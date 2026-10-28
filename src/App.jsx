@@ -12,6 +12,7 @@ import Home from './pages/Home.jsx';
 
 const Vocab = lazy(() => import('./pages/Vocab.jsx'));
 const Study = lazy(() => import('./pages/Study.jsx'));
+const Quiz = lazy(() => import('./pages/Quiz.jsx'));
 const ComingSoon = lazy(() => import('./pages/ComingSoon.jsx'));
 
 function Shell() {
@@ -37,7 +38,7 @@ function Shell() {
       page = <Study filterApi={filterApi} navigate={navigate} />;
       break;
     case 'kuis':
-      page = <ComingSoon title="Kuis" tahap={4} />;
+      page = <Quiz filterApi={filterApi} navigate={navigate} />;
       break;
     case 'progress':
       page = <ComingSoon title="Halaman progress" tahap={5} />;

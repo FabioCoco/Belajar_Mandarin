@@ -1,6 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { loadJSON, saveJSON, removeKey } from '../lib/storage.js';
 import { KEYS } from '../lib/constants.js';
+import { nextBox } from '../lib/leitner.js';
 
 // Bentuk data tersimpan:
 // {
@@ -64,6 +65,21 @@ export function ProgressProvider({ children }) {
     });
   }, []);
 
+  // Jawaban kuis + Leitner: benar naik kotak, salah kembali ke kotak 1 dan turun ke "belum hafal"
+  const answerQuiz = useCallback((id, correct) => {
+    setState((s) => {
+      const prev = { ...defaultWord, ...s.words[id] };
+      const word = {
+        ...prev,
+        box: nextBox(prev.box, correct),
+        correct: prev.correct + (correct ? 1 : 0),
+        wrong: prev.wrong + (correct ? 0 : 1),
+        memorized: correct ? prev.memorized : false,
+      };
+      return withStudy({ ...s, words: { ...s.words, [id]: word } });
+    });
+  }, []);
+
   const recordStudy = useCallback((n = 1) => setState((s) => withStudy(s, n)), []);
 
   const resetAll = useCallback(() => {
@@ -85,10 +101,11 @@ export function ProgressProvider({ children }) {
       isMemorized,
       setMemorized,
       markReviewed,
+      answerQuiz,
       recordStudy,
       resetAll,
     };
-  }, [state, getWord, isMemorized, setMemorized, markReviewed, recordStudy, resetAll]);
+  }, [state, getWord, isMemorized, setMemorized, markReviewed, answerQuiz, recordStudy, resetAll]);
 
   return <ProgressContext.Provider value={value}>{children}</ProgressContext.Provider>;
 }
