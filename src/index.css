@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   DESIGN TOKEN. Semua nilai berupa channel RGB ("R G B").
+   Ubah tampilan cukup dari sini + tailwind.config.js.
+   ============================================================ */
+:root {
+  color-scheme: light;
+
+  --bg: 255 251 242;        /* krem hangat #FFFBF2 */
+  --surface: 255 255 255;
+  --surface2: 251 244 228;  /* blok krem lembut */
+  --line: 234 223 200;
+  --ink: 43 45 47;          /* arang lembut #2B2D2F */
+  --muted: 94 99 102;
+  --primary: 76 175 122;    /* hijau bambu #4CAF7A */
+  --primary-ink: 46 125 91; /* hijau daun tua #2E7D5B (teks/ikon di atas permukaan) */
+  --btn-from: 47 134 96;    /* gradien tombol utama (putih di atasnya >= 4.5:1) */
+  --btn-to: 36 105 74;
+  --hero-from: 227 244 234;
+  --hero-to: 255 241 207;
+  --shadow: 60 80 60;
+  --focus: 46 125 91;
+
+  /* Aksen: base (dekorasi/isi), soft (latar), ink (teks di atas soft) */
+  --green: 76 175 122;    --green-soft: 227 244 234;    --green-ink: 31 107 71;
+  --sakura: 255 143 171;  --sakura-soft: 255 230 236;   --sakura-ink: 168 38 79;
+  --sky: 110 193 228;     --sky-soft: 225 243 250;      --sky-ink: 27 100 131;
+  --honey: 255 200 87;    --honey-soft: 255 241 207;    --honey-ink: 122 82 0;
+  --peach: 255 159 104;   --peach-soft: 255 233 219;    --peach-ink: 143 63 10;
+  --lavender: 183 156 237;--lavender-soft: 239 232 252; --lavender-ink: 91 63 160;
+
+  /* Status: hafal = hijau, belum hafal = persik, salah = merah lembut */
+  --ok-soft: 227 244 234;   --ok-ink: 31 107 71;
+  --todo-soft: 255 233 219; --todo-ink: 143 63 10;
+  --bad-soft: 254 226 226;  --bad-ink: 165 28 28;
+
+  /* Default warna bab (dioverride lewat style per elemen) */
+  --ch: var(--green); --ch-soft: var(--green-soft); --ch-ink: var(--green-ink);
+}
+
+.dark {
+  color-scheme: dark;
+
+  --bg: 22 33 29;           /* biru-hijau tua #16211D */
+  --surface: 31 46 40;      /* #1F2E28 */
+  --surface2: 38 56 48;
+  --line: 52 73 63;
+  --ink: 234 242 238;
+  --muted: 169 189 180;
+  --primary: 91 190 136;
+  --primary-ink: 143 221 176;
+  --btn-from: 47 134 96;
+  --btn-to: 36 105 74;
+  --hero-from: 36 67 58;
+  --hero-to: 51 64 42;
+  --shadow: 0 0 0;
+  --focus: 143 221 176;
+
+  --green: 91 190 136;    --green-soft: 39 74 60;    --green-ink: 155 227 187;
+  --sakura: 242 124 155;  --sakura-soft: 74 42 54;   --sakura-ink: 255 179 198;
+  --sky: 98 179 214;      --sky-soft: 34 65 78;      --sky-ink: 166 221 242;
+  --honey: 237 185 75;    --honey-soft: 74 62 30;    --honey-ink: 255 219 138;
+  --peach: 240 143 88;    --peach-soft: 74 50 37;    --peach-ink: 255 196 160;
+  --lavender: 165 139 221;--lavender-soft: 56 47 82; --lavender-ink: 212 194 247;
+
+  --ok-soft: 39 74 60;    --ok-ink: 155 227 187;
+  --todo-soft: 74 50 37;  --todo-ink: 255 196 160;
+  --bad-soft: 82 40 40;   --bad-ink: 254 180 180;
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-bg font-ui text-ink antialiased;
+    margin: 0;
+    overflow-x: hidden;
+  }
+  :focus-visible {
+    outline: 3px solid rgb(var(--focus));
+    outline-offset: 2px;
+    border-radius: 0.5rem;
+  }
+  h1, h2, h3 {
+    @apply font-ui font-extrabold tracking-tight;
+  }
+}
+
+@layer components {
+  .pb-safe { padding-bottom: env(safe-area-inset-bottom); }
+  .pt-safe { padding-top: env(safe-area-inset-top); }
+  .pl-safe { padding-left: env(safe-area-inset-left); }
+  .pr-safe { padding-right: env(safe-area-inset-right); }
+
+  .btn {
+    @apply inline-flex min-h-[44px] select-none items-center justify-center gap-2 rounded-2xl px-5 py-2.5 font-bold transition duration-150 active:scale-95;
+  }
+  .btn-primary {
+    @apply btn bg-btn-primary text-white shadow-soft hover:brightness-110;
+  }
+  .btn-soft {
+    @apply btn border border-line bg-surface text-ink shadow-soft hover:bg-surface2;
+  }
+  .card {
+    @apply rounded-card border border-line/70 bg-surface shadow-soft;
+  }
+}
+
+/* ============================================================
+   Animasi panda. Semuanya mati lewat aturan reduced-motion di bawah.
+   ============================================================ */
+/* transform-box hanya untuk elemen yang dianimasikan; jika dipasang global, atribut
+   transform="rotate(a cx cy)" pada elips lain ikut bergeser. */
+.panda-eye, .panda-head, .panda-all, .panda-z, .panda-chew, .panda-bubble, .panda-confetti { transform-box: fill-box; }
+.panda-anim .panda-eye { transform-origin: center; animation: panda-blink 5s infinite; }
+.panda-anim.panda-happy .panda-head { transform-origin: 50% 100%; animation: panda-nod 0.7s ease-in-out 2; }
+.panda-anim.panda-sad .panda-all { transform-origin: 50% 100%; animation: panda-shake 0.5s ease-in-out 2; }
+.panda-anim.panda-cheer .panda-all { transform-origin: 50% 100%; animation: panda-bounce 0.9s ease-in-out 4; }
+.panda-anim.panda-sleeping .panda-all { transform-origin: 50% 100%; animation: panda-breathe 3.2s ease-in-out infinite; }
+.panda-anim.panda-sleeping .panda-z { animation: panda-float 2.6s ease-in-out infinite; }
+.panda-anim.panda-sleeping .panda-z2 { animation-delay: 1.2s; }
+.panda-anim.panda-eating .panda-chew { transform-origin: center; animation: panda-chew 0.55s ease-in-out infinite; }
+.panda-anim.panda-thinking .panda-bubble { animation: panda-float 2.4s ease-in-out infinite; }
+.panda-anim.panda-cheer .panda-confetti { animation: panda-float 1.6s ease-in-out infinite; }
+
+@keyframes panda-blink { 0%, 92%, 100% { transform: scaleY(1); } 95% { transform: scaleY(0.1); } }
+@keyframes panda-nod { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
+@keyframes panda-shake { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(-3deg); } 75% { transform: rotate(3deg); } }
+@keyframes panda-bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes panda-breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.025); } }
+@keyframes panda-float { 0%, 100% { transform: translateY(0); opacity: 1; } 50% { transform: translateY(-5px); opacity: 0.7; } }
+@keyframes panda-chew { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(0.4); } }
+
+/* Flip 3D flashcard (dipakai di Tahap 3) */
+.flip-scene { perspective: 1200px; }
+.flip-card { transform-style: preserve-3d; transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.flip-card.is-flipped { transform: rotateY(180deg); }
+.flip-face { backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.flip-back { transform: rotateY(180deg); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

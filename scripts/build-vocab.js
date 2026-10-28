@@ -23,8 +23,14 @@ const PINYIN_RE = /^[a-züÜāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜńň
 const TONE_RE = /[āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜńňǹḿ]/;
 const HANZI_RE = /[㐀-鿿]/;
 
+// Koreksi hanzi tanpa mengubah data mentah. Kunci: "<bab>|<hanzi asli>".
+const HANZI_OVERRIDES = {
+  '3|103': '幺零三', // nomor kamar dibaca satu per satu (yāo líng sān)
+};
+const overrideLog = [];
+
 const warnings = [];
-const warn = (where, msg) => warnings.push(`[${where}] ${msg}`);
+const warn =(where, msg) => warnings.push(`[${where}] ${msg}`);
 const clean = (v) => (typeof v === 'string' ? v.trim() : v);
 const nz = (v) => (typeof v === 'string' && v.trim() !== '' ? v.trim() : null);
 
@@ -111,6 +117,11 @@ for (const { file, num } of chapters) {
       if (!raw || typeof raw !== 'object') {
         warn(where, 'entri bukan objek');
         return;
+      }
+      const fixed = HANZI_OVERRIDES[`${num}|${raw.hanzi}`];
+      if (fixed) {
+        overrideLog.push(`Bab ${num}: "${raw.hanzi}" -> "${fixed}"`);
+        raw = { ...raw, hanzi: fixed };
       }
       if (!validate(raw, where)) return; // entri dengan field wajib kosong dibuang
       const item = {
@@ -215,6 +226,8 @@ console.log(
 );
 console.log(`Duplikat digabung: ${duplicates}`);
 dupLog.forEach((d) => console.log(`  - ${d}`));
+console.log(`Koreksi hanzi    : ${overrideLog.length}`);
+overrideLog.forEach((d) => console.log(`  - ${d}`));
 console.log(`Output           : ${OUT_FILE}`);
 console.log(line);
 if (warnings.length) {
