@@ -3,7 +3,8 @@ import { loadJSON, saveJSON } from '../lib/storage.js';
 import { KEYS } from '../lib/constants.js';
 
 const SettingsContext = createContext(null);
-const DEFAULTS = { lang: 'id', theme: 'system' }; // lang: id | en | both; theme: system | light | dark
+// lang: id | en | both; theme: system | light | dark; cardDir: hanzi (Hanzi->Arti) | arti (Arti->Hanzi)
+const DEFAULTS = { lang: 'id', theme: 'system', cardDir: 'hanzi' };
 
 const systemDark = () => window.matchMedia?.('(prefers-color-scheme: dark)').matches ?? false;
 
@@ -32,10 +33,11 @@ export function SettingsProvider({ children }) {
 
   const setLang = useCallback((lang) => setSettings((s) => ({ ...s, lang })), []);
   const setTheme = useCallback((theme) => setSettings((s) => ({ ...s, theme })), []);
+  const setCardDir = useCallback((cardDir) => setSettings((s) => ({ ...s, cardDir })), []);
 
   const value = useMemo(
-    () => ({ lang: settings.lang, theme: settings.theme, resolvedTheme, setLang, setTheme }),
-    [settings, resolvedTheme, setLang, setTheme],
+    () => ({ lang: settings.lang, theme: settings.theme, cardDir: settings.cardDir, resolvedTheme, setLang, setTheme, setCardDir }),
+    [settings, resolvedTheme, setLang, setTheme, setCardDir],
   );
   return <SettingsContext.Provider value={value}>{children}</SettingsContext.Provider>;
 }

@@ -56,6 +56,14 @@ export function ProgressProvider({ children }) {
     });
   }, []);
 
+  // Satu kartu ditinjau di flashcard: set status dan selalu dihitung sebagai aktivitas belajar
+  const markReviewed = useCallback((id, memorized) => {
+    setState((s) => {
+      const prev = { ...defaultWord, ...s.words[id] };
+      return withStudy({ ...s, words: { ...s.words, [id]: { ...prev, memorized } } });
+    });
+  }, []);
+
   const recordStudy = useCallback((n = 1) => setState((s) => withStudy(s, n)), []);
 
   const resetAll = useCallback(() => {
@@ -76,10 +84,11 @@ export function ProgressProvider({ children }) {
       getWord,
       isMemorized,
       setMemorized,
+      markReviewed,
       recordStudy,
       resetAll,
     };
-  }, [state, getWord, isMemorized, setMemorized, recordStudy, resetAll]);
+  }, [state, getWord, isMemorized, setMemorized, markReviewed, recordStudy, resetAll]);
 
   return <ProgressContext.Provider value={value}>{children}</ProgressContext.Provider>;
 }

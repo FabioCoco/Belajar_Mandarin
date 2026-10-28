@@ -11,6 +11,7 @@ import { ErrorBoundary, LoadingState } from './components/StateViews.jsx';
 import Home from './pages/Home.jsx';
 
 const Vocab = lazy(() => import('./pages/Vocab.jsx'));
+const Study = lazy(() => import('./pages/Study.jsx'));
 const ComingSoon = lazy(() => import('./pages/ComingSoon.jsx'));
 
 function Shell() {
@@ -33,7 +34,7 @@ function Shell() {
       page = <Vocab filterApi={filterApi} />;
       break;
     case 'belajar':
-      page = <ComingSoon title="Flashcard" tahap={3} />;
+      page = <Study filterApi={filterApi} navigate={navigate} />;
       break;
     case 'kuis':
       page = <ComingSoon title="Kuis" tahap={4} />;

@@ -61,7 +61,10 @@ export default function VocabList({ items, lang, isMemorized, onToggle }) {
         {items.map((v) => (
           <li key={v.id} className="card flex flex-col gap-3 p-4">
             <div className="flex items-start gap-4">
-              <span lang="zh-CN" className="min-w-[4.5rem] font-hanzi text-4xl font-bold leading-none text-ink">
+              <span
+                lang="zh-CN"
+                className={`min-w-[4.5rem] max-w-[45%] shrink-0 break-words font-hanzi font-bold leading-tight text-ink ${[...v.hanzi].length > 4 ? "text-2xl" : "text-4xl"}`}
+              >
                 {v.hanzi}
               </span>
               <div className="min-w-0 flex-1">
