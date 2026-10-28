@@ -616,7 +616,8 @@
     "indonesian": "kantor",
     "posId": null,
     "posEn": null,
-    "note": "hanzi 室 ditambahkan tulisan tangan di baris 办公; di margin ada catatan '...ong si => kantor'"
+    "note": "hanzi 室 ditambahkan tulisan tangan di baris 办公; di margin ada catatan '...ong si => kantor'",
+    "posHint": "kata benda"
   },
   {
     "id": "b1-extra-002",
@@ -630,7 +631,8 @@
     "indonesian": "SMP",
     "posId": null,
     "posEn": null,
-    "note": "tulisan tangan"
+    "note": "tulisan tangan",
+    "posHint": "kata benda"
   },
   {
     "id": "b1-extra-003",
@@ -644,7 +646,8 @@
     "indonesian": "ke atas / besar",
     "posId": null,
     "posEn": null,
-    "note": "tulisan tangan; catatan di atas New words"
+    "note": "tulisan tangan; catatan di atas New words",
+    "posHint": "kata sifat"
   },
   {
     "id": "b1-extra-004",
@@ -658,7 +661,8 @@
     "indonesian": "SMA",
     "posId": null,
     "posEn": null,
-    "note": "tulisan tangan"
+    "note": "tulisan tangan",
+    "posHint": "kata benda"
   },
   {
     "id": "b1-extra-005",
@@ -672,7 +676,8 @@
     "indonesian": "singa",
     "posId": null,
     "posEn": null,
-    "note": "tulisan tangan; pinyin tidak ditulis, ditambahkan dari hanzi"
+    "note": "tulisan tangan; pinyin tidak ditulis, ditambahkan dari hanzi",
+    "posHint": "kata benda"
   },
   {
     "id": "b1-extra-006",
@@ -686,7 +691,8 @@
     "indonesian": "kecil",
     "posId": null,
     "posEn": null,
-    "note": "tulisan tangan; catatan di atas New words"
+    "note": "tulisan tangan; catatan di atas New words",
+    "posHint": "kata sifat"
   },
   {
     "id": "b1-extra-007",
@@ -700,7 +706,8 @@
     "indonesian": "karena (jawaban untuk 为什么 wèi shénme)",
     "posId": null,
     "posEn": null,
-    "note": "tulisan tangan"
+    "note": "tulisan tangan",
+    "posHint": "kata hubung"
   },
   {
     "id": "b1-extra-008",
@@ -714,7 +721,8 @@
     "indonesian": "dokter barat",
     "posId": null,
     "posEn": null,
-    "note": "tulisan tangan"
+    "note": "tulisan tangan",
+    "posHint": "kata benda"
   },
   {
     "id": "b1-extra-009",
@@ -728,7 +736,8 @@
     "indonesian": "direktur rumah sakit",
     "posId": null,
     "posEn": null,
-    "note": "tulisan tangan"
+    "note": "tulisan tangan",
+    "posHint": "kata benda"
   },
   {
     "id": "b1-extra-010",
@@ -752,8 +761,8 @@
     "kategori": "names",
     "hanzi": "贝拉",
     "pinyin": "Bèilā",
-    "english": "Berra",
-    "indonesian": "Berra (nama orang)",
+    "english": "Bella",
+    "indonesian": "Bella (nama orang)",
     "posId": null,
     "posEn": null,
     "note": null
@@ -1316,7 +1325,8 @@
     "indonesian": "papan tulis putih",
     "posId": null,
     "posEn": null,
-    "note": "tulisan tangan; ditulis 'baiban' + 'putih', hanzi ditambahkan"
+    "note": "tulisan tangan; ditulis 'baiban' + 'putih', hanzi ditambahkan",
+    "posHint": "kata benda"
   },
   {
     "id": "b2-extra-002",
@@ -1330,7 +1340,8 @@
     "indonesian": "akan / bisa",
     "posId": null,
     "posEn": null,
-    "note": "tulisan tangan"
+    "note": "tulisan tangan",
+    "posHint": "kata kerja bantu"
   },
   {
     "id": "b2-extra-003",
@@ -1344,7 +1355,8 @@
     "indonesian": "tidak perlu / tidak usah",
     "posId": null,
     "posEn": null,
-    "note": "tulisan tangan; di atas baris 1, hanzi terpotong (kemungkinan 不用)"
+    "note": "tulisan tangan; di atas baris 1, hanzi terpotong (kemungkinan 不用)",
+    "posHint": "kata kerja bantu"
   },
   {
     "id": "b2-names-001",
@@ -2002,7 +2014,8 @@
     "indonesian": "musim kemarau",
     "posId": null,
     "posEn": null,
-    "note": "tulisan tangan; hanzi tulisan tangan kurang jelas"
+    "note": "tulisan tangan; hanzi tulisan tangan kurang jelas",
+    "posHint": "kata benda"
   },
   {
     "id": "b3-extra-002",
@@ -2016,7 +2029,8 @@
     "indonesian": "pendingin ruangan",
     "posId": null,
     "posEn": null,
-    "note": "tulisan tangan"
+    "note": "tulisan tangan",
+    "posHint": "kata benda"
   },
   {
     "id": "b3-extra-003",
@@ -2030,7 +2044,8 @@
     "indonesian": "lantai",
     "posId": null,
     "posEn": null,
-    "note": "tulisan tangan"
+    "note": "tulisan tangan",
+    "posHint": "kata benda"
   },
   {
     "id": "b3-extra-004",
@@ -2044,7 +2059,8 @@
     "indonesian": "kakak cantik",
     "posId": null,
     "posEn": null,
-    "note": "tulisan tangan; hanzi ditambahkan dari pinyin 'mei nv'"
+    "note": "tulisan tangan; hanzi ditambahkan dari pinyin 'mei nv'",
+    "posHint": "kata benda"
   },
   {
     "id": "b3-extra-005",
@@ -2058,7 +2074,8 @@
     "indonesian": "mudah",
     "posId": null,
     "posEn": null,
-    "note": "tulisan tangan"
+    "note": "tulisan tangan",
+    "posHint": "kata sifat"
   },
   {
     "id": "b3-extra-006",
@@ -2114,7 +2131,8 @@
     "indonesian": "kamar double",
     "posId": null,
     "posEn": null,
-    "note": "tulisan tangan"
+    "note": "tulisan tangan",
+    "posHint": "kata benda"
   },
   {
     "id": "b3-extra-010",
@@ -2128,7 +2146,8 @@
     "indonesian": "tuan (perempuan) - jangan sembarangan",
     "posId": null,
     "posEn": null,
-    "note": "tulisan tangan"
+    "note": "tulisan tangan",
+    "posHint": "kata benda"
   },
   {
     "id": "b3-extra-011",
@@ -2652,7 +2671,8 @@
     "indonesian": "bimbel",
     "posId": null,
     "posEn": null,
-    "note": "tulisan tangan; hanzi ditambahkan dari pinyin"
+    "note": "tulisan tangan; hanzi ditambahkan dari pinyin",
+    "posHint": "kata benda"
   },
   {
     "id": "b4-extra-003",
@@ -2666,7 +2686,8 @@
     "indonesian": "guru bimbel / guru skripsi?",
     "posId": null,
     "posEn": null,
-    "note": "tulisan tangan; ada tanda tanya dari penulis"
+    "note": "tulisan tangan; ada tanda tanya dari penulis",
+    "posHint": "kata benda"
   },
   {
     "id": "b4-extra-004",
@@ -2694,7 +2715,8 @@
     "indonesian": "pria",
     "posId": null,
     "posEn": null,
-    "note": "tulisan tangan; hanzi tulisan tangan, pinyin 'nan ren'"
+    "note": "tulisan tangan; hanzi tulisan tangan, pinyin 'nan ren'",
+    "posHint": "kata benda"
   },
   {
     "id": "b4-extra-006",
@@ -2708,7 +2730,8 @@
     "indonesian": "wanita",
     "posId": null,
     "posEn": null,
-    "note": "tulisan tangan; hanzi tulisan tangan, pinyin 'nü ren'"
+    "note": "tulisan tangan; hanzi tulisan tangan, pinyin 'nü ren'",
+    "posHint": "kata benda"
   },
   {
     "id": "b4-extra-007",
@@ -2722,7 +2745,8 @@
     "indonesian": "ibu kota",
     "posId": null,
     "posEn": null,
-    "note": "tulisan tangan"
+    "note": "tulisan tangan",
+    "posHint": "kata benda"
   },
   {
     "id": "b4-extra-008",
@@ -2778,7 +2802,8 @@
     "indonesian": "perhatikan",
     "posId": null,
     "posEn": null,
-    "note": "tulisan tangan"
+    "note": "tulisan tangan",
+    "posHint": "kata kerja"
   },
   {
     "id": "b4-names-001",
@@ -3590,7 +3615,8 @@
     "indonesian": "doa",
     "posId": null,
     "posEn": null,
-    "note": "tulisan tangan; hanzi ditambahkan dari pinyin 'daogao'"
+    "note": "tulisan tangan; hanzi ditambahkan dari pinyin 'daogao'",
+    "posHint": "kata benda"
   },
   {
     "id": "b5-extra-002",
@@ -3618,7 +3644,8 @@
     "indonesian": "memberi tahu",
     "posId": null,
     "posEn": null,
-    "note": "tulisan tangan; hanzi ditambahkan dari pinyin 'kaosu'"
+    "note": "tulisan tangan; hanzi ditambahkan dari pinyin 'kaosu'",
+    "posHint": "kata kerja"
   },
   {
     "id": "b5-extra-004",
@@ -3632,7 +3659,8 @@
     "indonesian": "menjawab",
     "posId": null,
     "posEn": null,
-    "note": "tulisan tangan; hanzi ditambahkan dari pinyin 'huida'"
+    "note": "tulisan tangan; hanzi ditambahkan dari pinyin 'huida'",
+    "posHint": "kata kerja"
   },
   {
     "id": "b5-extra-005",
@@ -3646,7 +3674,8 @@
     "indonesian": "gereja",
     "posId": null,
     "posEn": null,
-    "note": "tulisan tangan; hanzi ditambahkan dari pinyin 'jiaotang'"
+    "note": "tulisan tangan; hanzi ditambahkan dari pinyin 'jiaotang'",
+    "posHint": "kata benda"
   },
   {
     "id": "b5-extra-006",
@@ -3660,7 +3689,8 @@
     "indonesian": "tempat tujuan",
     "posId": null,
     "posEn": null,
-    "note": "tulisan tangan"
+    "note": "tulisan tangan",
+    "posHint": "kata benda"
   },
   {
     "id": "b5-extra-007",
@@ -3674,7 +3704,8 @@
     "indonesian": "pendeta",
     "posId": null,
     "posEn": null,
-    "note": "tulisan tangan; hanzi ditambahkan dari pinyin 'mushi'"
+    "note": "tulisan tangan; hanzi ditambahkan dari pinyin 'mushi'",
+    "posHint": "kata benda"
   },
   {
     "id": "b5-extra-008",
@@ -3688,7 +3719,8 @@
     "indonesian": "jika",
     "posId": null,
     "posEn": null,
-    "note": "tulisan tangan; hanzi ditambahkan dari pinyin 'ruguo'"
+    "note": "tulisan tangan; hanzi ditambahkan dari pinyin 'ruguo'",
+    "posHint": "kata hubung"
   },
   {
     "id": "b5-extra-009",
@@ -3702,7 +3734,8 @@
     "indonesian": "hanya ada",
     "posId": null,
     "posEn": null,
-    "note": "tulisan tangan"
+    "note": "tulisan tangan",
+    "posHint": "kata hubung"
   },
   {
     "id": "b5-names-001",
@@ -4374,6 +4407,7 @@
     "indonesian": "menggambar",
     "posId": null,
     "posEn": null,
-    "note": "tulisan tangan"
+    "note": "tulisan tangan",
+    "posHint": "kata kerja"
   }
 ]

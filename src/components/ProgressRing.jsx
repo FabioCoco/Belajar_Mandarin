@@ -1,5 +1,5 @@
-// Cincin progress SVG. Warna mengikuti --ch bila ada (warna bab), selain itu hijau bambu.
-export default function ProgressRing({ value = 0, size = 64, stroke = 8, label, color = 'rgb(var(--ch))', children }) {
+// Cincin progress SVG. Warna isi memakai --ch-ink (versi pekat warna bab) agar kontras >= 3:1 terhadap latar.
+export default function ProgressRing({ value = 0, size = 64, stroke = 8, label, color = 'rgb(var(--ch-ink))', children }) {
   const v = Math.max(0, Math.min(1, value));
   const r = (size - stroke) / 2;
   const c = 2 * Math.PI * r;

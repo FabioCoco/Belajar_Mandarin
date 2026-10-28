@@ -1,5 +1,6 @@
 import { CircleCheck, CircleX, RotateCcw, Settings2 } from 'lucide-react';
 import PandaMascot from './PandaMascot.jsx';
+import Confetti from './Confetti.jsx';
 import { chapterStyle } from '../lib/chapterColors.js';
 import { getMeanings } from '../lib/vocab.js';
 
@@ -19,6 +20,7 @@ export default function QuizResult({ log, lang, onRetryWrong, onRestart, onSetup
 
   return (
     <div className="flex flex-col gap-5">
+      <Confetti fire={pct >= 80 ? 1 : 0} />
       <section className="card flex flex-col items-center gap-3 px-4 py-8 text-center">
         <PandaMascot mood={v.mood} size={150} />
         <h2 className="text-2xl">{v.title}</h2>

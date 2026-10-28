@@ -1,4 +1,4 @@
-import { getMeanings, splitPos, vocab } from './vocab.js';
+import { effectivePos, getMeanings, vocab } from './vocab.js';
 
 export const QUIZ_MODES = [
   { key: 'hanzi-arti', label: 'Hanzi → Arti', prompt: 'Apa arti kata ini?' },
@@ -23,13 +23,21 @@ export function answerOf(v, mode, lang) {
   return { key: lines.join(' / ').toLowerCase(), lines };
 }
 
-// Dua kata dianggap "sejenis" bila jenis katanya beririsan. Kata tanpa jenis kata (nama, frasa ekstra)
-// dibandingkan lewat kategorinya.
+// Dua kata dianggap "sejenis" bila jenis katanya beririsan (pos asli, atau posHint untuk entri tanpa pos).
+// Bila keduanya tak punya jenis kata (mis. nama), dibandingkan lewat kategorinya.
 function samePos(a, b) {
-  const pa = splitPos(a.posId);
-  const pb = splitPos(b.posId);
+  const pa = effectivePos(a);
+  const pb = effectivePos(b);
   if (!pa.length && !pb.length) return a.kategori === b.kategori;
   return pa.some((p) => pb.includes(p));
+}
+
+// Skor kemiripan tambahan agar pengecoh terasa masuk akal: kategori sama, panjang hanzi mirip, bab sama.
+// Ditambah sedikit acak (jitter) supaya pilihan pengecoh tidak selalu sama.
+function closeness(c, item) {
+  const lenDiff = Math.abs([...c.hanzi].length - [...item.hanzi].length);
+  const score = (c.kategori === item.kategori ? 2 : 0) + (lenDiff === 0 ? 2 : lenDiff === 1 ? 1 : 0) + (c.bab === item.bab ? 1 : 0);
+  return score + Math.random() * 2.5;
 }
 
 // Kata lain yang juga merupakan jawaban benar untuk soal ini tidak boleh jadi pengecoh,
@@ -40,21 +48,20 @@ function conflicts(c, item, mode) {
 }
 
 // Membuat satu soal pilihan ganda (maksimal 4 pilihan).
-// Pengecoh: diutamakan dari kata dengan jenis kata yang sama agar tidak terlalu mudah ditebak,
-// lalu dilengkapi dari kata lain bila jumlahnya kurang. Pilihan dengan teks yang sama dibuang.
+// Pengecoh: diutamakan dari kata dengan jenis kata yang sama agar tidak terlalu mudah ditebak; di dalam
+// kelompok itu dan saat melengkapi dari kata lain, yang paling mirip (closeness) didahulukan.
+// Pilihan dengan teks yang sama dibuang.
 export function buildQuestion(item, mode, lang, pool = vocab) {
   const correct = answerOf(item, mode, lang);
   const seen = new Set([correct.key]);
-  const eligible = shuffle(pool).filter((c) => {
-    if (c.id === item.id || conflicts(c, item, mode)) return false;
-    const key = answerOf(c, mode, lang).key;
-    if (seen.has(key)) return false;
-    return true;
-  });
+  const eligible = pool
+    .filter((c) => c.id !== item.id && !conflicts(c, item, mode) && answerOf(c, mode, lang).key !== correct.key)
+    .map((c) => ({ c, same: samePos(c, item), score: closeness(c, item) }));
+  const byScore = (x, y) => y.score - x.score;
 
   const picked = [];
   const take = (list) => {
-    for (const c of list) {
+    for (const { c } of list) {
       if (picked.length >= 3) return;
       const key = answerOf(c, mode, lang).key;
       if (seen.has(key)) continue;
@@ -62,8 +69,8 @@ export function buildQuestion(item, mode, lang, pool = vocab) {
       picked.push(c);
     }
   };
-  take(eligible.filter((c) => samePos(c, item)));
-  take(eligible);
+  take(eligible.filter((x) => x.same).sort(byScore));
+  take(eligible.filter((x) => !x.same).sort(byScore));
 
   const options = shuffle([item, ...picked]).map((v) => ({ id: v.id, ...answerOf(v, mode, lang) }));
   return { item, mode, options, correctIndex: options.findIndex((o) => o.id === item.id) };

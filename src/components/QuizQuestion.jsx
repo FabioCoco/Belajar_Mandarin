@@ -78,11 +78,11 @@ export default function QuizQuestion({ question, selected, onSelect, lang, speec
         {options.map((o, i) => {
           const isRight = i === correctIndex;
           const isChosen = i === selected;
-          let tone = 'border-line bg-surface hover:border-ch hover:bg-ch-soft';
+          let tone = 'border-control bg-surface hover:border-ch-ink hover:bg-ch-soft';
           if (answered) {
             if (isRight) tone = 'border-ok-ink bg-ok-soft text-ok-ink';
             else if (isChosen) tone = 'border-bad-ink bg-bad-soft text-bad-ink';
-            else tone = 'border-line bg-surface opacity-60';
+            else tone = 'border-control/50 bg-surface opacity-60';
           }
           return (
             <button
@@ -90,9 +90,9 @@ export default function QuizQuestion({ question, selected, onSelect, lang, speec
               type="button"
               disabled={answered}
               onClick={() => onSelect(i)}
-              className={`flex min-h-[60px] items-center gap-3 rounded-2xl border-2 px-4 py-3 text-left shadow-soft transition active:scale-[.98] disabled:cursor-default disabled:active:scale-100 ${tone}`}
+              className={`flex min-h-[64px] items-center gap-3 rounded-2xl border-2 px-4 py-3 text-left shadow-soft transition active:scale-[.98] disabled:cursor-default disabled:active:scale-100 ${tone}`}
             >
-              <span aria-hidden="true" className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-surface2 text-sm font-extrabold text-ink">
+              <span aria-hidden="true" className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-ch-soft text-sm font-extrabold text-ch-ink">
                 {LETTERS[i]}
               </span>
               <span className="min-w-0 flex-1">

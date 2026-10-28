@@ -17,12 +17,13 @@
   --muted: 94 99 102;
   --primary: 76 175 122;    /* hijau bambu #4CAF7A */
   --primary-ink: 46 125 91; /* hijau daun tua #2E7D5B (teks/ikon di atas permukaan) */
-  --btn-from: 47 134 96;    /* gradien tombol utama (putih di atasnya >= 4.5:1) */
+  --btn-from: 44 129 91;    /* gradien tombol utama (putih di atasnya >= 4.5:1) */
   --btn-to: 36 105 74;
   --hero-from: 227 244 234;
   --hero-to: 255 241 207;
   --shadow: 60 80 60;
   --focus: 46 125 91;
+  --control: 138 128 104;   /* garis tepi kontrol interaktif, >= 3:1 terhadap permukaan */
 
   /* Aksen: base (dekorasi/isi), soft (latar), ink (teks di atas soft) */
   --green: 76 175 122;    --green-soft: 227 244 234;    --green-ink: 31 107 71;
@@ -52,12 +53,13 @@
   --muted: 169 189 180;
   --primary: 91 190 136;
   --primary-ink: 143 221 176;
-  --btn-from: 47 134 96;
+  --btn-from: 44 129 91;
   --btn-to: 36 105 74;
   --hero-from: 36 67 58;
   --hero-to: 51 64 42;
   --shadow: 0 0 0;
   --focus: 143 221 176;
+  --control: 112 140 126;
 
   --green: 91 190 136;    --green-soft: 39 74 60;    --green-ink: 155 227 187;
   --sakura: 242 124 155;  --sakura-soft: 74 42 54;   --sakura-ink: 255 179 198;

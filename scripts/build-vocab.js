@@ -29,6 +29,22 @@ const HANZI_OVERRIDES = {
 };
 const overrideLog = [];
 
+// Petunjuk jenis kata untuk entri TANPA pos (extra_words/names) yang jenisnya jelas.
+// Hanya dipakai aplikasi untuk memilih pengecoh kuis yang sejenis (field posHint); tidak ditampilkan
+// di UI dan tidak masuk filter jenis kata. Kunci: hanzi.
+const POS_HINTS = {
+  'kata hubung': ['因为', '如果', '只有'],
+  'kata kerja bantu': ['会', '用'],
+  'kata sifat': ['容易', '大', '小'],
+  'kata kerja': ['告诉', '回答', '注意', '画画儿'],
+  'kata benda': [
+    '办公室', '初中', '高中', '狮子', '医生', '医院院长', '白板', '旱季', '冷气', '楼', '美女', '双人间',
+    '男人', '女人', '首都', '辅导班', '辅导老师', '祷告', '教堂', '目的地', '牧师', '小姐',
+  ],
+};
+const POS_HINT_BY_HANZI = Object.fromEntries(Object.entries(POS_HINTS).flatMap(([pos, list]) => list.map((h) => [h, pos])));
+let hintCount = 0;
+
 const warnings = [];
 const warn =(where, msg) => warnings.push(`[${where}] ${msg}`);
 const clean = (v) => (typeof v === 'string' ? v.trim() : v);
@@ -133,7 +149,12 @@ for (const { file, num } of chapters) {
         posId: nz(raw.pos_id),
         posEn: nz(raw.pos_en),
         note: nz(raw.note),
+        posHint: null,
       };
+      if (!item.posId && POS_HINT_BY_HANZI[item.hanzi]) {
+        item.posHint = POS_HINT_BY_HANZI[item.hanzi];
+        hintCount++;
+      }
       const dk = `${item.hanzi}|${item.pinyin}`;
       const existing = entries.get(dk);
       if (!existing) {
@@ -153,6 +174,7 @@ for (const { file, num } of chapters) {
       keep.posId ||= other.posId;
       keep.posEn ||= other.posEn;
       keep.note ||= other.note;
+      keep.posHint ||= other.posHint;
       if (other.english && other.english !== keep.english) {
         keep.altEnglish = [...new Set([...(keep.altEnglish || []), other.english, ...(other.altEnglish || [])])];
       }
@@ -192,6 +214,7 @@ for (const [num, { meta, entries }] of byChapter) {
       posId: e.posId,
       posEn: e.posEn,
       note: e.note,
+      ...(e.posHint ? { posHint: e.posHint } : {}),
       ...(e.altEnglish ? { altEnglish: e.altEnglish } : {}),
       ...(e.altIndonesian ? { altIndonesian: e.altIndonesian } : {}),
     });
@@ -226,6 +249,7 @@ console.log(
 );
 console.log(`Duplikat digabung: ${duplicates}`);
 dupLog.forEach((d) => console.log(`  - ${d}`));
+console.log(`Petunjuk jenis kata (khusus pengecoh kuis): ${hintCount}`);
 console.log(`Koreksi hanzi    : ${overrideLog.length}`);
 overrideLog.forEach((d) => console.log(`  - ${d}`));
 console.log(`Output           : ${OUT_FILE}`);

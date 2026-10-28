@@ -80,7 +80,7 @@ export default function Home({ navigate, openChapter }) {
             value={ratio}
             size={56}
             stroke={7}
-            color="rgb(var(--primary))"
+            color="rgb(var(--primary-ink))"
             label={`Target harian: ${todayCount} dari ${DAILY_TARGET} kata`}
           >
             {todayCount}
@@ -101,8 +101,8 @@ export default function Home({ navigate, openChapter }) {
           Pilih bab
         </h2>
         <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
-          {chapters.map((c) => (
-            <ChapterCard key={c.bab} chapter={c} memorized={memorizedByChapter[c.bab] ?? 0} onClick={() => openChapter(c.bab)} />
+          {chapters.map((c, i) => (
+            <ChapterCard key={c.bab} index={i} chapter={c} memorized={memorizedByChapter[c.bab] ?? 0} onClick={() => openChapter(c.bab)} />
           ))}
         </div>
       </section>

@@ -6,12 +6,12 @@ import { nextBox } from '../lib/leitner.js';
 // Bentuk data tersimpan:
 // {
 //   words:  { [id]: { memorized: bool, box: 1|2|3, correct, wrong } },   // box = kotak Leitner (Tahap 4)
-//   daily:  { date: 'YYYY-MM-DD', count },
+//   daily:  { date: 'YYYY-MM-DD', ids: [id kata berbeda yang dipelajari hari ini] },
 //   streak: { count, last: 'YYYY-MM-DD' }
 // }
 const ProgressContext = createContext(null);
 
-const emptyState = () => ({ words: {}, daily: { date: null, count: 0 }, streak: { count: 0, last: null } });
+const emptyState = () => ({ words: {}, daily: { date: null, ids: [] }, streak: { count: 0, last: null } });
 const defaultWord = { memorized: false, box: 1, correct: 0, wrong: 0 };
 
 const dateKey = (d = new Date()) =>
@@ -24,13 +24,21 @@ const yesterdayKey = () => {
 
 function load() {
   const s = loadJSON(KEYS.progress, null);
-  return s && typeof s === 'object' ? { ...emptyState(), ...s } : emptyState();
+  if (!s || typeof s !== 'object') return emptyState();
+  const state = { ...emptyState(), ...s };
+  // Migrasi data lama ({ date, count }) ke daftar id agar hitungan hari ini tidak hilang
+  if (!Array.isArray(state.daily.ids)) {
+    state.daily = { date: state.daily.date, ids: Array.from({ length: state.daily.count || 0 }, (_, i) => `lama-${i}`) };
+  }
+  return state;
 }
 
-// Catat 1 aktivitas belajar: menambah hitungan harian dan memperbarui streak.
-function withStudy(state, n = 1) {
+// Catat aktivitas belajar atas satu kata. Target harian menghitung KATA BERBEDA (mengulang kata yang sama
+// tidak menambah hitungan), sedangkan streak naik oleh aktivitas apa pun.
+function withStudy(state, id) {
   const today = dateKey();
-  const daily = state.daily.date === today ? { date: today, count: state.daily.count + n } : { date: today, count: n };
+  const before = state.daily.date === today ? state.daily.ids : [];
+  const daily = { date: today, ids: before.includes(id) ? before : [...before, id] };
   let streak = state.streak;
   if (streak.last !== today) {
     streak = { count: streak.last === yesterdayKey() ? streak.count + 1 : 1, last: today };
@@ -53,7 +61,7 @@ export function ProgressProvider({ children }) {
       const prev = { ...defaultWord, ...s.words[id] };
       if (prev.memorized === memorized) return s;
       const next = { ...s, words: { ...s.words, [id]: { ...prev, memorized } } };
-      return memorized ? withStudy(next) : next;
+      return memorized ? withStudy(next, id) : next;
     });
   }, []);
 
@@ -61,7 +69,7 @@ export function ProgressProvider({ children }) {
   const markReviewed = useCallback((id, memorized) => {
     setState((s) => {
       const prev = { ...defaultWord, ...s.words[id] };
-      return withStudy({ ...s, words: { ...s.words, [id]: { ...prev, memorized } } });
+      return withStudy({ ...s, words: { ...s.words, [id]: { ...prev, memorized } } }, id);
     });
   }, []);
 
@@ -76,11 +84,9 @@ export function ProgressProvider({ children }) {
         wrong: prev.wrong + (correct ? 0 : 1),
         memorized: correct ? prev.memorized : false,
       };
-      return withStudy({ ...s, words: { ...s.words, [id]: word } });
+      return withStudy({ ...s, words: { ...s.words, [id]: word } }, id);
     });
   }, []);
-
-  const recordStudy = useCallback((n = 1) => setState((s) => withStudy(s, n)), []);
 
   const resetAll = useCallback(() => {
     removeKey(KEYS.progress);
@@ -89,7 +95,7 @@ export function ProgressProvider({ children }) {
 
   const value = useMemo(() => {
     const today = dateKey();
-    const todayCount = state.daily.date === today ? state.daily.count : 0;
+    const todayCount = state.daily.date === today ? state.daily.ids.length : 0;
     // Streak masih hidup bila terakhir belajar hari ini atau kemarin
     const streak = state.streak.last === today || state.streak.last === yesterdayKey() ? state.streak.count : 0;
     return {
@@ -102,10 +108,9 @@ export function ProgressProvider({ children }) {
       setMemorized,
       markReviewed,
       answerQuiz,
-      recordStudy,
       resetAll,
     };
-  }, [state, getWord, isMemorized, setMemorized, markReviewed, answerQuiz, recordStudy, resetAll]);
+  }, [state, getWord, isMemorized, setMemorized, markReviewed, answerQuiz, resetAll]);
 
   return <ProgressContext.Provider value={value}>{children}</ProgressContext.Provider>;
 }

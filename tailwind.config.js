@@ -24,6 +24,7 @@ export default {
         surface: rgb('--surface'),
         surface2: rgb('--surface2'),
         line: rgb('--line'),
+        control: rgb('--control'),
         ink: rgb('--ink'),
         muted: rgb('--muted'),
         primary: { DEFAULT: rgb('--primary'), ink: rgb('--primary-ink') },

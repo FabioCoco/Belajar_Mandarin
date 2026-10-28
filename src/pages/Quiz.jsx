@@ -11,6 +11,7 @@ import { EmptyState } from '../components/StateViews.jsx';
 import { useProgress } from '../hooks/useProgress.jsx';
 import { useSettings } from '../hooks/useSettings.jsx';
 import { useSpeech } from '../hooks/useSpeech.js';
+import { useHoldCelebration } from '../hooks/useCelebrationHold.jsx';
 import { pickWeighted } from '../lib/leitner.js';
 import { QUIZ_MODES, buildQuestion } from '../lib/quiz.js';
 import { filterVocab, vocab } from '../lib/vocab.js';
@@ -32,6 +33,9 @@ export default function Quiz({ filterApi }) {
   // run = { questions, index, selected, log: [{ q, chosen, correct }], done }
   const [run, setRun] = useState(null);
   const nextRef = useRef(null);
+
+  // Jangan menyela soal dengan perayaan target harian; tunggu sampai kuis selesai atau ditinggalkan
+  useHoldCelebration(!!run && !run.done);
 
   const pool = useMemo(
     () => filterVocab(vocab, filters, isMemorized),
@@ -104,13 +108,16 @@ export default function Quiz({ filterApi }) {
   // ---------- Hasil ----------
   if (run?.done) {
     return (
-      <QuizResult
-        log={run.log}
-        lang={lang}
-        onRetryWrong={(items) => start(items, 'all')}
-        onRestart={() => start(pool, count)}
-        onSetup={() => setRun(null)}
-      />
+      <>
+        <h1 className="sr-only">Hasil kuis</h1>
+        <QuizResult
+          log={run.log}
+          lang={lang}
+          onRetryWrong={(items) => start(items, 'all')}
+          onRestart={() => start(pool, count)}
+          onSetup={() => setRun(null)}
+        />
+      </>
     );
   }
 
@@ -126,6 +133,7 @@ export default function Quiz({ filterApi }) {
 
     return (
       <div className="mx-auto flex w-full max-w-2xl flex-col gap-4">
+        <h1 className="sr-only">Kuis berjalan</h1>
         <div className="flex items-center gap-3">
           <PandaMascot mood={mood} size={72} key={`${mood}-${run.index}`} />
           <div className="min-w-0 flex-1">

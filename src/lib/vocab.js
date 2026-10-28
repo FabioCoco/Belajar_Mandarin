@@ -38,6 +38,12 @@ export function splitPos(posId) {
 
 export const allPos = [...new Set(vocab.flatMap((v) => splitPos(v.posId)))].sort((a, b) => a.localeCompare(b, 'id'));
 
+// Jenis kata untuk kemiripan (pengecoh kuis): pos asli, atau petunjuk posHint bila entri tak punya pos.
+export const effectivePos = (v) => {
+  const own = splitPos(v.posId);
+  return own.length ? own : splitPos(v.posHint);
+};
+
 // Pencarian: abaikan huruf besar/kecil dan tanda nada (cari "ni hao" menemukan "nǐ hǎo")
 export const normalize = (s) =>
   String(s ?? '')
