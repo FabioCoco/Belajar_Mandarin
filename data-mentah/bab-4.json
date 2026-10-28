@@ -1,0 +1,466 @@
+{
+  "chapter": {
+    "id": 4,
+    "title_id": "Bahasa & Les/Bimbel",
+    "title_en": "Languages & Tutoring"
+  },
+  "core_words": [
+    {
+      "hanzi": "出",
+      "pinyin": "chū",
+      "pos_en": "verb",
+      "pos_id": "kata kerja",
+      "english": "to come up with; to put out",
+      "indonesian": "mengeluarkan / keluar"
+    },
+    {
+      "hanzi": "次",
+      "pinyin": "cì",
+      "pos_en": "measure word",
+      "pos_id": "kata satuan",
+      "english": "time (occurrence counter)",
+      "indonesian": "kali"
+    },
+    {
+      "hanzi": "聪明",
+      "pinyin": "cōngming",
+      "pos_en": "adjective",
+      "pos_id": "kata sifat",
+      "english": "smart",
+      "indonesian": "pintar"
+    },
+    {
+      "hanzi": "点",
+      "pinyin": "diǎn",
+      "pos_en": "measure word",
+      "pos_id": "kata satuan",
+      "english": "o'clock",
+      "indonesian": "jam (pukul)"
+    },
+    {
+      "hanzi": "懂",
+      "pinyin": "dǒng",
+      "pos_en": "verb",
+      "pos_id": "kata kerja",
+      "english": "to understand",
+      "indonesian": "mengerti"
+    },
+    {
+      "hanzi": "方便",
+      "pinyin": "fāngbiàn",
+      "pos_en": "adjective",
+      "pos_id": "kata sifat",
+      "english": "convenient",
+      "indonesian": "praktis"
+    },
+    {
+      "hanzi": "辅导",
+      "pinyin": "fǔdǎo",
+      "pos_en": "verb",
+      "pos_id": "kata kerja",
+      "english": "to tutor",
+      "indonesian": "membimbing belajar"
+    },
+    {
+      "hanzi": "更",
+      "pinyin": "gèng",
+      "pos_en": "adverb",
+      "pos_id": "kata keterangan",
+      "english": "even more",
+      "indonesian": "lebih"
+    },
+    {
+      "hanzi": "教",
+      "pinyin": "jiāo",
+      "pos_en": "verb",
+      "pos_id": "kata kerja",
+      "english": "to teach",
+      "indonesian": "mengajar"
+    },
+    {
+      "hanzi": "交换",
+      "pinyin": "jiāohuàn",
+      "pos_en": "verb",
+      "pos_id": "kata kerja",
+      "english": "to swap",
+      "indonesian": "tukar (saling tukar)"
+    },
+    {
+      "hanzi": "教室",
+      "pinyin": "jiàoshì",
+      "pos_en": "noun",
+      "pos_id": "kata benda",
+      "english": "classroom",
+      "indonesian": "ruangan kelas"
+    },
+    {
+      "hanzi": "开始",
+      "pinyin": "kāishǐ",
+      "pos_en": "verb",
+      "pos_id": "kata kerja",
+      "english": "to start",
+      "indonesian": "mulai"
+    },
+    {
+      "hanzi": "年轻",
+      "pinyin": "niánqīng",
+      "pos_en": "adjective",
+      "pos_id": "kata sifat",
+      "english": "young",
+      "indonesian": "muda"
+    },
+    {
+      "hanzi": "女生",
+      "pinyin": "nǚshēng",
+      "pos_en": "noun",
+      "pos_id": "kata benda",
+      "english": "female student",
+      "indonesian": "perempuan"
+    },
+    {
+      "hanzi": "室",
+      "pinyin": "shì",
+      "pos_en": "noun",
+      "pos_id": "kata benda",
+      "english": "room",
+      "indonesian": "ruangan"
+    },
+    {
+      "hanzi": "时间",
+      "pinyin": "shíjiān",
+      "pos_en": "noun",
+      "pos_id": "kata benda",
+      "english": "time",
+      "indonesian": "waktu"
+    },
+    {
+      "hanzi": "小姐",
+      "pinyin": "xiǎojiě",
+      "pos_en": "noun",
+      "pos_id": "kata benda",
+      "english": "young lady, Miss",
+      "indonesian": "nona"
+    },
+    {
+      "hanzi": "小时",
+      "pinyin": "xiǎoshí",
+      "pos_en": "noun",
+      "pos_id": "kata benda",
+      "english": "hour",
+      "indonesian": "jam"
+    },
+    {
+      "hanzi": "又",
+      "pinyin": "yòu",
+      "pos_en": "adverb",
+      "pos_id": "kata keterangan",
+      "english": "again",
+      "indonesian": "juga / lagi"
+    },
+    {
+      "hanzi": "语法",
+      "pinyin": "yǔfǎ",
+      "pos_en": "noun",
+      "pos_id": "kata benda",
+      "english": "grammar",
+      "indonesian": "tata bahasa"
+    },
+    {
+      "hanzi": "真",
+      "pinyin": "zhēn",
+      "pos_en": "adverb",
+      "pos_id": "kata keterangan",
+      "english": "really",
+      "indonesian": "sungguh"
+    },
+    {
+      "hanzi": "主意",
+      "pinyin": "zhǔyi",
+      "pos_en": "noun",
+      "pos_id": "kata benda",
+      "english": "idea, plan",
+      "indonesian": "ide",
+      "note": "pinyin di buku ditandai <口> (colloquial)"
+    }
+  ],
+  "extended_words": [
+    {
+      "hanzi": "儿子",
+      "pinyin": "érzi",
+      "pos_en": "noun",
+      "pos_id": "kata benda",
+      "english": "son",
+      "indonesian": "anak laki-laki"
+    },
+    {
+      "hanzi": "阶段",
+      "pinyin": "jiēduàn",
+      "pos_en": "noun",
+      "pos_id": "kata benda",
+      "english": "phase",
+      "indonesian": "periode"
+    },
+    {
+      "hanzi": "口语",
+      "pinyin": "kǒuyǔ",
+      "pos_en": "noun",
+      "pos_id": "kata benda",
+      "english": "spoken language",
+      "indonesian": "berbicara"
+    },
+    {
+      "hanzi": "老",
+      "pinyin": "lǎo",
+      "pos_en": "prefix",
+      "pos_id": "awalan",
+      "english": "old; friendly prefix before a surname",
+      "indonesian": "tua; untuk panggilan akrab sebelum marga"
+    },
+    {
+      "hanzi": "男生",
+      "pinyin": "nánshēng",
+      "pos_en": "noun",
+      "pos_id": "kata benda",
+      "english": "male student",
+      "indonesian": "laki-laki"
+    },
+    {
+      "hanzi": "年纪",
+      "pinyin": "niánjì",
+      "pos_en": "noun",
+      "pos_id": "kata benda",
+      "english": "age",
+      "indonesian": "usia (tua/muda)"
+    },
+    {
+      "hanzi": "女儿",
+      "pinyin": "nǚ'ér",
+      "pos_en": "noun",
+      "pos_id": "kata benda",
+      "english": "daughter",
+      "indonesian": "anak perempuan"
+    },
+    {
+      "hanzi": "听力",
+      "pinyin": "tīnglì",
+      "pos_en": "noun",
+      "pos_id": "kata benda",
+      "english": "listening comprehension",
+      "indonesian": "listening"
+    }
+  ],
+  "names": [
+    {
+      "hanzi": "阿拉伯文",
+      "pinyin": "Ālābówén",
+      "english": "Arabic (written)",
+      "indonesian": "bahasa Arab"
+    },
+    {
+      "hanzi": "阿拉伯语",
+      "pinyin": "Ālābóyǔ",
+      "english": "Arabic language",
+      "indonesian": "bahasa Arab"
+    },
+    {
+      "hanzi": "北京",
+      "pinyin": "Běijīng",
+      "english": "Beijing",
+      "indonesian": "Beijing"
+    },
+    {
+      "hanzi": "德文",
+      "pinyin": "Déwén",
+      "english": "German (written)",
+      "indonesian": "bahasa Jerman"
+    },
+    {
+      "hanzi": "德语",
+      "pinyin": "Déyǔ",
+      "english": "German language",
+      "indonesian": "bahasa Jerman"
+    },
+    {
+      "hanzi": "丁",
+      "pinyin": "Dīng",
+      "english": "Chinese family name",
+      "indonesian": "salah satu marga Tionghoa"
+    },
+    {
+      "hanzi": "俄文",
+      "pinyin": "Éwén",
+      "english": "Russian (written)",
+      "indonesian": "bahasa Rusia"
+    },
+    {
+      "hanzi": "俄语",
+      "pinyin": "Éyǔ",
+      "english": "Russian language",
+      "indonesian": "bahasa Rusia"
+    },
+    {
+      "hanzi": "法文",
+      "pinyin": "Fǎwén",
+      "english": "French (written)",
+      "indonesian": "bahasa Prancis"
+    },
+    {
+      "hanzi": "法语",
+      "pinyin": "Fǎyǔ",
+      "english": "French language",
+      "indonesian": "bahasa Prancis"
+    },
+    {
+      "hanzi": "李",
+      "pinyin": "Lǐ",
+      "english": "Chinese family name",
+      "indonesian": "salah satu marga Tionghoa"
+    },
+    {
+      "hanzi": "马",
+      "pinyin": "Mǎ",
+      "english": "Chinese family name",
+      "indonesian": "salah satu marga Tionghoa"
+    },
+    {
+      "hanzi": "西班牙文",
+      "pinyin": "Xībānyáwén",
+      "english": "Spanish (written)",
+      "indonesian": "bahasa Spanyol"
+    },
+    {
+      "hanzi": "西班牙语",
+      "pinyin": "Xībānyáyǔ",
+      "english": "Spanish language",
+      "indonesian": "bahasa Spanyol"
+    },
+    {
+      "hanzi": "意大利文",
+      "pinyin": "Yìdàlìwén",
+      "english": "Italian (written)",
+      "indonesian": "bahasa Italia"
+    },
+    {
+      "hanzi": "意大利语",
+      "pinyin": "Yìdàlìyǔ",
+      "english": "Italian language",
+      "indonesian": "bahasa Italia"
+    },
+    {
+      "hanzi": "英文",
+      "pinyin": "Yīngwén",
+      "english": "English (written)",
+      "indonesian": "bahasa Inggris"
+    },
+    {
+      "hanzi": "英语",
+      "pinyin": "Yīngyǔ",
+      "english": "English language",
+      "indonesian": "bahasa Inggris"
+    },
+    {
+      "hanzi": "于",
+      "pinyin": "Yú",
+      "english": "Chinese family name",
+      "indonesian": "salah satu marga Tionghoa"
+    },
+    {
+      "hanzi": "张",
+      "pinyin": "Zhāng",
+      "english": "Chinese family name",
+      "indonesian": "salah satu marga Tionghoa"
+    },
+    {
+      "hanzi": "赵",
+      "pinyin": "Zhào",
+      "english": "Chinese family name",
+      "indonesian": "salah satu marga Tionghoa"
+    }
+  ],
+  "extra_words": [
+    {
+      "hanzi": "多大年纪",
+      "pinyin": "duō dà niánjì",
+      "english": "how old (asking an older person's age)",
+      "indonesian": "umur (bertanya umur tua/muda)",
+      "note": "tulisan tangan; hanzi ditambahkan dari pinyin"
+    },
+    {
+      "hanzi": "辅导班",
+      "pinyin": "fǔdǎo bān",
+      "english": "tutoring class",
+      "indonesian": "bimbel",
+      "note": "tulisan tangan; hanzi ditambahkan dari pinyin"
+    },
+    {
+      "hanzi": "辅导老师",
+      "pinyin": "fǔdǎo lǎoshī",
+      "english": "tutor, tutoring teacher",
+      "indonesian": "guru bimbel / guru skripsi?",
+      "note": "tulisan tangan; ada tanda tanya dari penulis"
+    },
+    {
+      "hanzi": "几岁",
+      "pinyin": "jǐ suì",
+      "english": "how old (for children)",
+      "indonesian": "umur (pakai angka)",
+      "note": "tulisan tangan; jawabannya pakai 几 jǐ"
+    },
+    {
+      "hanzi": "老",
+      "pinyin": "lǎo",
+      "english": "old",
+      "indonesian": "sudah tua",
+      "note": "tulisan tangan"
+    },
+    {
+      "hanzi": "男人",
+      "pinyin": "nánrén",
+      "english": "man",
+      "indonesian": "pria",
+      "note": "tulisan tangan; hanzi tulisan tangan, pinyin 'nan ren'"
+    },
+    {
+      "hanzi": "女人",
+      "pinyin": "nǚrén",
+      "english": "woman",
+      "indonesian": "wanita",
+      "note": "tulisan tangan; hanzi tulisan tangan, pinyin 'nü ren'"
+    },
+    {
+      "hanzi": "首都",
+      "pinyin": "shǒudū",
+      "english": "capital city",
+      "indonesian": "ibu kota",
+      "note": "tulisan tangan"
+    },
+    {
+      "hanzi": "一次",
+      "pinyin": "yí cì",
+      "english": "once, one time",
+      "indonesian": "satu kali",
+      "note": "tulisan tangan"
+    },
+    {
+      "hanzi": "一点",
+      "pinyin": "yī diǎn",
+      "english": "one o'clock",
+      "indonesian": "jam satu / pukul satu",
+      "note": "tulisan tangan"
+    },
+    {
+      "hanzi": "一个小时",
+      "pinyin": "yí ge xiǎoshí",
+      "english": "one hour",
+      "indonesian": "satu jam",
+      "note": "tulisan tangan"
+    },
+    {
+      "hanzi": "注意",
+      "pinyin": "zhùyì",
+      "english": "to pay attention to",
+      "indonesian": "perhatikan",
+      "note": "tulisan tangan"
+    }
+  ]
+}

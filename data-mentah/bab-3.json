@@ -1,0 +1,453 @@
+{
+  "chapter": {
+    "id": 3,
+    "title_id": "Hotel & Pemesanan Kamar",
+    "title_en": "Hotel & Room Booking"
+  },
+  "core_words": [
+    {
+      "hanzi": "宾馆",
+      "pinyin": "bīnguǎn",
+      "pos_en": "noun",
+      "pos_id": "kata benda",
+      "english": "hotel",
+      "indonesian": "hotel"
+    },
+    {
+      "hanzi": "层",
+      "pinyin": "céng",
+      "pos_en": "measure word",
+      "pos_id": "kata satuan",
+      "english": "floor, level",
+      "indonesian": "tingkat (kata satuan)"
+    },
+    {
+      "hanzi": "大",
+      "pinyin": "dà",
+      "pos_en": "adjective",
+      "pos_id": "kata sifat",
+      "english": "big",
+      "indonesian": "besar"
+    },
+    {
+      "hanzi": "单人间",
+      "pinyin": "dānrénjiān",
+      "pos_en": "noun",
+      "pos_id": "kata benda",
+      "english": "single room",
+      "indonesian": "kamar single"
+    },
+    {
+      "hanzi": "订",
+      "pinyin": "dìng",
+      "pos_en": "verb",
+      "pos_id": "kata kerja",
+      "english": "to book",
+      "indonesian": "pesan"
+    },
+    {
+      "hanzi": "房间",
+      "pinyin": "fángjiān",
+      "pos_en": "noun",
+      "pos_id": "kata benda",
+      "english": "room",
+      "indonesian": "kamar"
+    },
+    {
+      "hanzi": "服务",
+      "pinyin": "fúwù",
+      "pos_en": "verb",
+      "pos_id": "kata kerja",
+      "english": "to serve; service",
+      "indonesian": "melayani / pelayanan"
+    },
+    {
+      "hanzi": "服务员",
+      "pinyin": "fúwùyuán",
+      "pos_en": "noun",
+      "pos_id": "kata benda",
+      "english": "server, hotel staff",
+      "indonesian": "pelayan"
+    },
+    {
+      "hanzi": "还是",
+      "pinyin": "háishi",
+      "pos_en": "conjunction",
+      "pos_id": "kata hubung",
+      "english": "or (in questions)",
+      "indonesian": "atau"
+    },
+    {
+      "hanzi": "号",
+      "pinyin": "hào",
+      "pos_en": "noun",
+      "pos_id": "kata benda",
+      "english": "number (day, room)",
+      "indonesian": "nomor"
+    },
+    {
+      "hanzi": "后天",
+      "pinyin": "hòutiān",
+      "pos_en": "noun",
+      "pos_id": "kata benda",
+      "english": "day after tomorrow",
+      "indonesian": "lusa"
+    },
+    {
+      "hanzi": "考虑",
+      "pinyin": "kǎolǜ",
+      "pos_en": "verb",
+      "pos_id": "kata kerja",
+      "english": "to think over",
+      "indonesian": "mempertimbangkan"
+    },
+    {
+      "hanzi": "空调",
+      "pinyin": "kōngtiáo",
+      "pos_en": "noun",
+      "pos_id": "kata benda",
+      "english": "air conditioning",
+      "indonesian": "AC"
+    },
+    {
+      "hanzi": "热",
+      "pinyin": "rè",
+      "pos_en": "adjective",
+      "pos_id": "kata sifat",
+      "english": "hot",
+      "indonesian": "panas"
+    },
+    {
+      "hanzi": "夏季",
+      "pinyin": "xiàjì",
+      "pos_en": "noun",
+      "pos_id": "kata benda",
+      "english": "summer (formal)",
+      "indonesian": "musim panas"
+    },
+    {
+      "hanzi": "现金",
+      "pinyin": "xiànjīn",
+      "pos_en": "noun",
+      "pos_id": "kata benda",
+      "english": "cash",
+      "indonesian": "uang tunai"
+    },
+    {
+      "hanzi": "先生",
+      "pinyin": "xiānsheng",
+      "pos_en": "noun",
+      "pos_id": "kata benda",
+      "english": "Mr., sir",
+      "indonesian": "tuan"
+    },
+    {
+      "hanzi": "夏天",
+      "pinyin": "xiàtiān",
+      "pos_en": "noun",
+      "pos_id": "kata benda",
+      "english": "summer",
+      "indonesian": "musim panas"
+    },
+    {
+      "hanzi": "喜欢",
+      "pinyin": "xǐhuan",
+      "pos_en": "verb",
+      "pos_id": "kata kerja",
+      "english": "to like",
+      "indonesian": "suka"
+    },
+    {
+      "hanzi": "样儿",
+      "pinyin": "yàngr",
+      "pos_en": "noun",
+      "pos_id": "kata benda",
+      "english": "style, kind",
+      "indonesian": "jenis"
+    },
+    {
+      "hanzi": "一点儿",
+      "pinyin": "yìdiǎnr",
+      "pos_en": "numeral-measure",
+      "pos_id": "kata bilangan-satuan",
+      "english": "a little",
+      "indonesian": "sedikit"
+    },
+    {
+      "hanzi": "以上",
+      "pinyin": "yǐshàng",
+      "pos_en": "noun",
+      "pos_id": "kata benda",
+      "english": "above",
+      "indonesian": "di atas"
+    },
+    {
+      "hanzi": "以下",
+      "pinyin": "yǐxià",
+      "pos_en": "noun",
+      "pos_id": "kata benda",
+      "english": "below",
+      "indonesian": "di bawah"
+    },
+    {
+      "hanzi": "优惠",
+      "pinyin": "yōuhuì",
+      "pos_en": "adjective",
+      "pos_id": "kata sifat",
+      "english": "discounted",
+      "indonesian": "diskon"
+    },
+    {
+      "hanzi": "元",
+      "pinyin": "yuán",
+      "pos_en": "measure word",
+      "pos_id": "kata satuan",
+      "english": "yuan (currency counter)",
+      "indonesian": "dollar"
+    },
+    {
+      "hanzi": "预订",
+      "pinyin": "yùdìng",
+      "pos_en": "verb",
+      "pos_id": "kata kerja",
+      "english": "to reserve",
+      "indonesian": "pesan"
+    },
+    {
+      "hanzi": "周",
+      "pinyin": "zhōu",
+      "pos_en": "noun",
+      "pos_id": "kata benda",
+      "english": "week",
+      "indonesian": "minggu (seminggu)"
+    },
+    {
+      "hanzi": "最好",
+      "pinyin": "zuìhǎo",
+      "pos_en": "adverb",
+      "pos_id": "kata keterangan",
+      "english": "best; had better",
+      "indonesian": "paling bagus / sebaiknya"
+    }
+  ],
+  "extended_words": [
+    {
+      "hanzi": "冬季",
+      "pinyin": "dōngjì",
+      "pos_en": "noun",
+      "pos_id": "kata benda",
+      "english": "winter (formal)",
+      "indonesian": "musim dingin"
+    },
+    {
+      "hanzi": "冬天",
+      "pinyin": "dōngtiān",
+      "pos_en": "noun",
+      "pos_id": "kata benda",
+      "english": "winter",
+      "indonesian": "musim dingin"
+    },
+    {
+      "hanzi": "好吃",
+      "pinyin": "hǎochī",
+      "pos_en": "adjective",
+      "pos_id": "kata sifat",
+      "english": "tasty",
+      "indonesian": "enak dimakan"
+    },
+    {
+      "hanzi": "合适",
+      "pinyin": "héshì",
+      "pos_en": "adjective",
+      "pos_id": "kata sifat",
+      "english": "suitable",
+      "indonesian": "cocok"
+    },
+    {
+      "hanzi": "件",
+      "pinyin": "jiàn",
+      "pos_en": "measure word",
+      "pos_id": "kata satuan",
+      "english": "counter for clothes and matters",
+      "indonesian": "satuan untuk baju dll."
+    },
+    {
+      "hanzi": "简单",
+      "pinyin": "jiǎndān",
+      "pos_en": "adjective",
+      "pos_id": "kata sifat",
+      "english": "simple",
+      "indonesian": "mudah"
+    },
+    {
+      "hanzi": "冷",
+      "pinyin": "lěng",
+      "pos_en": "adjective",
+      "pos_id": "kata sifat",
+      "english": "cold",
+      "indonesian": "dingin"
+    },
+    {
+      "hanzi": "凉快",
+      "pinyin": "liángkuai",
+      "pos_en": "adjective",
+      "pos_id": "kata sifat",
+      "english": "pleasantly cool",
+      "indonesian": "sejuk"
+    },
+    {
+      "hanzi": "暖和",
+      "pinyin": "nuǎnhuo",
+      "pos_en": "adjective",
+      "pos_id": "kata sifat",
+      "english": "warm",
+      "indonesian": "hangat"
+    },
+    {
+      "hanzi": "暖气",
+      "pinyin": "nuǎnqì",
+      "pos_en": "noun",
+      "pos_id": "kata benda",
+      "english": "heating",
+      "indonesian": "penghangat (ruangan)"
+    },
+    {
+      "hanzi": "苹果",
+      "pinyin": "píngguǒ",
+      "pos_en": "noun",
+      "pos_id": "kata benda",
+      "english": "apple",
+      "indonesian": "apel"
+    },
+    {
+      "hanzi": "前天",
+      "pinyin": "qiántiān",
+      "pos_en": "noun",
+      "pos_id": "kata benda",
+      "english": "day before yesterday",
+      "indonesian": "2 hari yang lalu"
+    },
+    {
+      "hanzi": "双",
+      "pinyin": "shuāng",
+      "pos_en": "adjective",
+      "pos_id": "kata sifat",
+      "english": "pair; double",
+      "indonesian": "sepasang"
+    },
+    {
+      "hanzi": "衣服",
+      "pinyin": "yīfu",
+      "pos_en": "noun",
+      "pos_id": "kata benda",
+      "english": "clothes",
+      "indonesian": "baju / pakaian"
+    }
+  ],
+  "names": [
+    {
+      "hanzi": "美元",
+      "pinyin": "měiyuán",
+      "english": "US dollar",
+      "indonesian": "dollar US"
+    },
+    {
+      "hanzi": "人民币",
+      "pinyin": "rénmínbì",
+      "english": "Renminbi (RMB), China's currency",
+      "indonesian": "mata uang Zhongguo"
+    },
+    {
+      "hanzi": "支付宝",
+      "pinyin": "Zhīfùbǎo",
+      "english": "Alipay (payment app)",
+      "indonesian": "(alat bayar di China)"
+    }
+  ],
+  "extra_words": [
+    {
+      "hanzi": "旱季",
+      "pinyin": "hànjì",
+      "english": "dry season",
+      "indonesian": "musim kemarau",
+      "note": "tulisan tangan; hanzi tulisan tangan kurang jelas"
+    },
+    {
+      "hanzi": "冷气",
+      "pinyin": "lěngqì",
+      "english": "air conditioning (cooling)",
+      "indonesian": "pendingin ruangan",
+      "note": "tulisan tangan"
+    },
+    {
+      "hanzi": "楼",
+      "pinyin": "lóu",
+      "english": "floor, storey, building",
+      "indonesian": "lantai",
+      "note": "tulisan tangan"
+    },
+    {
+      "hanzi": "美女",
+      "pinyin": "měinǚ",
+      "english": "pretty lady, beautiful woman",
+      "indonesian": "kakak cantik",
+      "note": "tulisan tangan; hanzi ditambahkan dari pinyin 'mei nv'"
+    },
+    {
+      "hanzi": "容易",
+      "pinyin": "róngyì",
+      "english": "easy",
+      "indonesian": "mudah",
+      "note": "tulisan tangan"
+    },
+    {
+      "hanzi": "三层",
+      "pinyin": "sān céng",
+      "english": "three floors, three storeys",
+      "indonesian": "3 tingkat",
+      "note": "tulisan tangan"
+    },
+    {
+      "hanzi": "三层楼",
+      "pinyin": "sān céng lóu",
+      "english": "three-storey building, three floors",
+      "indonesian": "(jumlah lantai) 3 lantai",
+      "note": "tulisan tangan; hanzi ditambahkan dari pinyin"
+    },
+    {
+      "hanzi": "三楼",
+      "pinyin": "sān lóu",
+      "english": "third floor",
+      "indonesian": "lantai 3",
+      "note": "tulisan tangan; hanzi ditambahkan dari pinyin"
+    },
+    {
+      "hanzi": "双人间",
+      "pinyin": "shuāngrénjiān",
+      "english": "double room",
+      "indonesian": "kamar double",
+      "note": "tulisan tangan"
+    },
+    {
+      "hanzi": "小姐",
+      "pinyin": "xiǎojiě",
+      "english": "Miss, young lady (do not use carelessly)",
+      "indonesian": "tuan (perempuan) - jangan sembarangan",
+      "note": "tulisan tangan"
+    },
+    {
+      "hanzi": "103",
+      "pinyin": "yāo líng sān",
+      "english": "one-oh-three (room number 103)",
+      "indonesian": "103 (kalau nomor disebut satu per satu)",
+      "note": "tulisan tangan"
+    },
+    {
+      "hanzi": "一楼",
+      "pinyin": "yī lóu",
+      "english": "first floor",
+      "indonesian": "lantai 1",
+      "note": "tulisan tangan"
+    }
+  ]
+}
