@@ -5,382 +5,59 @@
     "title_en": "Jobs & Reasons for Learning"
   },
   "core_words": [
-    {
-      "hanzi": "当",
-      "pinyin": "dāng",
-      "pos_en": "verb",
-      "pos_id": "kata kerja",
-      "english": "to work as; to become",
-      "indonesian": "menjadi"
-    },
-    {
-      "hanzi": "对",
-      "pinyin": "duì",
-      "pos_en": "preposition",
-      "pos_id": "kata depan",
-      "english": "toward, regarding",
-      "indonesian": "terhadap, dengan"
-    },
-    {
-      "hanzi": "翻译",
-      "pinyin": "fānyì",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "translator; to translate",
-      "indonesian": "penerjemah, terjemahkan"
-    },
-    {
-      "hanzi": "感谢",
-      "pinyin": "gǎnxiè",
-      "pos_en": "verb",
-      "pos_id": "kata kerja",
-      "english": "to thank",
-      "indonesian": "berterima kasih"
-    },
-    {
-      "hanzi": "公务员",
-      "pinyin": "gōngwùyuán",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "civil servant",
-      "indonesian": "pegawai negeri"
-    },
-    {
-      "hanzi": "教师",
-      "pinyin": "jiàoshī",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "teacher",
-      "indonesian": "guru (lebih ke profesi/nama profesi)"
-    },
-    {
-      "hanzi": "结束",
-      "pinyin": "jiéshù",
-      "pos_en": "verb",
-      "pos_id": "kata kerja",
-      "english": "to end",
-      "indonesian": "selesai"
-    },
-    {
-      "hanzi": "进步",
-      "pinyin": "jìnbù",
-      "pos_en": "verb",
-      "pos_id": "kata kerja",
-      "english": "to make progress",
-      "indonesian": "kemajuan"
-    },
-    {
-      "hanzi": "经商",
-      "pinyin": "jīngshāng",
-      "pos_en": "verb",
-      "pos_id": "kata kerja",
-      "english": "to do business",
-      "indonesian": "berbisnis"
-    },
-    {
-      "hanzi": "快",
-      "pinyin": "kuài",
-      "pos_en": "adjective",
-      "pos_id": "kata sifat",
-      "english": "fast",
-      "indonesian": "cepat"
-    },
-    {
-      "hanzi": "了解",
-      "pinyin": "liǎojiě",
-      "pos_en": "verb",
-      "pos_id": "kata kerja",
-      "english": "to understand, to know about",
-      "indonesian": "memahami, mengerti"
-    },
-    {
-      "hanzi": "聊天儿",
-      "pinyin": "liáotiānr",
-      "pos_en": "verb",
-      "pos_id": "kata kerja",
-      "english": "to chat",
-      "indonesian": "ngobrol, berbicara",
-      "note": "pinyin di buku ditandai <口> (colloquial)"
-    },
-    {
-      "hanzi": "历史",
-      "pinyin": "lìshǐ",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "history",
-      "indonesian": "sejarah"
-    },
-    {
-      "hanzi": "旅行",
-      "pinyin": "lǚxíng",
-      "pos_en": "verb",
-      "pos_id": "kata kerja",
-      "english": "to travel",
-      "indonesian": "jalan-jalan"
-    },
-    {
-      "hanzi": "南方",
-      "pinyin": "nánfāng",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "the south",
-      "indonesian": "selatan"
-    },
-    {
-      "hanzi": "能",
-      "pinyin": "néng",
-      "pos_en": "modal verb",
-      "pos_id": "kata kerja bantu",
-      "english": "can, to be able to",
-      "indonesian": "bisa, mampu"
-    },
-    {
-      "hanzi": "神圣",
-      "pinyin": "shénshèng",
-      "pos_en": "adjective",
-      "pos_id": "kata sifat",
-      "english": "sacred",
-      "indonesian": "suci, mulia"
-    },
-    {
-      "hanzi": "特别",
-      "pinyin": "tèbié",
-      "pos_en": "adverb",
-      "pos_id": "kata keterangan",
-      "english": "especially",
-      "indonesian": "spesial"
-    },
-    {
-      "hanzi": "问题",
-      "pinyin": "wèntí",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "question, problem",
-      "indonesian": "pertanyaan"
-    },
-    {
-      "hanzi": "兴趣",
-      "pinyin": "xìngqù",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "interest",
-      "indonesian": "tertarik, menarik"
-    },
-    {
-      "hanzi": "要",
-      "pinyin": "yào",
-      "pos_en": "conjunction",
-      "pos_id": "kata hubung",
-      "english": "if (short form)",
-      "indonesian": "mau, ingin"
-    },
-    {
-      "hanzi": "要是",
-      "pinyin": "yàoshi",
-      "pos_en": "conjunction",
-      "pos_id": "kata hubung",
-      "english": "if",
-      "indonesian": "kalau"
-    },
-    {
-      "hanzi": "有意思",
-      "pinyin": "yǒu yìsi",
-      "pos_en": "adjective",
-      "pos_id": "kata sifat",
-      "english": "interesting",
-      "indonesian": "menarik"
-    },
-    {
-      "hanzi": "原因",
-      "pinyin": "yuányīn",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "reason",
-      "indonesian": "alasan"
-    },
-    {
-      "hanzi": "职业",
-      "pinyin": "zhíyè",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "profession",
-      "indonesian": "profesi / pekerjaan"
-    },
-    {
-      "hanzi": "准备",
-      "pinyin": "zhǔnbèi",
-      "pos_en": "verb",
-      "pos_id": "kata kerja",
-      "english": "to prepare",
-      "indonesian": "mempersiapkan, siap-siap"
-    }
+    { "hanzi": "工作", "pinyin": "gōngzuò", "pos_en": "noun", "pos_id": "kata benda", "english": "job; to work", "indonesian": "pekerjaan; bekerja" },
+    { "hanzi": "公司", "pinyin": "gōngsī", "pos_en": "noun", "pos_id": "kata benda", "english": "company", "indonesian": "perusahaan" },
+    { "hanzi": "职业", "pinyin": "zhíyè", "pos_en": "noun", "pos_id": "kata benda", "english": "occupation; profession", "indonesian": "profesi" },
+    { "hanzi": "医生", "pinyin": "yīshēng", "pos_en": "noun", "pos_id": "kata benda", "english": "doctor", "indonesian": "dokter" },
+    { "hanzi": "护士", "pinyin": "hùshi", "pos_en": "noun", "pos_id": "kata benda", "english": "nurse", "indonesian": "perawat" },
+    { "hanzi": "工程师", "pinyin": "gōngchéngshī", "pos_en": "noun", "pos_id": "kata benda", "english": "engineer", "indonesian": "insinyur" },
+    { "hanzi": "律师", "pinyin": "lǜshī", "pos_en": "noun", "pos_id": "kata benda", "english": "lawyer", "indonesian": "pengacara" },
+    { "hanzi": "老板", "pinyin": "lǎobǎn", "pos_en": "noun", "pos_id": "kata benda", "english": "boss; owner", "indonesian": "bos; pemilik usaha" },
+    { "hanzi": "经理", "pinyin": "jīnglǐ", "pos_en": "noun", "pos_id": "kata benda", "english": "manager", "indonesian": "manajer" },
+    { "hanzi": "职员", "pinyin": "zhíyuán", "pos_en": "noun", "pos_id": "kata benda", "english": "office worker; staff", "indonesian": "karyawan" },
+    { "hanzi": "司机", "pinyin": "sījī", "pos_en": "noun", "pos_id": "kata benda", "english": "driver", "indonesian": "sopir" },
+    { "hanzi": "厨师", "pinyin": "chúshī", "pos_en": "noun", "pos_id": "kata benda", "english": "chef; cook", "indonesian": "koki" },
+    { "hanzi": "警察", "pinyin": "jǐngchá", "pos_en": "noun", "pos_id": "kata benda", "english": "police officer", "indonesian": "polisi" },
+    { "hanzi": "农民", "pinyin": "nóngmín", "pos_en": "noun", "pos_id": "kata benda", "english": "farmer", "indonesian": "petani" },
+    { "hanzi": "商人", "pinyin": "shāngrén", "pos_en": "noun", "pos_id": "kata benda", "english": "businessperson; merchant", "indonesian": "pengusaha; pedagang" },
+    { "hanzi": "做", "pinyin": "zuò", "pos_en": "verb", "pos_id": "kata kerja", "english": "to do; to make", "indonesian": "melakukan; membuat" },
+    { "hanzi": "当", "pinyin": "dāng", "pos_en": "verb", "pos_id": "kata kerja", "english": "to work as; to become", "indonesian": "menjadi; bekerja sebagai" },
+    { "hanzi": "为什么", "pinyin": "wèishénme", "pos_en": "question phrase", "pos_id": "frasa tanya", "english": "why", "indonesian": "mengapa" },
+    { "hanzi": "因为", "pinyin": "yīnwèi", "pos_en": "conjunction", "pos_id": "kata hubung", "english": "because", "indonesian": "karena" },
+    { "hanzi": "所以", "pinyin": "suǒyǐ", "pos_en": "conjunction", "pos_id": "kata hubung", "english": "so; therefore", "indonesian": "jadi; oleh karena itu" }
   ],
   "extended_words": [
-    {
-      "hanzi": "方面",
-      "pinyin": "fāngmiàn",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "aspect",
-      "indonesian": "aspek / sisi"
-    },
-    {
-      "hanzi": "进行",
-      "pinyin": "jìnxíng",
-      "pos_en": "verb",
-      "pos_id": "kata kerja",
-      "english": "to carry out",
-      "indonesian": "melaksanakan, menjalankan"
-    },
-    {
-      "hanzi": "留学",
-      "pinyin": "liúxué",
-      "pos_en": "verb",
-      "pos_id": "kata kerja",
-      "english": "to study abroad",
-      "indonesian": "belajar luar negeri"
-    },
-    {
-      "hanzi": "留学生",
-      "pinyin": "liúxuéshēng",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "international student",
-      "indonesian": "mahasiswa asing"
-    },
-    {
-      "hanzi": "慢",
-      "pinyin": "màn",
-      "pos_en": "adjective",
-      "pos_id": "kata sifat",
-      "english": "slow",
-      "indonesian": "lambat, pelan"
-    },
-    {
-      "hanzi": "目的",
-      "pinyin": "mùdì",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "goal",
-      "indonesian": "tujuan"
-    },
-    {
-      "hanzi": "认为",
-      "pinyin": "rènwéi",
-      "pos_en": "verb",
-      "pos_id": "kata kerja",
-      "english": "to think, to believe",
-      "indonesian": "menganggap"
-    },
-    {
-      "hanzi": "完",
-      "pinyin": "wán",
-      "pos_en": "verb",
-      "pos_id": "kata kerja",
-      "english": "to finish",
-      "indonesian": "selesai",
-      "note": "wán untuk gerakan; jiéshù (结束) untuk kegiatan"
-    },
-    {
-      "hanzi": "文化",
-      "pinyin": "wénhuà",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "culture",
-      "indonesian": "budaya"
-    },
-    {
-      "hanzi": "只是",
-      "pinyin": "zhǐshì",
-      "pos_en": "adverb",
-      "pos_id": "kata keterangan",
-      "english": "merely",
-      "indonesian": "hanya"
-    }
+    { "hanzi": "面试", "pinyin": "miànshì", "pos_en": "noun", "pos_id": "kata benda", "english": "job interview", "indonesian": "wawancara kerja" },
+    { "hanzi": "同事", "pinyin": "tóngshì", "pos_en": "noun", "pos_id": "kata benda", "english": "colleague", "indonesian": "rekan kerja" },
+    { "hanzi": "工资", "pinyin": "gōngzī", "pos_en": "noun", "pos_id": "kata benda", "english": "salary; wages", "indonesian": "gaji" },
+    { "hanzi": "出差", "pinyin": "chūchāi", "pos_en": "verb", "pos_id": "kata kerja", "english": "to go on a business trip", "indonesian": "melakukan perjalanan dinas" },
+    { "hanzi": "旅游", "pinyin": "lǚyóu", "pos_en": "verb", "pos_id": "kata kerja", "english": "to travel; tourism", "indonesian": "berwisata" },
+    { "hanzi": "留学", "pinyin": "liúxué", "pos_en": "verb", "pos_id": "kata kerja", "english": "to study abroad", "indonesian": "kuliah di luar negeri" },
+    { "hanzi": "生意", "pinyin": "shēngyi", "pos_en": "noun", "pos_id": "kata benda", "english": "business; trade", "indonesian": "bisnis; usaha dagang" },
+    { "hanzi": "机会", "pinyin": "jīhuì", "pos_en": "noun", "pos_id": "kata benda", "english": "opportunity", "indonesian": "kesempatan" },
+    { "hanzi": "将来", "pinyin": "jiānglái", "pos_en": "noun", "pos_id": "kata benda", "english": "the future", "indonesian": "masa depan" },
+    { "hanzi": "兴趣", "pinyin": "xìngqù", "pos_en": "noun", "pos_id": "kata benda", "english": "interest", "indonesian": "minat; ketertarikan" },
+    { "hanzi": "文化", "pinyin": "wénhuà", "pos_en": "noun", "pos_id": "kata benda", "english": "culture", "indonesian": "budaya" },
+    { "hanzi": "重要", "pinyin": "zhòngyào", "pos_en": "adjective", "pos_id": "kata sifat", "english": "important", "indonesian": "penting" },
+    { "hanzi": "希望", "pinyin": "xīwàng", "pos_en": "verb", "pos_id": "kata kerja", "english": "to hope; hope", "indonesian": "berharap; harapan" },
+    { "hanzi": "需要", "pinyin": "xūyào", "pos_en": "verb", "pos_id": "kata kerja", "english": "to need", "indonesian": "membutuhkan" },
+    { "hanzi": "帮助", "pinyin": "bāngzhù", "pos_en": "verb", "pos_id": "kata kerja", "english": "to help; help", "indonesian": "membantu; bantuan" }
   ],
   "names": [
-    {
-      "hanzi": "彼得",
-      "pinyin": "Bǐdé",
-      "english": "Peter, an American student's name",
-      "indonesian": "nama seorang mahasiswa Amerika (Peter)"
-    },
-    {
-      "hanzi": "韩国",
-      "pinyin": "Hánguó",
-      "english": "South Korea",
-      "indonesian": "Korea Selatan"
-    },
-    {
-      "hanzi": "意大利",
-      "pinyin": "Yìdàlì",
-      "english": "Italy",
-      "indonesian": "Italia"
-    }
+    { "hanzi": "郑浩", "pinyin": "Zhèng Hào", "english": "Zheng Hao (common male name)", "indonesian": "Zheng Hao (nama laki-laki yang umum)" },
+    { "hanzi": "冯雪", "pinyin": "Féng Xuě", "english": "Feng Xue (common female name)", "indonesian": "Feng Xue (nama perempuan yang umum)" },
+    { "hanzi": "韩梅", "pinyin": "Hán Méi", "english": "Han Mei (common female name)", "indonesian": "Han Mei (nama perempuan yang umum)" },
+    { "hanzi": "罗杰", "pinyin": "Luó Jié", "english": "Roger", "indonesian": "Roger (transliterasi nama asing)" }
   ],
   "extra_words": [
-    {
-      "hanzi": "祷告",
-      "pinyin": "dǎogào",
-      "english": "prayer, to pray",
-      "indonesian": "doa",
-      "note": "tulisan tangan; hanzi ditambahkan dari pinyin 'daogao'"
-    },
-    {
-      "hanzi": "对…有兴趣 / 感兴趣",
-      "pinyin": "duì … yǒu xìngqù",
-      "english": "to be interested in ...",
-      "indonesian": "tertarik pada ...",
-      "note": "tulisan tangan; pola kalimat 'tertarik pada...', arti tidak ditulis"
-    },
-    {
-      "hanzi": "告诉",
-      "pinyin": "gàosu",
-      "english": "to tell",
-      "indonesian": "memberi tahu",
-      "note": "tulisan tangan; hanzi ditambahkan dari pinyin 'kaosu'"
-    },
-    {
-      "hanzi": "回答",
-      "pinyin": "huídá",
-      "english": "to answer",
-      "indonesian": "menjawab",
-      "note": "tulisan tangan; hanzi ditambahkan dari pinyin 'huida'"
-    },
-    {
-      "hanzi": "教堂",
-      "pinyin": "jiàotáng",
-      "english": "church",
-      "indonesian": "gereja",
-      "note": "tulisan tangan; hanzi ditambahkan dari pinyin 'jiaotang'"
-    },
-    {
-      "hanzi": "目的地",
-      "pinyin": "mùdìdì",
-      "english": "destination",
-      "indonesian": "tempat tujuan",
-      "note": "tulisan tangan"
-    },
-    {
-      "hanzi": "牧师",
-      "pinyin": "mùshi",
-      "english": "pastor",
-      "indonesian": "pendeta",
-      "note": "tulisan tangan; hanzi ditambahkan dari pinyin 'mushi'"
-    },
-    {
-      "hanzi": "如果",
-      "pinyin": "rúguǒ",
-      "english": "if",
-      "indonesian": "jika",
-      "note": "tulisan tangan; hanzi ditambahkan dari pinyin 'ruguo'"
-    },
-    {
-      "hanzi": "只有",
-      "pinyin": "zhǐyǒu",
-      "english": "only, only if",
-      "indonesian": "hanya ada",
-      "note": "tulisan tangan"
-    }
+    { "hanzi": "你做什么工作", "pinyin": "nǐ zuò shénme gōngzuò", "english": "What do you do for a living?", "indonesian": "Apa pekerjaanmu?", "note": "pola umum menanyakan profesi" },
+    { "hanzi": "我在公司工作", "pinyin": "wǒ zài gōngsī gōngzuò", "english": "I work at a company", "indonesian": "Saya bekerja di perusahaan", "note": "pola: 在 + tempat + kata kerja" },
+    { "hanzi": "我是工程师", "pinyin": "wǒ shì gōngchéngshī", "english": "I am an engineer", "indonesian": "Saya seorang insinyur", "note": "pola: 我是 + profesi" },
+    { "hanzi": "你为什么学汉语", "pinyin": "nǐ wèishénme xué Hànyǔ", "english": "Why are you learning Chinese?", "indonesian": "Mengapa kamu belajar bahasa Mandarin?", "note": "" },
+    { "hanzi": "因为工作需要学汉语", "pinyin": "yīnwèi gōngzuò xūyào xué Hànyǔ", "english": "Because my work requires me to learn Chinese", "indonesian": "Karena pekerjaan menuntut saya belajar bahasa Mandarin", "note": "jawaban dengan pola 因为 ..." },
+    { "hanzi": "我对中国文化有兴趣", "pinyin": "wǒ duì Zhōngguó wénhuà yǒu xìngqù", "english": "I am interested in Chinese culture", "indonesian": "Saya tertarik pada budaya Tiongkok", "note": "pola: 对 + hal + 有兴趣" },
+    { "hanzi": "我想去中国留学", "pinyin": "wǒ xiǎng qù Zhōngguó liúxué", "english": "I want to study in China", "indonesian": "Saya ingin kuliah di Tiongkok", "note": "" },
+    { "hanzi": "学汉语对工作有帮助", "pinyin": "xué Hànyǔ duì gōngzuò yǒu bāngzhù", "english": "Learning Chinese is helpful for work", "indonesian": "Belajar bahasa Mandarin membantu pekerjaan", "note": "对 ... 有帮助 = bermanfaat bagi ..." },
+    { "hanzi": "我想和中国人做生意", "pinyin": "wǒ xiǎng hé Zhōngguórén zuò shēngyi", "english": "I want to do business with Chinese people", "indonesian": "Saya ingin berbisnis dengan orang Tionghoa/Tiongkok", "note": "和 = dengan" }
   ]
 }

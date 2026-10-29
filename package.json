@@ -1,8 +1,12 @@
 {
   "name": "panda-belajar-mandarin",
   "private": true,
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "Aplikasi web belajar kosakata bahasa Mandarin bertema panda (flashcard, kuis, Leitner).",
   "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "dev": "vite",
     "build": "npm run build:data && vite build",

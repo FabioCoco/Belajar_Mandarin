@@ -5,360 +5,57 @@
     "title_en": "Shopping & Stationery"
   },
   "core_words": [
-    {
-      "hanzi": "本",
-      "pinyin": "běn",
-      "pos_en": "measure word",
-      "pos_id": "kata satuan",
-      "english": "counter for books",
-      "indonesian": "satuan buku"
-    },
-    {
-      "hanzi": "册",
-      "pinyin": "cè",
-      "pos_en": "measure word",
-      "pos_id": "kata satuan",
-      "english": "volume (of a book)",
-      "indonesian": "jilid / buku"
-    },
-    {
-      "hanzi": "词典",
-      "pinyin": "cídiǎn",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "dictionary",
-      "indonesian": "kamus"
-    },
-    {
-      "hanzi": "单",
-      "pinyin": "dān",
-      "pos_en": "adjective",
-      "pos_id": "kata sifat",
-      "english": "single",
-      "indonesian": "tunggal"
-    },
-    {
-      "hanzi": "地图",
-      "pinyin": "dìtú",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "map",
-      "indonesian": "peta"
-    },
-    {
-      "hanzi": "付",
-      "pinyin": "fù",
-      "pos_en": "verb",
-      "pos_id": "kata kerja",
-      "english": "to pay",
-      "indonesian": "bayar"
-    },
-    {
-      "hanzi": "刚",
-      "pinyin": "gāng",
-      "pos_en": "adverb",
-      "pos_id": "kata keterangan",
-      "english": "just now",
-      "indonesian": "barusan"
-    },
-    {
-      "hanzi": "就",
-      "pinyin": "jiù",
-      "pos_en": "adverb",
-      "pos_id": "kata keterangan",
-      "english": "right away; then",
-      "indonesian": "langsung"
-    },
-    {
-      "hanzi": "可以",
-      "pinyin": "kěyǐ",
-      "pos_en": "modal verb",
-      "pos_id": "kata kerja bantu",
-      "english": "may; can",
-      "indonesian": "boleh / bisa"
-    },
-    {
-      "hanzi": "两",
-      "pinyin": "liǎng",
-      "pos_en": "numeral",
-      "pos_id": "kata bilangan",
-      "english": "two (before counters)",
-      "indonesian": "dua (untuk jumlah)"
-    },
-    {
-      "hanzi": "钱",
-      "pinyin": "qián",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "money",
-      "indonesian": "uang"
-    },
-    {
-      "hanzi": "请客",
-      "pinyin": "qǐngkè",
-      "pos_en": "verb",
-      "pos_id": "kata kerja",
-      "english": "to treat someone (to a meal)",
-      "indonesian": "traktir"
-    },
-    {
-      "hanzi": "世界",
-      "pinyin": "shìjiè",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "world",
-      "indonesian": "dunia"
-    },
-    {
-      "hanzi": "送",
-      "pinyin": "sòng",
-      "pos_en": "verb",
-      "pos_id": "kata kerja",
-      "english": "to give (a gift)",
-      "indonesian": "kasih"
-    },
-    {
-      "hanzi": "现在",
-      "pinyin": "xiànzài",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "now",
-      "indonesian": "sekarang"
-    },
-    {
-      "hanzi": "下午",
-      "pinyin": "xiàwǔ",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "afternoon",
-      "indonesian": "sore"
-    },
-    {
-      "hanzi": "呀",
-      "pinyin": "ya",
-      "pos_en": "particle",
-      "pos_id": "partikel",
-      "english": "sentence-final particle",
-      "indonesian": "partikel"
-    },
-    {
-      "hanzi": "营业",
-      "pinyin": "yíngyè",
-      "pos_en": "verb",
-      "pos_id": "kata kerja",
-      "english": "to be open for business",
-      "indonesian": "buka (buka toko)"
-    },
-    {
-      "hanzi": "营业员",
-      "pinyin": "yíngyèyuán",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "shop assistant",
-      "indonesian": "staff toko"
-    },
-    {
-      "hanzi": "张",
-      "pinyin": "zhāng",
-      "pos_en": "measure word",
-      "pos_id": "kata satuan",
-      "english": "counter for flat things (paper, tables)",
-      "indonesian": "selembar"
-    },
-    {
-      "hanzi": "知",
-      "pinyin": "zhī",
-      "pos_en": "verb",
-      "pos_id": "kata kerja",
-      "english": "to know",
-      "indonesian": "tahu, mengetahui"
-    },
-    {
-      "hanzi": "知道",
-      "pinyin": "zhīdào",
-      "pos_en": "verb",
-      "pos_id": "kata kerja",
-      "english": "to know",
-      "indonesian": "tau"
-    },
-    {
-      "hanzi": "种",
-      "pinyin": "zhǒng",
-      "pos_en": "measure word",
-      "pos_id": "kata satuan",
-      "english": "kind, type",
-      "indonesian": "jenis"
-    }
+    { "hanzi": "买", "pinyin": "mǎi", "pos_en": "verb", "pos_id": "kata kerja", "english": "to buy", "indonesian": "membeli" },
+    { "hanzi": "卖", "pinyin": "mài", "pos_en": "verb", "pos_id": "kata kerja", "english": "to sell", "indonesian": "menjual" },
+    { "hanzi": "钱", "pinyin": "qián", "pos_en": "noun", "pos_id": "kata benda", "english": "money", "indonesian": "uang" },
+    { "hanzi": "块", "pinyin": "kuài", "pos_en": "measure word", "pos_id": "kata satuan", "english": "yuan (spoken); piece", "indonesian": "yuan (bahasa lisan); potong" },
+    { "hanzi": "毛", "pinyin": "máo", "pos_en": "measure word", "pos_id": "kata satuan", "english": "mao (1/10 of a yuan, spoken)", "indonesian": "mao (sepersepuluh yuan, bahasa lisan)" },
+    { "hanzi": "多少", "pinyin": "duōshao", "pos_en": "pronoun", "pos_id": "kata ganti", "english": "how many; how much", "indonesian": "berapa banyak" },
+    { "hanzi": "贵", "pinyin": "guì", "pos_en": "adjective", "pos_id": "kata sifat", "english": "expensive", "indonesian": "mahal" },
+    { "hanzi": "便宜", "pinyin": "piányi", "pos_en": "adjective", "pos_id": "kata sifat", "english": "cheap", "indonesian": "murah" },
+    { "hanzi": "商店", "pinyin": "shāngdiàn", "pos_en": "noun", "pos_id": "kata benda", "english": "shop; store", "indonesian": "toko" },
+    { "hanzi": "东西", "pinyin": "dōngxi", "pos_en": "noun", "pos_id": "kata benda", "english": "thing; stuff", "indonesian": "barang; benda" },
+    { "hanzi": "要", "pinyin": "yào", "pos_en": "verb", "pos_id": "kata kerja", "english": "to want; to need", "indonesian": "mau; memerlukan" },
+    { "hanzi": "想", "pinyin": "xiǎng", "pos_en": "modal verb", "pos_id": "kata kerja bantu", "english": "to want to; to think", "indonesian": "ingin; berpikir" },
+    { "hanzi": "这", "pinyin": "zhè", "pos_en": "pronoun", "pos_id": "kata ganti", "english": "this", "indonesian": "ini" },
+    { "hanzi": "那", "pinyin": "nà", "pos_en": "pronoun", "pos_id": "kata ganti", "english": "that", "indonesian": "itu" },
+    { "hanzi": "个", "pinyin": "gè", "pos_en": "measure word", "pos_id": "kata satuan", "english": "general measure word", "indonesian": "penggolong umum (buah)" },
+    { "hanzi": "本", "pinyin": "běn", "pos_en": "measure word", "pos_id": "kata satuan", "english": "measure word for books", "indonesian": "penggolong untuk buku" },
+    { "hanzi": "支", "pinyin": "zhī", "pos_en": "measure word", "pos_id": "kata satuan", "english": "measure word for pens and sticks", "indonesian": "penggolong untuk pena/benda batang" },
+    { "hanzi": "笔", "pinyin": "bǐ", "pos_en": "noun", "pos_id": "kata benda", "english": "pen; writing instrument", "indonesian": "pena; alat tulis" },
+    { "hanzi": "书", "pinyin": "shū", "pos_en": "noun", "pos_id": "kata benda", "english": "book", "indonesian": "buku" },
+    { "hanzi": "纸", "pinyin": "zhǐ", "pos_en": "noun", "pos_id": "kata benda", "english": "paper", "indonesian": "kertas" }
   ],
   "extended_words": [
-    {
-      "hanzi": "班",
-      "pinyin": "bān",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "class (group of students)",
-      "indonesian": "kelas"
-    },
-    {
-      "hanzi": "本子",
-      "pinyin": "běnzi",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "notebook",
-      "indonesian": "buku tulis"
-    },
-    {
-      "hanzi": "笔",
-      "pinyin": "bǐ",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "pen",
-      "indonesian": "pen"
-    },
-    {
-      "hanzi": "多少",
-      "pinyin": "duōshao",
-      "pos_en": "pronoun",
-      "pos_id": "kata ganti",
-      "english": "how many, how much",
-      "indonesian": "berapa"
-    },
-    {
-      "hanzi": "钢笔",
-      "pinyin": "gāngbǐ",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "fountain pen",
-      "indonesian": "pena (pena tinta)"
-    },
-    {
-      "hanzi": "黑板",
-      "pinyin": "hēibǎn",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "blackboard",
-      "indonesian": "papan tulis hitam"
-    },
-    {
-      "hanzi": "劳驾",
-      "pinyin": "láojià",
-      "pos_en": "verb",
-      "pos_id": "kata kerja",
-      "english": "excuse me (when asking a favor)",
-      "indonesian": "merepotkan"
-    },
-    {
-      "hanzi": "年级",
-      "pinyin": "niánjí",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "school year, grade",
-      "indonesian": "tingkat"
-    },
-    {
-      "hanzi": "铅笔",
-      "pinyin": "qiānbǐ",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "pencil",
-      "indonesian": "pensil"
-    },
-    {
-      "hanzi": "上课",
-      "pinyin": "shàngkè",
-      "pos_en": "verb",
-      "pos_id": "kata kerja",
-      "english": "to go to class",
-      "indonesian": "mulai pelajaran"
-    },
-    {
-      "hanzi": "上午",
-      "pinyin": "shàngwǔ",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "morning",
-      "indonesian": "pagi"
-    },
-    {
-      "hanzi": "少",
-      "pinyin": "shǎo",
-      "pos_en": "adjective",
-      "pos_id": "kata sifat",
-      "english": "few; less",
-      "indonesian": "sedikit / kurang"
-    },
-    {
-      "hanzi": "系",
-      "pinyin": "xì",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "university department",
-      "indonesian": "jurusan"
-    },
-    {
-      "hanzi": "圆珠笔",
-      "pinyin": "yuánzhūbǐ",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "ballpoint pen",
-      "indonesian": "pulpen umum"
-    },
-    {
-      "hanzi": "支",
-      "pinyin": "zhī",
-      "pos_en": "measure word",
-      "pos_id": "kata satuan",
-      "english": "counter for pens and other long thin objects",
-      "indonesian": "sebatang (pulpen)"
-    }
+    { "hanzi": "铅笔", "pinyin": "qiānbǐ", "pos_en": "noun", "pos_id": "kata benda", "english": "pencil", "indonesian": "pensil" },
+    { "hanzi": "钢笔", "pinyin": "gāngbǐ", "pos_en": "noun", "pos_id": "kata benda", "english": "fountain pen", "indonesian": "pena tinta (fountain pen)" },
+    { "hanzi": "橡皮", "pinyin": "xiàngpí", "pos_en": "noun", "pos_id": "kata benda", "english": "eraser", "indonesian": "penghapus" },
+    { "hanzi": "尺子", "pinyin": "chǐzi", "pos_en": "noun", "pos_id": "kata benda", "english": "ruler", "indonesian": "penggaris" },
+    { "hanzi": "笔记本", "pinyin": "bǐjìběn", "pos_en": "noun", "pos_id": "kata benda", "english": "notebook", "indonesian": "buku catatan" },
+    { "hanzi": "书包", "pinyin": "shūbāo", "pos_en": "noun", "pos_id": "kata benda", "english": "school bag", "indonesian": "tas sekolah" },
+    { "hanzi": "文具", "pinyin": "wénjù", "pos_en": "noun", "pos_id": "kata benda", "english": "stationery", "indonesian": "alat tulis kantor/sekolah" },
+    { "hanzi": "颜色", "pinyin": "yánsè", "pos_en": "noun", "pos_id": "kata benda", "english": "color", "indonesian": "warna" },
+    { "hanzi": "红色", "pinyin": "hóngsè", "pos_en": "noun", "pos_id": "kata benda", "english": "red", "indonesian": "merah" },
+    { "hanzi": "蓝色", "pinyin": "lánsè", "pos_en": "noun", "pos_id": "kata benda", "english": "blue", "indonesian": "biru" },
+    { "hanzi": "打折", "pinyin": "dǎzhé", "pos_en": "verb", "pos_id": "kata kerja", "english": "to give a discount", "indonesian": "memberi diskon" },
+    { "hanzi": "大", "pinyin": "dà", "pos_en": "adjective", "pos_id": "kata sifat", "english": "big", "indonesian": "besar" },
+    { "hanzi": "小", "pinyin": "xiǎo", "pos_en": "adjective", "pos_id": "kata sifat", "english": "small", "indonesian": "kecil" },
+    { "hanzi": "元", "pinyin": "yuán", "pos_en": "measure word", "pos_id": "kata satuan", "english": "yuan (written form)", "indonesian": "yuan (bentuk tulisan)" },
+    { "hanzi": "百", "pinyin": "bǎi", "pos_en": "numeral", "pos_id": "kata bilangan", "english": "hundred", "indonesian": "ratus" }
   ],
   "names": [
-    {
-      "hanzi": "汉日词典",
-      "pinyin": "Hàn-Rì Cídiǎn",
-      "english": "Chinese-to-Japanese dictionary",
-      "indonesian": "Kamus Mandarin-Jepang"
-    },
-    {
-      "hanzi": "汉英词典",
-      "pinyin": "Hàn-Yīng Cídiǎn",
-      "english": "Chinese-to-English dictionary",
-      "indonesian": "Kamus Mandarin-Inggris"
-    },
-    {
-      "hanzi": "日汉词典",
-      "pinyin": "Rì-Hàn Cídiǎn",
-      "english": "Japanese-to-Chinese dictionary",
-      "indonesian": "Kamus Jepang-Mandarin"
-    },
-    {
-      "hanzi": "英汉词典",
-      "pinyin": "Yīng-Hàn Cídiǎn",
-      "english": "English-to-Chinese dictionary",
-      "indonesian": "Kamus Inggris-Mandarin"
-    }
+    { "hanzi": "小红", "pinyin": "Xiǎohóng", "english": "Xiaohong (common girl's name)", "indonesian": "Xiaohong (nama anak perempuan yang umum)" },
+    { "hanzi": "大卫", "pinyin": "Dàwèi", "english": "David", "indonesian": "David (transliterasi nama asing)" },
+    { "hanzi": "林娜", "pinyin": "Lín Nà", "english": "Lin Na (common female name)", "indonesian": "Lin Na (nama perempuan yang umum)" },
+    { "hanzi": "赵强", "pinyin": "Zhào Qiáng", "english": "Zhao Qiang (common male name)", "indonesian": "Zhao Qiang (nama laki-laki yang umum)" }
   ],
   "extra_words": [
-    {
-      "hanzi": "白板",
-      "pinyin": "báibǎn",
-      "english": "whiteboard",
-      "indonesian": "papan tulis putih",
-      "note": "tulisan tangan; ditulis 'baiban' + 'putih', hanzi ditambahkan"
-    },
-    {
-      "hanzi": "会",
-      "pinyin": "huì",
-      "english": "will, can (know how to)",
-      "indonesian": "akan / bisa",
-      "note": "tulisan tangan"
-    },
-    {
-      "hanzi": "用",
-      "pinyin": "yòng",
-      "english": "to use (不用 = no need to)",
-      "indonesian": "tidak perlu / tidak usah",
-      "note": "tulisan tangan; di atas baris 1, hanzi terpotong (kemungkinan 不用)"
-    }
+    { "hanzi": "多少钱", "pinyin": "duōshao qián", "english": "How much is it?", "indonesian": "Berapa harganya?", "note": "kalimat paling berguna saat berbelanja" },
+    { "hanzi": "太贵了", "pinyin": "tài guì le", "english": "Too expensive!", "indonesian": "Terlalu mahal!", "note": "太 ... 了 = terlalu ..." },
+    { "hanzi": "能便宜一点吗", "pinyin": "néng piányi yìdiǎn ma", "english": "Can it be a bit cheaper?", "indonesian": "Bisa lebih murah sedikit?", "note": "untuk menawar" },
+    { "hanzi": "我想买一支笔", "pinyin": "wǒ xiǎng mǎi yì zhī bǐ", "english": "I want to buy a pen", "indonesian": "Saya ingin membeli sebatang pena", "note": "pola: 想买 + jumlah + penggolong + barang" },
+    { "hanzi": "我要这个", "pinyin": "wǒ yào zhège", "english": "I'll take this one", "indonesian": "Saya mau yang ini", "note": "sambil menunjuk barang" },
+    { "hanzi": "可以刷卡吗", "pinyin": "kěyǐ shuākǎ ma", "english": "Can I pay by card?", "indonesian": "Bisa bayar dengan kartu?", "note": "刷卡 = menggesek kartu" },
+    { "hanzi": "请给我一个袋子", "pinyin": "qǐng gěi wǒ yí ge dàizi", "english": "Please give me a bag", "indonesian": "Tolong beri saya sebuah kantong", "note": "袋子 = kantong plastik/tas belanja" }
   ]
 }

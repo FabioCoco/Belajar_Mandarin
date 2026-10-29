@@ -3,10 +3,12 @@
 import { readdirSync, readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { createHash } from 'node:crypto';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const SRC_DIR = join(ROOT, 'data-mentah');
 const OUT_FILE = join(ROOT, 'src', 'data', 'vocab.json');
+const VERSION_FILE = join(ROOT, 'src', 'data', 'vocab-version.json');
 
 // Urutan = prioritas saat menggabungkan duplikat (core menang atas yang lain)
 const CATEGORIES = [
@@ -23,25 +25,16 @@ const PINYIN_RE = /^[a-züÜāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜńň
 const TONE_RE = /[āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜńňǹḿ]/;
 const HANZI_RE = /[㐀-鿿]/;
 
-// Koreksi hanzi tanpa mengubah data mentah. Kunci: "<bab>|<hanzi asli>".
-const HANZI_OVERRIDES = {
-  '3|103': '幺零三', // nomor kamar dibaca satu per satu (yāo líng sān)
-};
+// Koreksi hanzi tanpa mengubah data mentah. Kunci: "<bab>|<hanzi asli>", nilai: hanzi pengganti.
+// Contoh: '3|103': '幺零三'. Saat ini kosong karena tidak ada entri yang perlu dikoreksi.
+const HANZI_OVERRIDES = {};
 const overrideLog = [];
 
 // Petunjuk jenis kata untuk entri TANPA pos (extra_words/names) yang jenisnya jelas.
 // Hanya dipakai aplikasi untuk memilih pengecoh kuis yang sejenis (field posHint); tidak ditampilkan
-// di UI dan tidak masuk filter jenis kata. Kunci: hanzi.
-const POS_HINTS = {
-  'kata hubung': ['因为', '如果', '只有'],
-  'kata kerja bantu': ['会', '用'],
-  'kata sifat': ['容易', '大', '小'],
-  'kata kerja': ['告诉', '回答', '注意', '画画儿'],
-  'kata benda': [
-    '办公室', '初中', '高中', '狮子', '医生', '医院院长', '白板', '旱季', '冷气', '楼', '美女', '双人间',
-    '男人', '女人', '首都', '辅导班', '辅导老师', '祷告', '教堂', '目的地', '牧师', '小姐',
-  ],
-};
+// di UI dan tidak masuk filter jenis kata. Bentuk: { 'kata hubung': ['因为', ...], ... }.
+// Kosong karena extra_words saat ini berisi kalimat/ungkapan, bukan kata tunggal tanpa jenis kata.
+const POS_HINTS = {};
 const POS_HINT_BY_HANZI = Object.fromEntries(Object.entries(POS_HINTS).flatMap(([pos, list]) => list.map((h) => [h, pos])));
 let hintCount = 0;
 
@@ -227,8 +220,23 @@ for (const v of vocab) {
   ids.add(v.id);
 }
 
+// Pengaman: jangan pernah menimpa vocab.json dengan daftar kosong (mis. folder data-mentah/ hilang di CI)
+if (vocab.length === 0) {
+  console.error('\nGAGAL: tidak ada kosakata yang berhasil dibaca dari data-mentah/. vocab.json TIDAK diubah.');
+  warnings.forEach((w) => console.error(`  ! ${w}`));
+  process.exit(1);
+}
+
 mkdirSync(dirname(OUT_FILE), { recursive: true });
 writeFileSync(OUT_FILE, JSON.stringify(vocab, null, 2) + '\n', 'utf8');
+
+// Versi dataset: hash dari (id + hanzi + pinyin). Aplikasi memakainya untuk membuang progress lama
+// bila isi kosakata berubah, supaya status "hafal" tidak salah menunjuk ke kata lain.
+const version = createHash('sha1')
+  .update(vocab.map((v) => `${v.id}|${v.hanzi}|${v.pinyin}`).join('\n'))
+  .digest('hex')
+  .slice(0, 10);
+writeFileSync(VERSION_FILE, JSON.stringify({ version }, null, 2) + '\n', 'utf8');
 
 // ---------- Laporan ----------
 const line = '-'.repeat(66);
@@ -252,7 +260,7 @@ dupLog.forEach((d) => console.log(`  - ${d}`));
 console.log(`Petunjuk jenis kata (khusus pengecoh kuis): ${hintCount}`);
 console.log(`Koreksi hanzi    : ${overrideLog.length}`);
 overrideLog.forEach((d) => console.log(`  - ${d}`));
-console.log(`Output           : ${OUT_FILE}`);
+console.log(`Output           : ${OUT_FILE} (versi ${version})`);
 console.log(line);
 if (warnings.length) {
   console.log(`\nPERINGATAN (${warnings.length}):`);

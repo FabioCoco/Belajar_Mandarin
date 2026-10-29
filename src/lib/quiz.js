@@ -23,13 +23,26 @@ export function answerOf(v, mode, lang) {
   return { key: lines.join(' / ').toLowerCase(), lines };
 }
 
-// Dua kata dianggap "sejenis" bila jenis katanya beririsan (pos asli, atau posHint untuk entri tanpa pos).
-// Bila keduanya tak punya jenis kata (mis. nama), dibandingkan lewat kategorinya.
-function samePos(a, b) {
+// Kelompok jenis kata yang mirip peran tata bahasanya. Dipakai sebagai tingkat kedua pengecoh bila
+// jenis kata yang sama terlalu sedikit (mis. hanya 2 kata hubung): kata fungsi dengan kata fungsi,
+// kata penunjuk/bilangan dengan sesamanya.
+const POS_GROUPS = [
+  ['kata hubung', 'kata depan', 'kata keterangan', 'partikel', 'frasa tanya', 'kata kerja bantu', 'kata seru'],
+  ['kata ganti', 'kata bilangan', 'kata satuan'],
+];
+const groupOf = (pos) => POS_GROUPS.findIndex((g) => g.includes(pos));
+
+// Tingkat kemiripan jenis kata: 0 = sejenis (pos asli, atau posHint untuk entri tanpa pos), 1 = satu kelompok
+// peran tata bahasa, 2 = lainnya. Bila keduanya tak punya jenis kata (mis. nama, ungkapan), dibandingkan
+// lewat kategorinya.
+function posTier(a, b) {
   const pa = effectivePos(a);
   const pb = effectivePos(b);
-  if (!pa.length && !pb.length) return a.kategori === b.kategori;
-  return pa.some((p) => pb.includes(p));
+  if (!pa.length && !pb.length) return a.kategori === b.kategori ? 0 : 2;
+  if (pa.some((p) => pb.includes(p))) return 0;
+  const ga = pa.map(groupOf).filter((g) => g >= 0);
+  if (pb.some((p) => ga.includes(groupOf(p)))) return 1;
+  return 2;
 }
 
 // Skor kemiripan tambahan agar pengecoh terasa masuk akal: kategori sama, panjang hanzi mirip, bab sama.
@@ -48,15 +61,15 @@ function conflicts(c, item, mode) {
 }
 
 // Membuat satu soal pilihan ganda (maksimal 4 pilihan).
-// Pengecoh: diutamakan dari kata dengan jenis kata yang sama agar tidak terlalu mudah ditebak; di dalam
-// kelompok itu dan saat melengkapi dari kata lain, yang paling mirip (closeness) didahulukan.
+// Pengecoh: diutamakan dari kata dengan jenis kata yang sama, lalu satu kelompok peran tata bahasa, lalu
+// kata lain (lihat posTier). Di dalam tiap tingkat, yang paling mirip (closeness) didahulukan.
 // Pilihan dengan teks yang sama dibuang.
 export function buildQuestion(item, mode, lang, pool = vocab) {
   const correct = answerOf(item, mode, lang);
   const seen = new Set([correct.key]);
   const eligible = pool
     .filter((c) => c.id !== item.id && !conflicts(c, item, mode) && answerOf(c, mode, lang).key !== correct.key)
-    .map((c) => ({ c, same: samePos(c, item), score: closeness(c, item) }));
+    .map((c) => ({ c, tier: posTier(c, item), score: closeness(c, item) }));
   const byScore = (x, y) => y.score - x.score;
 
   const picked = [];
@@ -69,8 +82,7 @@ export function buildQuestion(item, mode, lang, pool = vocab) {
       picked.push(c);
     }
   };
-  take(eligible.filter((x) => x.same).sort(byScore));
-  take(eligible.filter((x) => !x.same).sort(byScore));
+  for (const tier of [0, 1, 2]) take(eligible.filter((x) => x.tier === tier).sort(byScore));
 
   const options = shuffle([item, ...picked]).map((v) => ({ id: v.id, ...answerOf(v, mode, lang) }));
   return { item, mode, options, correctIndex: options.findIndex((o) => o.id === item.id) };

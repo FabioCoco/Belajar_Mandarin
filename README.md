@@ -1,103 +1,108 @@
-# 🐼 Panda Belajar Mandarin
+# Panda Belajar Mandarin
 
-Aplikasi web untuk belajar kosakata bahasa Mandarin dengan flashcard, kuis pilihan ganda, dan pengulangan berjarak (Leitner), ditemani maskot panda. Antarmuka berbahasa Indonesia, tanpa backend, dan progress tersimpan di browser.
-
-> **Demo:** _(tambahkan link demo di sini setelah deploy)_
-
-| Mobile | Desktop |
-| :---: | :---: |
-| _(screenshot mobile: beranda / flashcard / kuis)_ | _(screenshot desktop: beranda / progress)_ |
-| `docs/screenshot-mobile.png` | `docs/screenshot-desktop.png` |
-
----
+Aplikasi web untuk belajar kosakata bahasa Mandarin lewat flashcard, kuis pilihan ganda, dan sistem pengulangan Leitner. Tampilannya bertema panda, bahasa antarmukanya Indonesia, dan seluruh progress disimpan di browser tanpa backend.
 
 ## Latar belakang
 
-Saya belajar bahasa Mandarin dari buku pelajaran. Setiap bab memuat puluhan kata baru, dan daftar kata di buku sulit dipakai untuk mengulang: tidak bisa diacak, tidak bisa ditutup untuk menguji diri, dan tidak tahu kata mana yang sudah benar-benar hafal.
+Saya belajar bahasa Mandarin dari buku pelajaran. Daftar kata di buku sulit dipakai untuk mengulang: urutannya tidak bisa diacak, artinya tidak bisa ditutup untuk menguji diri, dan tidak ada catatan kata mana yang sudah hafal.
 
-Saya mengetik kosakata tiap bab (hanzi, pinyin, jenis kata, arti Indonesia dan Inggris) ke dalam file JSON, lalu membangun aplikasi ini agar data itu bisa dipakai untuk:
-
-- mengulang lewat **flashcard** dua arah,
-- menguji diri lewat **kuis**, dengan kata yang sering salah muncul lebih sering,
-- melihat **progress** per bab sehingga tahu bagian mana yang perlu dilatih.
-
-Proyek ini sekaligus portofolio: dirancang agar menyenangkan dipakai di ponsel maupun desktop, ramah aksesibilitas, dan mudah ditambah bab barunya.
+Aplikasi ini saya buat untuk menutup kekurangan itu. Kosakata dikelompokkan per bab tema, lalu bisa dipelajari dengan flashcard, diuji dengan kuis, dan dipantau lewat halaman progress.
 
 ## Fitur
 
-- **Flashcard**: flip 3D, arah Hanzi → Arti atau Arti → Hanzi, tombol Hafal / Belum hafal, navigasi sebelumnya/berikutnya, mode acak. Keyboard: `Spasi` balik, `←` `→` pindah, `H` hafal, `B` belum hafal. Swipe di layar sentuh (kanan = hafal, kiri = belum hafal).
-- **Kuis pilihan ganda**: tiga mode (Hanzi → Arti, Arti → Hanzi, Hanzi → Pinyin), 10 / 20 / semua soal, 4 pilihan dengan pengecoh sejenis kata, skor akhir, dan tinjauan jawaban yang salah. Jawaban salah otomatis menurunkan kata ke "belum hafal".
-- **Leitner 3 kotak** ("keranjang bambu"): jawaban benar naik kotak, salah kembali ke kotak 1; kata di kotak rendah lebih sering muncul.
-- **Suara**: tombol lafal memakai Web Speech API (`zh-CN`). Disembunyikan otomatis jika browser tidak mendukung atau suara Mandarin tidak tersedia.
-- **Bahasa terjemahan**: Indonesia / English / Keduanya, berlaku di seluruh aplikasi.
-- **Filter & pencarian**: per bab (chip berwarna), kategori, jenis kata, status hafal, dan pencarian hanzi / pinyin / arti (abai tanda nada: `ni hao` menemukan `nǐ hǎo`).
-- **Daftar kosakata**: tabel di layar lebar, daftar kartu di ponsel.
-- **Beranda**: sapaan panda, target harian (10 kata), streak, dan kartu semua bab dengan progress ring.
-- **Progress**: persentase hafal per bab dan kategori, isi keranjang Leitner, dan panda yang "makan bambu": makin banyak kata hafal, makin banyak bambu termakan.
-- **Konfeti** (canvas ringan) saat skor kuis ≥ 80% dan saat target harian tercapai.
-- **Mode terang / gelap / ikut sistem**, reset progress dengan dialog konfirmasi.
+- Flashcard dengan animasi balik 3D. Arahnya bisa Hanzi ke Arti atau Arti ke Hanzi. Kartu ditandai Hafal atau Belum hafal, dan urutannya bisa diacak. Di keyboard: `Spasi` membalik kartu, `←` `→` berpindah kartu, `H` hafal, `B` belum hafal. Di layar sentuh, geser ke kanan berarti hafal dan ke kiri berarti belum hafal.
+- Kuis pilihan ganda dengan tiga mode (Hanzi ke Arti, Arti ke Hanzi, Hanzi ke Pinyin), 10, 20, atau semua soal, dan empat pilihan jawaban. Di akhir kuis ada skor dan daftar jawaban yang salah. Kata yang dijawab salah otomatis kembali berstatus belum hafal.
+- Leitner 3 kotak yang ditampilkan sebagai keranjang bambu. Kata yang sering salah lebih sering muncul sebagai soal.
+- Tombol suara memakai Web Speech API dengan bahasa `zh-CN`. Jika browser tidak mendukung atau tidak punya suara Mandarin, tombol disembunyikan dan muncul pesan singkat.
+- Bahasa terjemahan bisa dipilih: Indonesia, English, atau keduanya.
+- Filter dan pencarian berdasarkan bab, kategori, jenis kata, dan status hafal. Pencarian mencakup hanzi, pinyin, dan arti, dan tidak membedakan tanda nada (`ni hao` menemukan `nǐ hǎo`).
+- Daftar kosakata berbentuk tabel di layar lebar dan daftar kartu di ponsel.
+- Beranda berisi sapaan panda, target harian 10 kata berbeda, streak hari belajar, dan kartu tiap bab dengan progress ring.
+- Halaman progress menampilkan persentase hafal per bab dan per kategori, isi keranjang Leitner, serta panda yang makan bambu. Makin banyak kata yang hafal, makin banyak batang bambu yang habis.
+- Konfeti muncul saat skor kuis minimal 80% dan saat target harian tercapai.
+- Mode terang, gelap, atau ikut sistem, dan tombol reset progress dengan dialog konfirmasi.
 
 ## Keputusan desain
 
 ### Maskot
-Panda dibuat sebagai komponen SVG inline buatan sendiri (`PandaMascot.jsx`), bukan gambar atau karakter milik pihak lain. Gayanya bulat dan sederhana, dengan enam ekspresi (`mood`): `happy`, `sad`, `thinking`, `sleeping`, `eating`, `cheer`. Panda dipakai sebagai logo, sapaan di beranda, reaksi saat belajar dan kuis, serta ilustrasi pada tampilan kosong, memuat, dan galat. Animasi kecil (berkedip, mengangguk, bergoyang, bernapas) otomatis mati saat `prefers-reduced-motion`.
 
-### Palet warna
-Nuansa hangat seperti taman bambu: latar krem (`#FFFBF2`), aksen hijau bambu (`#4CAF7A`) dan hijau daun tua (`#2E7D5B`), ditambah sakura, madu, biru langit, persik, dan lavender. Mode gelap memakai biru-hijau tua (`#16211D`), bukan abu-abu netral.
+Panda adalah komponen SVG inline (`PandaMascot.jsx`), tidak memakai gambar atau karakter pihak lain. Ada enam ekspresi lewat prop `mood`: `happy`, `sad`, `thinking`, `sleeping`, `eating`, dan `cheer`. Panda muncul sebagai logo, sapaan di beranda, reaksi saat belajar dan kuis, serta ilustrasi di tampilan kosong, memuat, dan galat. Animasinya (berkedip, mengangguk, bergoyang) mati otomatis bagi pengguna yang mengaktifkan `prefers-reduced-motion`.
 
-- Semua token warna adalah CSS variables berbentuk channel RGB (`src/index.css`) yang dipasang ke Tailwind (`tailwind.config.js`), jadi tema bisa diubah di satu tempat.
-- **Warna per bab** dihitung dari nomor bab (`lib/chapterColors.js`) dan berputar melalui palet aksen, sehingga bab baru otomatis mendapat warna dan ikon.
-- **Status** tidak hanya mengandalkan warna: hafal / belum hafal / salah selalu disertai ikon dan teks.
-- **Kontras**: pasangan teks dan latar diaudit dengan skrip yang menghitung rasio WCAG dari token CSS yang sebenarnya (terang dan gelap). Semua pasangan teks lolos AA (≥ 4,5:1); isi bar dan ring diberi garis tepi pekat atau memakai warna "ink" agar tidak bergantung pada warna pastel, dan angkanya selalu ditulis.
+### Warna
 
-### Responsif
-Mobile-first dengan breakpoint Tailwind.
+Nuansanya hangat seperti taman bambu: latar krem `#FFFBF2`, hijau bambu `#4CAF7A`, dan hijau daun `#2E7D5B`, ditambah sakura, madu, biru langit, persik, dan lavender. Mode gelap memakai biru-hijau tua `#16211D`.
 
-| Lebar | Navigasi | Konten |
+- Semua warna didefinisikan sebagai CSS variables di `src/index.css` dan dipasang ke Tailwind lewat `tailwind.config.js`, jadi tema bisa diubah dari satu tempat.
+- Setiap bab punya warna sendiri yang dihitung dari nomor bab (`lib/chapterColors.js`) dan berputar melalui enam warna aksen. Bab baru langsung mendapat warna dan ikon tanpa konfigurasi.
+- Status hafal, belum hafal, dan salah selalu disertai ikon dan teks, bukan warna saja.
+- Kontras teks terhadap latar memenuhi WCAG AA di mode terang dan gelap.
+
+### Tampilan responsif
+
+Tampilan dirancang dari ukuran ponsel lebih dulu.
+
+| Lebar layar | Navigasi | Konten |
 | --- | --- | --- |
-| < 768px | tab bar bawah (area sentuh ≥ 44px, aman untuk notch) | satu kolom, kosakata sebagai kartu |
-| 768–1023px | tab bar bawah | kosakata sebagai tabel |
-| ≥ 1024px | sidebar kiri (menu, bahasa, tema) | konten di tengah, lebar maksimum nyaman dibaca |
-| ≥ 1280px | sidebar kiri | + panel filter di samping (di bawahnya filter muncul sebagai bottom sheet) |
+| di bawah 768px | tab bar bawah | satu kolom, kosakata berbentuk kartu |
+| 768 sampai 1023px | tab bar bawah | kosakata berbentuk tabel |
+| 1024px ke atas | sidebar kiri | konten di tengah dengan lebar maksimum |
+| 1280px ke atas | sidebar kiri | ditambah panel filter di samping |
 
-Flashcard memakai ukuran fluid (`clamp`) sehingga hanzi proporsional di layar kecil maupun lebar, dan frasa panjang otomatis mengecil. Tata letak sudah diperiksa otomatis tanpa scroll horizontal pada 10 lebar layar (360–1440px) di semua halaman.
+Di layar yang lebih sempit dari 1280px, filter muncul sebagai bottom sheet. Hanzi di flashcard memakai ukuran fluid (`clamp`) dan mengecil otomatis untuk frasa yang panjang. Tidak ada scroll horizontal pada lebar 360 sampai 1440px.
 
 ### Aksesibilitas
-Fokus keyboard terlihat, semua kontrol punya nama aksesibel, ada tautan "Lewati ke konten", judul tab berubah per halaman dan fokus pindah ke konten saat berganti halaman, dialog menjebak fokus dan menutup dengan `Esc`, serta semua animasi menghormati `prefers-reduced-motion`.
+
+Fokus keyboard selalu terlihat dan semua tombol punya nama untuk pembaca layar. Ada tautan "Lewati ke konten", judul tab berubah mengikuti halaman, dan fokus berpindah ke konten saat berganti halaman. Dialog mengunci fokus di dalamnya dan bisa ditutup dengan `Esc`. Area sentuh di ponsel minimal 44px.
 
 ## Tech stack
 
 | Teknologi | Alasan |
 | --- | --- |
-| **Vite + React (JavaScript)** | Cepat, sederhana, hasil build statis yang mudah dipasang di Vercel atau GitHub Pages. JavaScript biasa agar fokus pada produk. |
-| **Tailwind CSS** | Design token terpusat dan komponen yang konsisten tanpa menulis banyak CSS. |
-| **lucide-react** | Ikon ringan dan seragam. |
-| **localStorage** | Tanpa backend: progress, pengaturan, dan streak tersimpan di perangkat. Semua akses lewat satu modul (`lib/storage.js`) yang aman dari galat. |
-| **Web Speech API** | Lafal tanpa layanan eksternal atau berkas audio. |
-| **Noto Sans SC, Nunito** | Hanzi tampil konsisten di semua perangkat; Nunito memberi nuansa ramah dan membulat. |
-| **Canvas & SVG buatan sendiri** | Konfeti, maskot, dan grafik tanpa library berat. |
+| Vite + React (JavaScript) | Pengembangan cepat dan hasil build berupa situs statis. |
+| Tailwind CSS | Warna, radius, dan bayangan terpusat sebagai token, sehingga tampilan konsisten. |
+| lucide-react | Ikon yang ringan dan seragam. |
+| localStorage | Progress, pengaturan, dan streak tersimpan di perangkat tanpa backend. Semua aksesnya lewat satu modul, `lib/storage.js`, yang menangani galat. |
+| Web Speech API | Pelafalan tanpa layanan luar atau berkas audio. |
+| Noto Sans SC dan Nunito | Noto Sans SC untuk hanzi, Nunito untuk teks antarmuka. Keduanya dimuat dari Google Fonts. |
+| Hash route (`#/kuis`) | Navigasi sederhana tanpa library router dan tanpa pengaturan server. |
+| Canvas dan SVG | Konfeti, maskot, keranjang, dan grafik dibuat sendiri tanpa library tambahan. |
 
 ## Menjalankan
 
-Prasyarat: Node.js 18+.
+Butuh Node.js versi 18 atau lebih baru.
 
 ```bash
 npm install
 npm run dev          # server pengembangan
-npm run build        # membangun data lalu aplikasi ke folder dist/
+npm run build        # membangun data kosakata lalu aplikasi ke folder dist/
 npm run preview      # mencoba hasil build
 npm run build:data   # hanya membangun ulang src/data/vocab.json
 ```
 
-`src/data/vocab.json` dihasilkan dari `data-mentah/`. Jalankan `npm run build:data` setiap kali data mentah berubah (`npm run build` sudah melakukannya otomatis).
+`src/data/vocab.json` dihasilkan dari folder `data-mentah/`. Setiap kali data mentah diubah, jalankan `npm run build:data`. Perintah `npm run build` sudah menjalankannya lebih dulu.
+
+## Kosakata
+
+Isinya 286 kata di 6 bab, masing-masing 46 sampai 50 entri:
+
+| Bab | Tema |
+| --- | --- |
+| 1 | Keluarga dan perkenalan diri |
+| 2 | Belanja dan alat tulis |
+| 3 | Hotel dan pemesanan kamar |
+| 4 | Bahasa dan les/bimbel |
+| 5 | Pekerjaan dan alasan belajar |
+| 6 | Ulang tahun dan shio |
+
+Tiap bab dibagi menjadi empat kategori: kata inti (`core`), kata lanjutan (`extended`), ungkapan atau kalimat berguna (`extra`), dan nama (`names`). Kosakata ini disusun khusus untuk proyek ini dengan tingkat pemula sebagai sasaran. Pinyin dan terjemahan belum diperiksa oleh penutur asli.
 
 ## Menambah bab baru
 
-1. Buat `data-mentah/bab-7.json` (nomor bebas, urut dari nama berkas) dengan skema yang sama seperti bab lain (lihat di bawah).
-2. Jalankan `npm run build:data`. Terminal menampilkan ringkasan jumlah kata dan daftar peringatan validasi.
-3. Selesai. Daftar bab, filter, progress, kuis, serta warna dan ikon bab menyesuaikan otomatis. Tidak ada kode yang perlu diubah.
+1. Buat berkas `data-mentah/bab-7.json` dengan skema yang sama seperti bab lain (lihat bagian berikutnya).
+2. Jalankan `npm run build:data`. Terminal menampilkan jumlah kata per bab dan kategori, serta peringatan untuk entri yang bermasalah.
+3. Selesai. Daftar bab, filter, progress, kuis, serta warna dan ikon bab menyesuaikan sendiri. Tidak ada kode yang perlu diubah.
 
-Berkas yang hilang, kosong, atau rusak tidak membuat build gagal; hanya dicatat sebagai peringatan.
+Berkas bab yang kosong atau rusak hanya menghasilkan peringatan dan tidak menghentikan build. Jika tidak ada satu pun bab yang terbaca, skrip berhenti dengan pesan galat dan tidak menimpa `vocab.json`.
 
 ## Struktur data
 
@@ -113,63 +118,67 @@ Satu berkas per bab di `data-mentah/bab-N.json`:
 }
 ```
 
-`scripts/build-vocab.js` menormalisasi semuanya menjadi array datar di `src/data/vocab.json`:
+Skrip `scripts/build-vocab.js` mengubahnya menjadi satu array datar di `src/data/vocab.json`. Tiap entri punya field berikut:
 
 | Field | Keterangan |
 | --- | --- |
-| `id` | unik, mis. `b1-core-001` |
+| `id` | unik, contoh `b1-core-001` |
 | `bab`, `babJudulId`, `babJudulEn` | nomor dan judul bab |
-| `kategori` | `core` / `extended` / `extra` / `names` |
+| `kategori` | `core`, `extended`, `extra`, atau `names` |
 | `hanzi`, `pinyin`, `english`, `indonesian` | wajib terisi |
-| `posId`, `posEn` | jenis kata (boleh `null`) |
-| `note` | catatan (boleh `null`) |
-| `altEnglish`, `altIndonesian` | terjemahan lain bila ada duplikat yang digabung |
-| `posHint` | (opsional) petunjuk jenis kata untuk entri tanpa `posId`, hanya dipakai memilih pengecoh kuis; tidak tampil di UI |
+| `posId`, `posEn` | jenis kata, boleh `null` |
+| `note` | catatan penggunaan, boleh `null` |
+| `altEnglish`, `altIndonesian` | terjemahan lain jika ada entri duplikat yang digabung |
+| `posHint` | opsional, petunjuk jenis kata untuk entri yang tidak punya `posId`; hanya dipakai saat memilih pengecoh kuis |
 
-Aturan penting:
+Aturan yang dijalankan skrip:
 
-- Entri dengan hanzi dan pinyin yang sama dalam satu bab dianggap duplikat dan digabung, dengan prioritas kategori `core > extended > extra > names`. Terjemahan lain disimpan di `altEnglish` / `altIndonesian`.
-- Validasi mencetak peringatan (bukan galat) untuk field wajib kosong, hanzi tanpa karakter Han, atau pinyin berisi karakter tidak valid / tanpa tanda nada.
-- Koreksi data tanpa menyentuh data mentah dilakukan lewat `HANZI_OVERRIDES` di `scripts/build-vocab.js` (contoh: nomor kamar `103` dibaca sebagai `幺零三`).
-- `POS_HINTS` di `scripts/build-vocab.js` memberi petunjuk jenis kata bagi entri `extra_words` yang tak punya `pos_id` (mis. 因为 = kata hubung) supaya pengecoh kuisnya sejenis. Entri tanpa petunjuk tetap berfungsi.
-- Jenis kata gabungan (mis. `kata benda, kata kerja`) dipecah di sisi aplikasi (`splitPos` di `lib/vocab.js`), jadi filter hanya berisi jenis kata tunggal.
+- Entri dengan hanzi dan pinyin yang sama di satu bab dianggap duplikat dan digabung. Kategori yang dipakai mengikuti urutan `core`, `extended`, `extra`, `names`, dan terjemahan yang berbeda disimpan di `altEnglish` dan `altIndonesian`.
+- Validasi mencetak peringatan, bukan galat, untuk field wajib yang kosong, hanzi tanpa karakter Han, serta pinyin yang memuat karakter tidak valid atau tanpa tanda nada. Nada netral seperti `de` juga muncul sebagai peringatan dan itu wajar.
+- `HANZI_OVERRIDES` dan `POS_HINTS` di dalam skrip dipakai untuk mengoreksi hanzi dan memberi petunjuk jenis kata tanpa mengubah data mentah. Keduanya saat ini kosong.
+- Jenis kata gabungan seperti `kata benda, kata kerja` dipecah di aplikasi (`splitPos` di `lib/vocab.js`), jadi filter hanya berisi jenis kata tunggal.
+- Setiap build, skrip menghitung versi dataset dari id, hanzi, dan pinyin, lalu menyimpannya di `src/data/vocab-version.json`. Jika daftar kata berubah, progress hafalan lama di browser dihapus dan pengguna diberi tahu, karena id lama bisa menunjuk ke kata yang berbeda. Streak tetap disimpan. Memperbaiki terjemahan tidak mengubah versi.
 
 ## Algoritma Leitner
 
-Kata dikelompokkan dalam **3 kotak** (tampil sebagai keranjang bambu). Kata yang belum pernah dikuis dianggap berada di kotak 1.
+Kata dibagi ke dalam tiga kotak. Kata yang belum pernah muncul di kuis dianggap berada di kotak 1.
 
-1. **Menjawab benar** → kata naik satu kotak (maksimal kotak 3).
-2. **Menjawab salah** → kata kembali ke kotak 1 **dan** status hafalnya turun menjadi "belum hafal".
-3. **Memilih soal**: kata di kotak rendah muncul lebih sering. Setiap kotak punya bobot (kotak 1 = 4, kotak 2 = 2, kotak 3 = 1), lalu soal diambil secara acak berbobot tanpa pengembalian dengan metode Efraimidis–Spirakis: tiap kata diberi kunci `u^(1/bobot)` dengan `u` acak di (0, 1), diurutkan menurun, dan N teratas dipilih.
+1. Jawaban benar menaikkan kata satu kotak, maksimal sampai kotak 3.
+2. Jawaban salah mengembalikan kata ke kotak 1 dan mengubah statusnya menjadi belum hafal.
+3. Kata di kotak rendah lebih sering menjadi soal. Bobotnya 4 untuk kotak 1, 2 untuk kotak 2, dan 1 untuk kotak 3.
 
-Pada pengujian 2.000 undian dengan jumlah kata yang sama di tiap kotak, kata kotak 1/2/3 terpilih sekitar 56% / 29% / 15%, sesuai rasio bobot 4:2:1. Implementasinya ada di `src/lib/leitner.js`; pembuatan soal dan pemilihan pengecoh di `src/lib/quiz.js`.
+Soal dipilih dengan pengambilan acak berbobot tanpa pengembalian (metode Efraimidis-Spirakis). Setiap kata diberi kunci `u^(1/bobot)`, dengan `u` bilangan acak antara 0 dan 1. Kata diurutkan dari kunci terbesar dan sejumlah soal teratas diambil. Kata berbobot besar cenderung mendapat kunci mendekati 1, sehingga lebih sering terpilih. Kodenya ada di `src/lib/leitner.js`.
 
-**Pengecoh** dipilih dari kata dengan jenis kata yang sama (atau kategori yang sama untuk nama dan frasa tanpa jenis kata) agar tidak terlalu mudah ditebak, lalu dilengkapi dari kata lain bila kurang. Di dalam tiap kelompok, kata yang paling mirip (kategori sama, panjang hanzi mirip, bab sama, plus sedikit acak) didahulukan. Pilihan bertekstur sama dan kata yang sebenarnya juga benar (mis. hanzi sama di bab berbeda) dibuang.
+### Pilihan jawaban kuis
+
+Pembuatan soal ada di `src/lib/quiz.js`. Tiga pengecoh dipilih bertingkat supaya tidak terlalu mudah ditebak:
+
+1. kata dengan jenis kata yang sama (untuk nama dan ungkapan yang tidak punya jenis kata, dipakai kategori yang sama),
+2. kata dalam kelompok peran tata bahasa yang sama, misalnya kata hubung dengan kata depan, partikel, atau kata kerja bantu,
+3. kata lain bila dua tingkat di atas belum cukup.
+
+Di dalam tiap tingkat, kata yang paling mirip didahulukan, dengan penilaian dari kategori yang sama, panjang hanzi yang mirip, dan bab yang sama, ditambah sedikit unsur acak. Pilihan dengan teks yang sama dibuang, begitu juga kata lain yang sebenarnya merupakan jawaban benar, misalnya dua entri dengan arti yang sama.
 
 ## Struktur proyek
 
 ```
-data-mentah/          data sumber per bab (bab-N.json)
-scripts/build-vocab.js  normalisasi + validasi -> src/data/vocab.json
+data-mentah/             data sumber per bab (bab-N.json)
+scripts/build-vocab.js   normalisasi dan validasi data, menghasilkan src/data/vocab.json
 src/
-  components/         PandaMascot, Flashcard, QuizQuestion, ChapterCard, FilterPanel, ...
-  hooks/              useProgress, useSettings, useSpeech, useFilters, useHashRoute
-  lib/                vocab, quiz, leitner, chapterColors, storage, constants
-  pages/              Home, Study (flashcard), Quiz, Vocab, Progress
-  index.css           design token (CSS variables) + animasi
-tailwind.config.js    token yang dipasang ke Tailwind
+  components/            PandaMascot, Flashcard, QuizQuestion, ChapterCard, FilterPanel, dan lainnya
+  hooks/                 useProgress, useSettings, useSpeech, useFilters, useHashRoute
+  lib/                   vocab, quiz, leitner, chapterColors, storage, constants
+  pages/                 Home, Study, Quiz, Vocab, Progress
+  index.css              token warna (CSS variables) dan animasi
+tailwind.config.js       token yang dipasang ke Tailwind
 ```
 
 ## Rencana pengembangan
 
-- Riwayat belajar harian (grafik 7 / 30 hari) dan pengingat belajar.
-- Mode kuis mengetik pinyin dan kuis mendengarkan (audio ke hanzi).
-- Interval Leitner berbasis tanggal (kata muncul kembali setelah jeda tertentu), bukan hanya bobot acak.
-- Ekspor / impor progress dan sinkronisasi antar perangkat.
-- Kotak ketiga otomatis menandai kata sebagai hafal (opsional).
-- Dukungan HSK level dan pengelompokan topik di luar bab buku.
-- PWA agar bisa dipakai tanpa internet.
-
-## Deploy
-
-_(Panduan deploy ke Vercel / GitHub Pages akan ditambahkan di tahap berikutnya.)_
+- Riwayat belajar harian dengan grafik 7 dan 30 hari.
+- Kuis mengetik pinyin dan kuis mendengarkan.
+- Interval Leitner berbasis tanggal, jadi kata muncul lagi setelah jeda tertentu dan tidak hanya lewat bobot acak.
+- Ekspor dan impor progress untuk berpindah perangkat.
+- Opsi menandai kata sebagai hafal otomatis saat mencapai kotak 3.
+- Pengelompokan kata berdasarkan level HSK.
+- Versi PWA agar bisa dipakai tanpa internet, dengan font yang disimpan lokal.

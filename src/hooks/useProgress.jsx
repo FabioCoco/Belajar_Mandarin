@@ -2,6 +2,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useState } 
 import { loadJSON, saveJSON, removeKey } from '../lib/storage.js';
 import { KEYS } from '../lib/constants.js';
 import { nextBox } from '../lib/leitner.js';
+import { version as DATASET_VERSION } from '../data/vocab-version.json';
 
 // Bentuk data tersimpan:
 // {
@@ -11,7 +12,8 @@ import { nextBox } from '../lib/leitner.js';
 // }
 const ProgressContext = createContext(null);
 
-const emptyState = () => ({ words: {}, daily: { date: null, ids: [] }, streak: { count: 0, last: null } });
+// Penanda isi kosakata (dibuat oleh scripts/build-vocab.js). Progress yang tersimpan untuk versi lain dibuang.
+const emptyState = () => ({ dataset: DATASET_VERSION, words: {}, daily: { date: null, ids: [] }, streak: { count: 0, last: null } });
 const defaultWord = { memorized: false, box: 1, correct: 0, wrong: 0 };
 
 const dateKey = (d = new Date()) =>
@@ -22,9 +24,17 @@ const yesterdayKey = () => {
   return dateKey(d);
 };
 
+let datasetWasReset = false;
+
 function load() {
   const s = loadJSON(KEYS.progress, null);
   if (!s || typeof s !== 'object') return emptyState();
+  if (s.dataset !== DATASET_VERSION) {
+    // Isi kosakata berubah: id lama bisa menunjuk ke kata lain, jadi hafalan dan hitungan harian dibuang.
+    // Streak dipertahankan karena tidak terikat pada kata tertentu.
+    datasetWasReset = Object.keys(s.words || {}).length > 0;
+    return { ...emptyState(), streak: s.streak || emptyState().streak };
+  }
   const state = { ...emptyState(), ...s };
   // Migrasi data lama ({ date, count }) ke daftar id agar hitungan hari ini tidak hilang
   if (!Array.isArray(state.daily.ids)) {
@@ -48,6 +58,8 @@ function withStudy(state, id) {
 
 export function ProgressProvider({ children }) {
   const [state, setState] = useState(load);
+  const [datasetReset, setDatasetReset] = useState(() => datasetWasReset);
+  const dismissDatasetReset = useCallback(() => setDatasetReset(false), []);
 
   useEffect(() => {
     saveJSON(KEYS.progress, state);
@@ -109,8 +121,10 @@ export function ProgressProvider({ children }) {
       markReviewed,
       answerQuiz,
       resetAll,
+      datasetReset,
+      dismissDatasetReset,
     };
-  }, [state, getWord, isMemorized, setMemorized, markReviewed, answerQuiz, resetAll]);
+  }, [state, getWord, isMemorized, setMemorized, markReviewed, answerQuiz, resetAll, datasetReset, dismissDatasetReset]);
 
   return <ProgressContext.Provider value={value}>{children}</ProgressContext.Provider>;
 }

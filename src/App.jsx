@@ -25,7 +25,7 @@ function Shell() {
   const { route, navigate } = useHashRoute();
   const filterApi = useFilters();
   const { setFilters } = filterApi;
-  const { todayCount } = useProgress();
+  const { todayCount, datasetReset, dismissDatasetReset } = useProgress();
   const mainRef = useRef(null);
   const firstRoute = useRef(true);
 
@@ -112,6 +112,14 @@ function Shell() {
         </div>
         <BottomNav route={route} navigate={navigate} />
         <Confetti fire={fire} />
+        <Toast
+          open={datasetReset}
+          onClose={dismissDatasetReset}
+          mood="thinking"
+          duration={9000}
+          title="Kosakata diperbarui"
+          message="Isi kosakata berubah, jadi progress hafalan lama direset."
+        />
         <Toast open={toast} onClose={() => setToast(false)} title="Target harian tercapai!" message={`${DAILY_TARGET} kata berbeda sudah dipelajari hari ini. Panda bangga!`} />
       </div>
     </CelebrationHoldContext.Provider>

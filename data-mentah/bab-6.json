@@ -2,372 +2,64 @@
   "chapter": {
     "id": 6,
     "title_id": "Ulang Tahun & Shio",
-    "title_en": "Birthdays & Zodiac"
+    "title_en": "Birthdays & Zodiac Animals"
   },
   "core_words": [
-    {
-      "hanzi": "啊",
-      "pinyin": "ā",
-      "pos_en": "interjection",
-      "pos_id": "kata seru",
-      "english": "exclamation particle",
-      "indonesian": "kata seru"
-    },
-    {
-      "hanzi": "哎呀",
-      "pinyin": "āiyā",
-      "pos_en": "interjection",
-      "pos_id": "kata seru",
-      "english": "exclamation of surprise",
-      "indonesian": "kata seru"
-    },
-    {
-      "hanzi": "出生",
-      "pinyin": "chūshēng",
-      "pos_en": "verb",
-      "pos_id": "kata kerja",
-      "english": "to be born",
-      "indonesian": "lahir"
-    },
-    {
-      "hanzi": "蛋糕",
-      "pinyin": "dàngāo",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "cake",
-      "indonesian": "kue"
-    },
-    {
-      "hanzi": "打扫",
-      "pinyin": "dǎsǎo",
-      "pos_en": "verb",
-      "pos_id": "kata kerja",
-      "english": "to clean up",
-      "indonesian": "menyapu"
-    },
-    {
-      "hanzi": "得",
-      "pinyin": "de",
-      "pos_en": "particle",
-      "pos_id": "partikel",
-      "english": "particle linking a verb and its complement",
-      "indonesian": "partikel struktural"
-    },
-    {
-      "hanzi": "东西",
-      "pinyin": "dōngxi",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "thing, stuff",
-      "indonesian": "barang"
-    },
-    {
-      "hanzi": "干净",
-      "pinyin": "gānjìng",
-      "pos_en": "adjective",
-      "pos_id": "kata sifat",
-      "english": "clean",
-      "indonesian": "bersih"
-    },
-    {
-      "hanzi": "怪",
-      "pinyin": "guài",
-      "pos_en": "adjective",
-      "pos_id": "kata sifat",
-      "english": "odd",
-      "indonesian": "aneh"
-    },
-    {
-      "hanzi": "怪不得",
-      "pinyin": "guàibude",
-      "pos_en": "adverb",
-      "pos_id": "kata keterangan",
-      "english": "no wonder",
-      "indonesian": "pantasan"
-    },
-    {
-      "hanzi": "关系",
-      "pinyin": "guānxi",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "relationship",
-      "indonesian": "hubungan"
-    },
-    {
-      "hanzi": "猴",
-      "pinyin": "hóu",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "monkey",
-      "indonesian": "monyet"
-    },
-    {
-      "hanzi": "寄",
-      "pinyin": "jì",
-      "pos_en": "verb",
-      "pos_id": "kata kerja",
-      "english": "to mail",
-      "indonesian": "mengirim"
-    },
-    {
-      "hanzi": "进",
-      "pinyin": "jìn",
-      "pos_en": "verb",
-      "pos_id": "kata kerja",
-      "english": "to enter",
-      "indonesian": "masuk"
-    },
-    {
-      "hanzi": "啦",
-      "pinyin": "la",
-      "pos_en": "particle",
-      "pos_id": "partikel",
-      "english": "sentence-final particle (了 + 啊)",
-      "indonesian": "partikel modal"
-    },
-    {
-      "hanzi": "蜡烛",
-      "pinyin": "làzhú",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "candle",
-      "indonesian": "lilin"
-    },
-    {
-      "hanzi": "礼物",
-      "pinyin": "lǐwù",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "gift",
-      "indonesian": "hadiah"
-    },
-    {
-      "hanzi": "没关系",
-      "pinyin": "méi guānxi",
-      "pos_en": "phrase",
-      "pos_id": "ungkapan",
-      "english": "no problem",
-      "indonesian": "tidak apa-apa"
-    },
-    {
-      "hanzi": "年",
-      "pinyin": "nián",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "year",
-      "indonesian": "tahun"
-    },
-    {
-      "hanzi": "跑",
-      "pinyin": "pǎo",
-      "pos_en": "verb",
-      "pos_id": "kata kerja",
-      "english": "to run",
-      "indonesian": "berlari"
-    },
-    {
-      "hanzi": "生日",
-      "pinyin": "shēngrì",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "birthday",
-      "indonesian": "ulang tahun"
-    },
-    {
-      "hanzi": "收拾",
-      "pinyin": "shōushi",
-      "pos_en": "verb",
-      "pos_id": "kata kerja",
-      "english": "to tidy up; to pack",
-      "indonesian": "merapikan, membereskan"
-    },
-    {
-      "hanzi": "属",
-      "pinyin": "shǔ",
-      "pos_en": "verb",
-      "pos_id": "kata kerja",
-      "english": "to belong to (a zodiac year)",
-      "indonesian": "shio"
-    },
-    {
-      "hanzi": "水果",
-      "pinyin": "shuǐguǒ",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "fruit",
-      "indonesian": "buah"
-    },
-    {
-      "hanzi": "兔",
-      "pinyin": "tù",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "rabbit",
-      "indonesian": "kelinci"
-    },
-    {
-      "hanzi": "兔子",
-      "pinyin": "tùzi",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "rabbit",
-      "indonesian": "kelinci"
-    },
-    {
-      "hanzi": "晚会",
-      "pinyin": "wǎnhuì",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "evening party",
-      "indonesian": "pesta malam"
-    },
-    {
-      "hanzi": "洗",
-      "pinyin": "xǐ",
-      "pos_en": "verb",
-      "pos_id": "kata kerja",
-      "english": "to wash",
-      "indonesian": "mencuci"
-    },
-    {
-      "hanzi": "糟糕",
-      "pinyin": "zāogāo",
-      "pos_en": "adjective",
-      "pos_id": "kata sifat",
-      "english": "oh no; bad",
-      "indonesian": "gawat"
-    },
-    {
-      "hanzi": "整齐",
-      "pinyin": "zhěngqí",
-      "pos_en": "adjective",
-      "pos_id": "kata sifat",
-      "english": "neat",
-      "indonesian": "rapi"
-    },
-    {
-      "hanzi": "正在",
-      "pinyin": "zhèngzài",
-      "pos_en": "adverb",
-      "pos_id": "kata keterangan",
-      "english": "currently (doing)",
-      "indonesian": "sedang"
-    }
+    { "hanzi": "生日", "pinyin": "shēngrì", "pos_en": "noun", "pos_id": "kata benda", "english": "birthday", "indonesian": "ulang tahun" },
+    { "hanzi": "年", "pinyin": "nián", "pos_en": "noun", "pos_id": "kata benda", "english": "year", "indonesian": "tahun" },
+    { "hanzi": "月", "pinyin": "yuè", "pos_en": "noun", "pos_id": "kata benda", "english": "month; moon", "indonesian": "bulan" },
+    { "hanzi": "日", "pinyin": "rì", "pos_en": "noun", "pos_id": "kata benda", "english": "day; date (written)", "indonesian": "hari; tanggal (bahasa tulis)" },
+    { "hanzi": "星期", "pinyin": "xīngqī", "pos_en": "noun", "pos_id": "kata benda", "english": "week; day of the week", "indonesian": "minggu; hari dalam seminggu" },
+    { "hanzi": "今天", "pinyin": "jīntiān", "pos_en": "noun", "pos_id": "kata benda", "english": "today", "indonesian": "hari ini" },
+    { "hanzi": "明天", "pinyin": "míngtiān", "pos_en": "noun", "pos_id": "kata benda", "english": "tomorrow", "indonesian": "besok" },
+    { "hanzi": "昨天", "pinyin": "zuótiān", "pos_en": "noun", "pos_id": "kata benda", "english": "yesterday", "indonesian": "kemarin" },
+    { "hanzi": "几", "pinyin": "jǐ", "pos_en": "pronoun", "pos_id": "kata ganti", "english": "how many (small number)", "indonesian": "berapa (jumlah kecil)" },
+    { "hanzi": "属", "pinyin": "shǔ", "pos_en": "verb", "pos_id": "kata kerja", "english": "to belong to; to be born in the year of", "indonesian": "bershio; termasuk dalam" },
+    { "hanzi": "快乐", "pinyin": "kuàilè", "pos_en": "adjective", "pos_id": "kata sifat", "english": "happy; joyful", "indonesian": "bahagia; gembira" },
+    { "hanzi": "礼物", "pinyin": "lǐwù", "pos_en": "noun", "pos_id": "kata benda", "english": "gift; present", "indonesian": "hadiah; kado" },
+    { "hanzi": "蛋糕", "pinyin": "dàngāo", "pos_en": "noun", "pos_id": "kata benda", "english": "cake", "indonesian": "kue" },
+    { "hanzi": "蜡烛", "pinyin": "làzhú", "pos_en": "noun", "pos_id": "kata benda", "english": "candle", "indonesian": "lilin" },
+    { "hanzi": "派对", "pinyin": "pàiduì", "pos_en": "noun", "pos_id": "kata benda", "english": "party", "indonesian": "pesta" },
+    { "hanzi": "请客", "pinyin": "qǐngkè", "pos_en": "verb", "pos_id": "kata kerja", "english": "to treat someone (to a meal)", "indonesian": "mentraktir" },
+    { "hanzi": "唱歌", "pinyin": "chànggē", "pos_en": "verb", "pos_id": "kata kerja", "english": "to sing", "indonesian": "menyanyi" },
+    { "hanzi": "许愿", "pinyin": "xǔyuàn", "pos_en": "verb", "pos_id": "kata kerja", "english": "to make a wish", "indonesian": "membuat permohonan" },
+    { "hanzi": "祝", "pinyin": "zhù", "pos_en": "verb", "pos_id": "kata kerja", "english": "to wish (someone well)", "indonesian": "mengucapkan harapan baik" },
+    { "hanzi": "送", "pinyin": "sòng", "pos_en": "verb", "pos_id": "kata kerja", "english": "to give (as a gift); to see off", "indonesian": "memberi (sebagai hadiah); mengantar" }
   ],
   "extended_words": [
-    {
-      "hanzi": "动作",
-      "pinyin": "dòngzuò",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "movement",
-      "indonesian": "gerakan"
-    },
-    {
-      "hanzi": "非常",
-      "pinyin": "fēicháng",
-      "pos_en": "adverb",
-      "pos_id": "kata keterangan",
-      "english": "extremely",
-      "indonesian": "sangat"
-    },
-    {
-      "hanzi": "幅",
-      "pinyin": "fú",
-      "pos_en": "measure word",
-      "pos_id": "kata satuan",
-      "english": "counter for pictures and paintings",
-      "indonesian": "satuan gambar, lukisan"
-    },
-    {
-      "hanzi": "画儿",
-      "pinyin": "huàr",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "picture, painting",
-      "indonesian": "gambar, lukisan"
-    },
-    {
-      "hanzi": "可爱",
-      "pinyin": "kě'ài",
-      "pos_en": "adjective",
-      "pos_id": "kata sifat",
-      "english": "cute",
-      "indonesian": "lucu, imut"
-    },
-    {
-      "hanzi": "流利",
-      "pinyin": "liúlì",
-      "pos_en": "adjective",
-      "pos_id": "kata sifat",
-      "english": "fluent",
-      "indonesian": "lancar"
-    },
-    {
-      "hanzi": "篇",
-      "pinyin": "piān",
-      "pos_en": "measure word",
-      "pos_id": "kata satuan",
-      "english": "counter for articles and essays",
-      "indonesian": "lembar / buah"
-    },
-    {
-      "hanzi": "清楚",
-      "pinyin": "qīngchu",
-      "pos_en": "adjective",
-      "pos_id": "kata sifat",
-      "english": "clear",
-      "indonesian": "jelas"
-    },
-    {
-      "hanzi": "通知",
-      "pinyin": "tōngzhī",
-      "pos_en": "noun, verb",
-      "pos_id": "kata benda, kata kerja",
-      "english": "notice; to notify",
-      "indonesian": "pengumuman"
-    },
-    {
-      "hanzi": "文章",
-      "pinyin": "wénzhāng",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "essay, article",
-      "indonesian": "artikel, esai"
-    },
-    {
-      "hanzi": "已",
-      "pinyin": "yǐ",
-      "pos_en": "adverb",
-      "pos_id": "kata keterangan",
-      "english": "already (formal)",
-      "indonesian": "sudah"
-    },
-    {
-      "hanzi": "已经",
-      "pinyin": "yǐjīng",
-      "pos_en": "adverb",
-      "pos_id": "kata keterangan",
-      "english": "already",
-      "indonesian": "sudah"
-    },
-    {
-      "hanzi": "音乐",
-      "pinyin": "yīnyuè",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "music",
-      "indonesian": "musik"
-    }
+    { "hanzi": "生肖", "pinyin": "shēngxiào", "pos_en": "noun", "pos_id": "kata benda", "english": "Chinese zodiac animal", "indonesian": "shio" },
+    { "hanzi": "鼠", "pinyin": "shǔ", "pos_en": "noun", "pos_id": "kata benda", "english": "rat (zodiac)", "indonesian": "tikus (shio)" },
+    { "hanzi": "牛", "pinyin": "niú", "pos_en": "noun", "pos_id": "kata benda", "english": "ox; cow (zodiac)", "indonesian": "sapi (shio)" },
+    { "hanzi": "虎", "pinyin": "hǔ", "pos_en": "noun", "pos_id": "kata benda", "english": "tiger (zodiac)", "indonesian": "macan (shio)" },
+    { "hanzi": "兔", "pinyin": "tù", "pos_en": "noun", "pos_id": "kata benda", "english": "rabbit (zodiac)", "indonesian": "kelinci (shio)" },
+    { "hanzi": "龙", "pinyin": "lóng", "pos_en": "noun", "pos_id": "kata benda", "english": "dragon (zodiac)", "indonesian": "naga (shio)" },
+    { "hanzi": "蛇", "pinyin": "shé", "pos_en": "noun", "pos_id": "kata benda", "english": "snake (zodiac)", "indonesian": "ular (shio)" },
+    { "hanzi": "马", "pinyin": "mǎ", "pos_en": "noun", "pos_id": "kata benda", "english": "horse (zodiac)", "indonesian": "kuda (shio)" },
+    { "hanzi": "羊", "pinyin": "yáng", "pos_en": "noun", "pos_id": "kata benda", "english": "goat; sheep (zodiac)", "indonesian": "kambing/domba (shio)" },
+    { "hanzi": "猴", "pinyin": "hóu", "pos_en": "noun", "pos_id": "kata benda", "english": "monkey (zodiac)", "indonesian": "monyet (shio)" },
+    { "hanzi": "鸡", "pinyin": "jī", "pos_en": "noun", "pos_id": "kata benda", "english": "rooster; chicken (zodiac)", "indonesian": "ayam (shio)" },
+    { "hanzi": "狗", "pinyin": "gǒu", "pos_en": "noun", "pos_id": "kata benda", "english": "dog (zodiac)", "indonesian": "anjing (shio)" },
+    { "hanzi": "猪", "pinyin": "zhū", "pos_en": "noun", "pos_id": "kata benda", "english": "pig (zodiac)", "indonesian": "babi (shio)" },
+    { "hanzi": "出生", "pinyin": "chūshēng", "pos_en": "verb", "pos_id": "kata kerja", "english": "to be born", "indonesian": "lahir" },
+    { "hanzi": "一起", "pinyin": "yìqǐ", "pos_en": "adverb", "pos_id": "kata keterangan", "english": "together", "indonesian": "bersama-sama" },
+    { "hanzi": "邀请", "pinyin": "yāoqǐng", "pos_en": "verb", "pos_id": "kata kerja", "english": "to invite", "indonesian": "mengundang" },
+    { "hanzi": "参加", "pinyin": "cānjiā", "pos_en": "verb", "pos_id": "kata kerja", "english": "to attend; to take part in", "indonesian": "menghadiri; ikut serta" }
   ],
-  "names": [],
+  "names": [
+    { "hanzi": "马丽", "pinyin": "Mǎ Lì", "english": "Ma Li (common female name)", "indonesian": "Ma Li (nama perempuan yang umum)" },
+    { "hanzi": "高飞", "pinyin": "Gāo Fēi", "english": "Gao Fei (common male name)", "indonesian": "Gao Fei (nama laki-laki yang umum)" },
+    { "hanzi": "唐俊", "pinyin": "Táng Jùn", "english": "Tang Jun (common male name)", "indonesian": "Tang Jun (nama laki-laki yang umum)" },
+    { "hanzi": "何敏", "pinyin": "Hé Mǐn", "english": "He Min (common name)", "indonesian": "He Min (nama umum)" }
+  ],
   "extra_words": [
-    {
-      "hanzi": "画画儿",
-      "pinyin": "huà huàr",
-      "english": "to draw (a picture)",
-      "indonesian": "menggambar",
-      "note": "tulisan tangan"
-    }
+    { "hanzi": "生日快乐", "pinyin": "shēngrì kuàilè", "english": "Happy birthday", "indonesian": "Selamat ulang tahun", "note": "ucapan paling umum" },
+    { "hanzi": "祝你生日快乐", "pinyin": "zhù nǐ shēngrì kuàilè", "english": "Wishing you a happy birthday", "indonesian": "Semoga ulang tahunmu menyenangkan", "note": "bentuk lengkap dengan 祝" },
+    { "hanzi": "你的生日是几月几号", "pinyin": "nǐ de shēngrì shì jǐ yuè jǐ hào", "english": "When is your birthday?", "indonesian": "Tanggal berapa ulang tahunmu?", "note": "pola tanggal: 几月几号 = bulan berapa, tanggal berapa" },
+    { "hanzi": "今天是我的生日", "pinyin": "jīntiān shì wǒ de shēngrì", "english": "Today is my birthday", "indonesian": "Hari ini ulang tahun saya", "note": "" },
+    { "hanzi": "我属龙", "pinyin": "wǒ shǔ lóng", "english": "My zodiac sign is the dragon", "indonesian": "Shio saya naga", "note": "pola: 我属 + hewan shio" },
+    { "hanzi": "你属什么", "pinyin": "nǐ shǔ shénme", "english": "What is your zodiac animal?", "indonesian": "Shiomu apa?", "note": "" },
+    { "hanzi": "谢谢你的礼物", "pinyin": "xièxie nǐ de lǐwù", "english": "Thank you for your gift", "indonesian": "Terima kasih atas hadiahmu", "note": "" },
+    { "hanzi": "请来参加我的生日派对", "pinyin": "qǐng lái cānjiā wǒ de shēngrì pàiduì", "english": "Please come to my birthday party", "indonesian": "Silakan datang ke pesta ulang tahunku", "note": "kalimat undangan" },
+    { "hanzi": "我们一起唱生日歌", "pinyin": "wǒmen yìqǐ chàng shēngrìgē", "english": "Let's sing the birthday song together", "indonesian": "Mari kita menyanyikan lagu ulang tahun bersama", "note": "" }
   ]
 }

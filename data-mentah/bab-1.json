@@ -5,444 +5,58 @@
     "title_en": "Family & Self-Introduction"
   },
   "core_words": [
-    {
-      "hanzi": "不对",
-      "pinyin": "búduì",
-      "pos_en": "adjective",
-      "pos_id": "kata sifat",
-      "english": "incorrect",
-      "indonesian": "salah"
-    },
-    {
-      "hanzi": "猜",
-      "pinyin": "cāi",
-      "pos_en": "verb",
-      "pos_id": "kata kerja",
-      "english": "to guess",
-      "indonesian": "menebak"
-    },
-    {
-      "hanzi": "大夫",
-      "pinyin": "dàifu",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "doctor (colloquial)",
-      "indonesian": "(dari China) / tabib"
-    },
-    {
-      "hanzi": "大学",
-      "pinyin": "dàxué",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "university",
-      "indonesian": "universitas"
-    },
-    {
-      "hanzi": "对",
-      "pinyin": "duì",
-      "pos_en": "adjective",
-      "pos_id": "kata sifat",
-      "english": "correct",
-      "indonesian": "benar"
-    },
-    {
-      "hanzi": "发",
-      "pinyin": "fā",
-      "pos_en": "verb",
-      "pos_id": "kata kerja",
-      "english": "to send",
-      "indonesian": "mengirim"
-    },
-    {
-      "hanzi": "给",
-      "pinyin": "gěi",
-      "pos_en": "preposition",
-      "pos_id": "kata depan",
-      "english": "to give; for (someone)",
-      "indonesian": "memberi / kasih"
-    },
-    {
-      "hanzi": "工作",
-      "pinyin": "gōngzuò",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "job; to work",
-      "indonesian": "bekerja, pekerjaan"
-    },
-    {
-      "hanzi": "狗",
-      "pinyin": "gǒu",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "dog",
-      "indonesian": "anjing"
-    },
-    {
-      "hanzi": "几",
-      "pinyin": "jǐ",
-      "pos_en": "pronoun",
-      "pos_id": "kata ganti",
-      "english": "how many (small numbers)",
-      "indonesian": "berapa banyak"
-    },
-    {
-      "hanzi": "交",
-      "pinyin": "jiāo",
-      "pos_en": "verb",
-      "pos_id": "kata kerja",
-      "english": "to make (friends)",
-      "indonesian": "berteman"
-    },
-    {
-      "hanzi": "姐姐",
-      "pinyin": "jiějie",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "older sister",
-      "indonesian": "kakak perempuan"
-    },
-    {
-      "hanzi": "今天",
-      "pinyin": "jīntiān",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "today",
-      "indonesian": "hari ini"
-    },
-    {
-      "hanzi": "口",
-      "pinyin": "kǒu",
-      "pos_en": "measure word",
-      "pos_id": "kata satuan",
-      "english": "counter for family members",
-      "indonesian": "untuk orang rumah"
-    },
-    {
-      "hanzi": "妹妹",
-      "pinyin": "mèimei",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "younger sister",
-      "indonesian": "adik perempuan"
-    },
-    {
-      "hanzi": "谁",
-      "pinyin": "shéi",
-      "pos_en": "pronoun",
-      "pos_id": "kata ganti",
-      "english": "who",
-      "indonesian": "siapa"
-    },
-    {
-      "hanzi": "研究",
-      "pinyin": "yánjiū",
-      "pos_en": "verb",
-      "pos_id": "kata kerja",
-      "english": "to research",
-      "indonesian": "meneliti"
-    },
-    {
-      "hanzi": "研究生",
-      "pinyin": "yánjiūshēng",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "postgraduate student",
-      "indonesian": "mahasiswa pascasarjana"
-    },
-    {
-      "hanzi": "邮件",
-      "pinyin": "yóujiàn",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "email",
-      "indonesian": "email"
-    },
-    {
-      "hanzi": "只",
-      "pinyin": "zhī",
-      "pos_en": "measure word",
-      "pos_id": "kata satuan",
-      "english": "counter for animals and one of a pair",
-      "indonesian": "seekor (hewan kecil)"
-    }
+    { "hanzi": "家", "pinyin": "jiā", "pos_en": "noun", "pos_id": "kata benda", "english": "family; home", "indonesian": "keluarga; rumah" },
+    { "hanzi": "爸爸", "pinyin": "bàba", "pos_en": "noun", "pos_id": "kata benda", "english": "father; dad", "indonesian": "ayah; papa" },
+    { "hanzi": "妈妈", "pinyin": "māma", "pos_en": "noun", "pos_id": "kata benda", "english": "mother; mom", "indonesian": "ibu; mama" },
+    { "hanzi": "哥哥", "pinyin": "gēge", "pos_en": "noun", "pos_id": "kata benda", "english": "older brother", "indonesian": "kakak laki-laki" },
+    { "hanzi": "姐姐", "pinyin": "jiějie", "pos_en": "noun", "pos_id": "kata benda", "english": "older sister", "indonesian": "kakak perempuan" },
+    { "hanzi": "弟弟", "pinyin": "dìdi", "pos_en": "noun", "pos_id": "kata benda", "english": "younger brother", "indonesian": "adik laki-laki" },
+    { "hanzi": "妹妹", "pinyin": "mèimei", "pos_en": "noun", "pos_id": "kata benda", "english": "younger sister", "indonesian": "adik perempuan" },
+    { "hanzi": "爷爷", "pinyin": "yéye", "pos_en": "noun", "pos_id": "kata benda", "english": "grandfather (father's side)", "indonesian": "kakek (dari pihak ayah)" },
+    { "hanzi": "奶奶", "pinyin": "nǎinai", "pos_en": "noun", "pos_id": "kata benda", "english": "grandmother (father's side)", "indonesian": "nenek (dari pihak ayah)" },
+    { "hanzi": "孩子", "pinyin": "háizi", "pos_en": "noun", "pos_id": "kata benda", "english": "child", "indonesian": "anak" },
+    { "hanzi": "我", "pinyin": "wǒ", "pos_en": "pronoun", "pos_id": "kata ganti", "english": "I; me", "indonesian": "saya; aku" },
+    { "hanzi": "你", "pinyin": "nǐ", "pos_en": "pronoun", "pos_id": "kata ganti", "english": "you", "indonesian": "kamu; Anda" },
+    { "hanzi": "他", "pinyin": "tā", "pos_en": "pronoun", "pos_id": "kata ganti", "english": "he; him", "indonesian": "dia (laki-laki)" },
+    { "hanzi": "她", "pinyin": "tā", "pos_en": "pronoun", "pos_id": "kata ganti", "english": "she; her", "indonesian": "dia (perempuan)" },
+    { "hanzi": "叫", "pinyin": "jiào", "pos_en": "verb", "pos_id": "kata kerja", "english": "to be called; to call", "indonesian": "bernama; memanggil" },
+    { "hanzi": "姓", "pinyin": "xìng", "pos_en": "verb", "pos_id": "kata kerja", "english": "to have the surname", "indonesian": "bermarga" },
+    { "hanzi": "是", "pinyin": "shì", "pos_en": "verb", "pos_id": "kata kerja", "english": "to be (am, is, are)", "indonesian": "adalah" },
+    { "hanzi": "有", "pinyin": "yǒu", "pos_en": "verb", "pos_id": "kata kerja", "english": "to have; there is", "indonesian": "punya; ada" },
+    { "hanzi": "岁", "pinyin": "suì", "pos_en": "measure word", "pos_id": "kata satuan", "english": "years of age", "indonesian": "tahun (untuk usia)" },
+    { "hanzi": "认识", "pinyin": "rènshi", "pos_en": "verb", "pos_id": "kata kerja", "english": "to know (a person); to meet", "indonesian": "mengenal; berkenalan" }
   ],
   "extended_words": [
-    {
-      "hanzi": "办公",
-      "pinyin": "bàngōng",
-      "pos_en": "verb",
-      "pos_id": "kata kerja",
-      "english": "to work in an office",
-      "indonesian": "kerja di kantor"
-    },
-    {
-      "hanzi": "弟弟",
-      "pinyin": "dìdi",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "younger brother",
-      "indonesian": "adik laki-laki"
-    },
-    {
-      "hanzi": "封",
-      "pinyin": "fēng",
-      "pos_en": "measure word",
-      "pos_id": "kata satuan",
-      "english": "counter for letters",
-      "indonesian": "satuan untuk email/surat"
-    },
-    {
-      "hanzi": "副",
-      "pinyin": "fù",
-      "pos_en": "adjective",
-      "pos_id": "kata sifat",
-      "english": "deputy",
-      "indonesian": "wakil"
-    },
-    {
-      "hanzi": "工厂",
-      "pinyin": "gōngchǎng",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "factory",
-      "indonesian": "pabrik"
-    },
-    {
-      "hanzi": "工人",
-      "pinyin": "gōngrén",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "laborer",
-      "indonesian": "pekerja"
-    },
-    {
-      "hanzi": "公司",
-      "pinyin": "gōngsī",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "company",
-      "indonesian": "perusahaan"
-    },
-    {
-      "hanzi": "教学",
-      "pinyin": "jiàoxué",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "teaching",
-      "indonesian": "mengajar"
-    },
-    {
-      "hanzi": "家庭",
-      "pinyin": "jiātíng",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "family, household",
-      "indonesian": "keluarga"
-    },
-    {
-      "hanzi": "经理",
-      "pinyin": "jīnglǐ",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "manager",
-      "indonesian": "manager"
-    },
-    {
-      "hanzi": "谈",
-      "pinyin": "tán",
-      "pos_en": "verb",
-      "pos_id": "kata kerja",
-      "english": "to talk, to discuss",
-      "indonesian": "diskusi"
-    },
-    {
-      "hanzi": "为",
-      "pinyin": "wèi",
-      "pos_en": "preposition",
-      "pos_id": "kata depan",
-      "english": "for; for the sake of",
-      "indonesian": "untuk, demi"
-    },
-    {
-      "hanzi": "为什么",
-      "pinyin": "wèi shénme",
-      "pos_en": "question phrase",
-      "pos_id": "frasa tanya",
-      "english": "why",
-      "indonesian": "kenapa"
-    },
-    {
-      "hanzi": "校",
-      "pinyin": "xiào",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "school",
-      "indonesian": "sekolah"
-    },
-    {
-      "hanzi": "小学",
-      "pinyin": "xiǎoxué",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "elementary school",
-      "indonesian": "SD"
-    },
-    {
-      "hanzi": "校长",
-      "pinyin": "xiàozhǎng",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "school principal",
-      "indonesian": "kepala sekolah"
-    },
-    {
-      "hanzi": "信",
-      "pinyin": "xìn",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "letter",
-      "indonesian": "surat"
-    },
-    {
-      "hanzi": "医院",
-      "pinyin": "yīyuàn",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "hospital",
-      "indonesian": "rumah sakit"
-    },
-    {
-      "hanzi": "院长",
-      "pinyin": "yuànzhǎng",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "head of an institution (e.g. hospital director)",
-      "indonesian": "direktur"
-    },
-    {
-      "hanzi": "职员",
-      "pinyin": "zhíyuán",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "office staff",
-      "indonesian": "karyawan"
-    },
-    {
-      "hanzi": "中学",
-      "pinyin": "zhōngxué",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "secondary school",
-      "indonesian": "sekolah menengah"
-    },
-    {
-      "hanzi": "主妇",
-      "pinyin": "zhǔfù",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "homemaker",
-      "indonesian": "ibu rumah tangga"
-    },
-    {
-      "hanzi": "主任",
-      "pinyin": "zhǔrèn",
-      "pos_en": "noun",
-      "pos_id": "kata benda",
-      "english": "head of a department",
-      "indonesian": "kepala (bagian masing-masing)"
-    }
+    { "hanzi": "朋友", "pinyin": "péngyou", "pos_en": "noun", "pos_id": "kata benda", "english": "friend", "indonesian": "teman" },
+    { "hanzi": "同学", "pinyin": "tóngxué", "pos_en": "noun", "pos_id": "kata benda", "english": "classmate", "indonesian": "teman sekelas" },
+    { "hanzi": "老师", "pinyin": "lǎoshī", "pos_en": "noun", "pos_id": "kata benda", "english": "teacher", "indonesian": "guru" },
+    { "hanzi": "学生", "pinyin": "xuésheng", "pos_en": "noun", "pos_id": "kata benda", "english": "student", "indonesian": "pelajar; murid" },
+    { "hanzi": "欢迎", "pinyin": "huānyíng", "pos_en": "verb", "pos_id": "kata kerja", "english": "to welcome", "indonesian": "menyambut; selamat datang" },
+    { "hanzi": "高兴", "pinyin": "gāoxìng", "pos_en": "adjective", "pos_id": "kata sifat", "english": "glad; happy", "indonesian": "senang" },
+    { "hanzi": "住", "pinyin": "zhù", "pos_en": "verb", "pos_id": "kata kerja", "english": "to live; to stay", "indonesian": "tinggal" },
+    { "hanzi": "人", "pinyin": "rén", "pos_en": "noun", "pos_id": "kata benda", "english": "person; people", "indonesian": "orang" },
+    { "hanzi": "什么", "pinyin": "shénme", "pos_en": "pronoun", "pos_id": "kata ganti", "english": "what", "indonesian": "apa" },
+    { "hanzi": "谁", "pinyin": "shéi", "pos_en": "pronoun", "pos_id": "kata ganti", "english": "who", "indonesian": "siapa" },
+    { "hanzi": "哪儿", "pinyin": "nǎr", "pos_en": "pronoun", "pos_id": "kata ganti", "english": "where", "indonesian": "di mana" },
+    { "hanzi": "的", "pinyin": "de", "pos_en": "particle", "pos_id": "partikel", "english": "possessive particle ('s)", "indonesian": "partikel kepemilikan (milik ...)" },
+    { "hanzi": "中国", "pinyin": "Zhōngguó", "pos_en": "noun", "pos_id": "kata benda", "english": "China", "indonesian": "Tiongkok" },
+    { "hanzi": "印度尼西亚", "pinyin": "Yìndùníxīyà", "pos_en": "noun", "pos_id": "kata benda", "english": "Indonesia", "indonesian": "Indonesia" }
   ],
   "names": [
-    {
-      "hanzi": "贝拉",
-      "pinyin": "Bèilā",
-      "english": "Bella",
-      "indonesian": "Bella (nama orang)"
-    },
-    {
-      "hanzi": "海伦",
-      "pinyin": "Hǎilún",
-      "english": "Helen",
-      "indonesian": "Helen (nama orang)"
-    }
+    { "hanzi": "小明", "pinyin": "Xiǎomíng", "english": "Xiaoming (common given name)", "indonesian": "Xiaoming (nama umum, biasanya laki-laki)" },
+    { "hanzi": "李华", "pinyin": "Lǐ Huá", "english": "Li Hua (common name)", "indonesian": "Li Hua (nama umum)" },
+    { "hanzi": "王芳", "pinyin": "Wáng Fāng", "english": "Wang Fang (common female name)", "indonesian": "Wang Fang (nama perempuan yang umum)" },
+    { "hanzi": "张伟", "pinyin": "Zhāng Wěi", "english": "Zhang Wei (common male name)", "indonesian": "Zhang Wei (nama laki-laki yang umum)" },
+    { "hanzi": "玛丽", "pinyin": "Mǎlì", "english": "Mary", "indonesian": "Mary (transliterasi nama asing)" }
   ],
   "extra_words": [
-    {
-      "hanzi": "办公室",
-      "pinyin": "bàngōngshì",
-      "english": "office",
-      "indonesian": "kantor",
-      "note": "hanzi 室 ditambahkan tulisan tangan di baris 办公; di margin ada catatan '...ong si => kantor'"
-    },
-    {
-      "hanzi": "初中",
-      "pinyin": "chū zhōng",
-      "english": "junior high school",
-      "indonesian": "SMP",
-      "note": "tulisan tangan"
-    },
-    {
-      "hanzi": "大",
-      "pinyin": "dà",
-      "english": "big, upper",
-      "indonesian": "ke atas / besar",
-      "note": "tulisan tangan; catatan di atas New words"
-    },
-    {
-      "hanzi": "高中",
-      "pinyin": "gāo zhōng",
-      "english": "senior high school",
-      "indonesian": "SMA",
-      "note": "tulisan tangan"
-    },
-    {
-      "hanzi": "狮子",
-      "pinyin": "shīzi",
-      "english": "lion",
-      "indonesian": "singa",
-      "note": "tulisan tangan; pinyin tidak ditulis, ditambahkan dari hanzi"
-    },
-    {
-      "hanzi": "小",
-      "pinyin": "xiǎo",
-      "english": "small",
-      "indonesian": "kecil",
-      "note": "tulisan tangan; catatan di atas New words"
-    },
-    {
-      "hanzi": "小学",
-      "pinyin": "xiǎoxué",
-      "english": "primary school",
-      "indonesian": "SD",
-      "note": "tulisan tangan; pinyin dari buku"
-    },
-    {
-      "hanzi": "因为",
-      "pinyin": "yīnwèi",
-      "english": "because",
-      "indonesian": "karena (jawaban untuk 为什么 wèi shénme)",
-      "note": "tulisan tangan"
-    },
-    {
-      "hanzi": "医生",
-      "pinyin": "yīshēng",
-      "english": "doctor (Western medicine)",
-      "indonesian": "dokter barat",
-      "note": "tulisan tangan"
-    },
-    {
-      "hanzi": "医院院长",
-      "pinyin": "yīyuàn yuànzhǎng",
-      "english": "hospital director",
-      "indonesian": "direktur rumah sakit",
-      "note": "tulisan tangan"
-    },
-    {
-      "hanzi": "中",
-      "pinyin": "zhōng",
-      "english": "middle",
-      "indonesian": "menengah",
-      "note": "tulisan tangan; catatan di atas New words"
-    }
+    { "hanzi": "你好", "pinyin": "nǐ hǎo", "english": "hello", "indonesian": "halo", "note": "salam paling umum untuk semua situasi" },
+    { "hanzi": "我叫…", "pinyin": "wǒ jiào …", "english": "My name is ...", "indonesian": "Nama saya ...", "note": "pola: 我叫 + nama" },
+    { "hanzi": "认识你很高兴", "pinyin": "rènshi nǐ hěn gāoxìng", "english": "Nice to meet you", "indonesian": "Senang berkenalan denganmu", "note": "diucapkan saat pertama kali bertemu" },
+    { "hanzi": "你家有几口人", "pinyin": "nǐ jiā yǒu jǐ kǒu rén", "english": "How many people are in your family?", "indonesian": "Ada berapa orang di keluargamu?", "note": "口 adalah penggolong anggota keluarga" },
+    { "hanzi": "你今年多大了", "pinyin": "nǐ jīnnián duō dà le", "english": "How old are you this year?", "indonesian": "Tahun ini usiamu berapa?", "note": "cara akrab menanyakan usia; 今年 = tahun ini" },
+    { "hanzi": "请多关照", "pinyin": "qǐng duō guānzhào", "english": "Please take care of me / I look forward to working with you", "indonesian": "Mohon bimbingan dan kerja samanya", "note": "ungkapan sopan setelah berkenalan" },
+    { "hanzi": "我是印度尼西亚人", "pinyin": "wǒ shì Yìndùníxīyà rén", "english": "I am Indonesian", "indonesian": "Saya orang Indonesia", "note": "pola: 我是 + negara + 人" },
+    { "hanzi": "好久不见", "pinyin": "hǎojiǔ bú jiàn", "english": "Long time no see", "indonesian": "Lama tidak bertemu", "note": "dipakai saat bertemu teman lama" }
   ]
 }
