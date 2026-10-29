@@ -17,6 +17,7 @@ Aplikasi ini saya buat untuk menutup kekurangan atau kesusahan belajar. Kosakata
 - Daftar kosakata berbentuk tabel di layar lebar dan daftar kartu di ponsel.
 - Beranda berisi ringkasan target harian 10 kata berbeda, streak, jumlah kata hafal, dan daftar bab sederhana: nomor, judul, jumlah kata, status (Belum mulai, Sedang, Selesai), dan bar progres.
 - Halaman progress menampilkan riwayat belajar harian berupa grafik batang 7 atau 30 hari (kata berbeda per hari, garis target, total, hari aktif, rata-rata, dan jumlah hari target tercapai; angkanya juga tersedia sebagai tabel untuk pembaca layar), persentase hafal per bab dan per kategori, isi keranjang Leitner, serta panda yang makan bambu. Makin banyak kata yang hafal, makin banyak batang bambu yang habis.
+- Ekspor dan impor progress lewat file JSON di halaman Progress. Impor memeriksa isi file (format, versi kosakata, dan nilai tiap kolom), membuang data yang tidak dikenal, lalu meminta konfirmasi dengan ringkasan isi cadangan sebelum mengganti progress yang ada. Cadangan dari versi kosakata yang berbeda ditolak, karena id kata bisa menunjuk ke kata lain.
 - Konfeti muncul saat skor kuis minimal 80% dan saat target harian tercapai.
 - Mode terang (default untuk pengunjung baru), gelap, atau ikut sistem, dan tombol reset progress dengan dialog konfirmasi.
 - Sidebar desktop bisa diciutkan menjadi strip ikon dan statusnya diingat di browser. Di ponsel dan tablet sidebar menjadi drawer yang dibuka dari tombol menu.
@@ -166,9 +167,9 @@ Data menyimpan beberapa arti dalam satu string yang dipisah `;`. Pada pilihan ja
 data-mentah/             data sumber per bab (bab-N.json)
 scripts/build-vocab.js   normalisasi dan validasi data, menghasilkan src/data/vocab.json
 src/
-  components/            PandaMascot, Flashcard, QuizQuestion, ChapterCard, FilterPanel, Dropdown, Sidebar, HistoryChart, dan lainnya
+  components/            PandaMascot, Flashcard, QuizQuestion, ChapterCard, FilterPanel, Dropdown, Sidebar, HistoryChart, BackupPanel, dan lainnya
   hooks/                 useProgress, useSettings, useSidebar, useSpeech, useFilters, useHashRoute
-  lib/                   vocab, quiz, leitner, chapterColors, storage, constants, dates
+  lib/                   vocab, quiz, leitner, chapterColors, storage, constants, dates, backup
   pages/                 Home, Study, Quiz, Vocab, Progress
   index.css              token warna (CSS variables) dan animasi
 tailwind.config.js       token yang dipasang ke Tailwind
@@ -178,7 +179,6 @@ tailwind.config.js       token yang dipasang ke Tailwind
 
 - Kuis mengetik pinyin dan kuis mendengarkan.
 - Interval Leitner berbasis tanggal, jadi kata muncul lagi setelah jeda tertentu dan tidak hanya lewat bobot acak.
-- Ekspor dan impor progress untuk berpindah perangkat.
 - Opsi menandai kata sebagai hafal otomatis saat mencapai kotak 3.
 - Pengelompokan kata berdasarkan level HSK.
 - Versi PWA agar bisa dipakai tanpa internet, dengan font yang disimpan lokal.

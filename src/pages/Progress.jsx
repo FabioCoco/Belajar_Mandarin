@@ -7,6 +7,7 @@ import ProgressRing from '../components/ProgressRing.jsx';
 import ChapterIcon from '../components/ChapterIcon.jsx';
 import LeitnerBaskets from '../components/LeitnerBaskets.jsx';
 import HistoryChart from '../components/HistoryChart.jsx';
+import BackupPanel from '../components/BackupPanel.jsx';
 import { EmptyState } from '../components/StateViews.jsx';
 import { useProgress } from '../hooks/useProgress.jsx';
 import { chapterStyle } from '../lib/chapterColors.js';
@@ -121,6 +122,13 @@ export default function Progress() {
         </h2>
         <LeitnerBaskets counts={stats.boxes} />
         <p className="text-sm text-muted">Kata yang belum pernah muncul di kuis berada di kotak 1. Jawab benar untuk menaikkannya, jawab salah dan ia kembali ke kotak 1.</p>
+      </section>
+
+      <section aria-labelledby="judul-cadangan" className="card p-4 sm:p-5">
+        <h2 id="judul-cadangan" className="mb-3 text-xl">
+          Cadangan progress
+        </h2>
+        <BackupPanel />
       </section>
     </div>
   );

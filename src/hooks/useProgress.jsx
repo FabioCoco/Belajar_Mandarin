@@ -3,6 +3,7 @@ import { loadJSON, saveJSON, removeKey } from '../lib/storage.js';
 import { KEYS } from '../lib/constants.js';
 import { nextBox } from '../lib/leitner.js';
 import { dateKey, daysAgo, yesterdayKey } from '../lib/dates.js';
+import { buildBackup } from '../lib/backup.js';
 import { version as DATASET_VERSION } from '../data/vocab-version.json';
 
 // Bentuk data tersimpan:
@@ -107,6 +108,10 @@ export function ProgressProvider({ children }) {
     });
   }, []);
 
+  // Cadangan: ekspor state saat ini, impor mengganti seluruh progress dengan state yang sudah divalidasi (lib/backup.js)
+  const exportBackup = useCallback(() => buildBackup(state), [state]);
+  const importState = useCallback((next) => setState(next), []);
+
   const resetAll = useCallback(() => {
     removeKey(KEYS.progress);
     setState(emptyState());
@@ -129,10 +134,12 @@ export function ProgressProvider({ children }) {
       markReviewed,
       answerQuiz,
       resetAll,
+      exportBackup,
+      importState,
       datasetReset,
       dismissDatasetReset,
     };
-  }, [state, getWord, isMemorized, setMemorized, markReviewed, answerQuiz, resetAll, datasetReset, dismissDatasetReset]);
+  }, [state, getWord, isMemorized, setMemorized, markReviewed, answerQuiz, resetAll, exportBackup, importState, datasetReset, dismissDatasetReset]);
 
   return <ProgressContext.Provider value={value}>{children}</ProgressContext.Provider>;
 }
