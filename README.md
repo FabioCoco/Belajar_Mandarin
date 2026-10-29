@@ -4,9 +4,7 @@ Aplikasi web untuk belajar kosakata bahasa Mandarin lewat flashcard, kuis piliha
 
 ## Latar belakang
 
-Saya belajar bahasa Mandarin dari buku pelajaran. Daftar kata di buku sulit dipakai untuk mengulang: urutannya tidak bisa diacak, artinya tidak bisa ditutup untuk menguji diri, dan tidak ada catatan kata mana yang sudah hafal.
-
-Aplikasi ini saya buat untuk menutup kekurangan itu. Kosakata dikelompokkan per bab tema, lalu bisa dipelajari dengan flashcard, diuji dengan kuis, dan dipantau lewat halaman progress.
+Aplikasi ini saya buat untuk menutup kekurangan atau kesusahan belajar. Kosakata dikelompokkan per bab tema, lalu bisa dipelajari dengan flashcard, diuji dengan kuis, dan dipantau lewat halaman progress.
 
 ## Fitur
 
