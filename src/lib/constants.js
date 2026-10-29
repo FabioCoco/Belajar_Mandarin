@@ -7,4 +7,5 @@ export const DAILY_TARGET = 10; // kata per hari
 export const KEYS = {
   settings: 'settings:v1',
   progress: 'progress:v1',
+  sidebar: 'sidebar:v1',
 };

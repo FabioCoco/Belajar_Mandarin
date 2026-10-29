@@ -1,7 +1,7 @@
 import { RotateCcw } from 'lucide-react';
 import { CATEGORIES, allPos } from '../lib/vocab.js';
 import ChapterFilter from './ChapterFilter.jsx';
-import Chip from './Chip.jsx';
+import Dropdown from './Dropdown.jsx';
 import Segmented from './Segmented.jsx';
 
 const Section = ({ title, children }) => (
@@ -12,32 +12,33 @@ const Section = ({ title, children }) => (
 );
 
 // Isi filter. Dipakai sebagai panel samping (desktop lebar) dan di dalam bottom sheet (mobile).
-export default function FilterPanel({ filters, toggle, set, reset, activeCount }) {
+const POS_OPTIONS = [{ value: 'all', label: 'Semua jenis kata' }, ...allPos.map((p) => ({ value: p, label: p }))];
+const KATEGORI_OPTIONS = [{ value: 'all', label: 'Semua kategori' }, ...CATEGORIES.map((c) => ({ value: c.key, label: c.label }))];
+
+export default function FilterPanel({ filters, set, reset, activeCount }) {
   return (
     <div className="flex flex-col gap-5">
       <Section title="Bab">
-        <ChapterFilter selected={filters.babs} onToggle={toggle} />
+        <ChapterFilter selected={filters.babs} onChange={(v) => set('babs', v)} />
       </Section>
 
       <Section title="Kategori">
-        <div className="flex flex-wrap gap-2">
-          {CATEGORIES.map((c) => (
-            <Chip key={c.key} selected={filters.kategori.includes(c.key)} onClick={() => toggle('kategori', c.key)}>
-              {c.label}
-            </Chip>
-          ))}
-        </div>
+        <Dropdown
+          label="Kategori"
+          value={filters.kategori[0] ?? 'all'}
+          onChange={(v) => set('kategori', v === 'all' ? [] : [v])}
+          options={KATEGORI_OPTIONS}
+        />
       </Section>
 
       {allPos.length > 0 && (
         <Section title="Jenis kata">
-          <div className="flex flex-wrap gap-2">
-            {allPos.map((p) => (
-              <Chip key={p} selected={filters.pos.includes(p)} onClick={() => toggle('pos', p)}>
-                {p}
-              </Chip>
-            ))}
-          </div>
+          <Dropdown
+            label="Jenis kata"
+            value={filters.pos[0] ?? 'all'}
+            onChange={(v) => set('pos', v === 'all' ? [] : [v])}
+            options={POS_OPTIONS}
+          />
         </Section>
       )}
 

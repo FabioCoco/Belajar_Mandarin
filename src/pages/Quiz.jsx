@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Play, X } from 'lucide-react';
 import FilterLayout from '../components/FilterLayout.jsx';
-import ChapterFilter from '../components/ChapterFilter.jsx';
 import LeitnerBaskets from '../components/LeitnerBaskets.jsx';
 import QuizQuestion from '../components/QuizQuestion.jsx';
 import QuizResult from '../components/QuizResult.jsx';
@@ -23,7 +22,7 @@ const COUNT_OPTIONS = [
 ];
 
 export default function Quiz({ filterApi }) {
-  const { filters, toggle, reset } = filterApi;
+  const { filters, reset } = filterApi;
   const { lang } = useSettings();
   const { words, isMemorized, getWord, answerQuiz } = useProgress();
   const speech = useSpeech();
@@ -194,8 +193,6 @@ export default function Quiz({ filterApi }) {
             </div>
             {filterButton}
           </div>
-
-          <ChapterFilter selected={filters.babs} onToggle={toggle} />
 
           <section className="card flex flex-col gap-4 p-4">
             <div>

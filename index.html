@@ -25,7 +25,7 @@
       // Terapkan tema sebelum render agar tidak berkedip
       try {
         var s = JSON.parse(localStorage.getItem('pbm:settings:v1') || '{}');
-        var d = s.theme === 'dark' || ((!s.theme || s.theme === 'system') && matchMedia('(prefers-color-scheme: dark)').matches);
+        var d = s.theme === 'dark' || (s.theme === 'system' && matchMedia('(prefers-color-scheme: dark)').matches);
         if (d) document.documentElement.classList.add('dark');
       } catch (e) {}
     </script>

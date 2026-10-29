@@ -118,6 +118,12 @@
    ============================================================ */
 /* transform-box hanya untuk elemen yang dianimasikan; jika dipasang global, atribut
    transform="rotate(a cx cy)" pada elips lain ikut bergeser. */
+/* Mode gelap: bagian hitam panda (telinga, tangan, kaki) menyatu dengan latar, jadi siluetnya diberi kontur terang tipis. */
+.dark .panda {
+  filter: drop-shadow(1.5px 0 0 rgb(var(--ink) / .85)) drop-shadow(-1.5px 0 0 rgb(var(--ink) / .85))
+    drop-shadow(0 1.5px 0 rgb(var(--ink) / .85)) drop-shadow(0 -1.5px 0 rgb(var(--ink) / .85));
+}
+
 .panda-eye, .panda-head, .panda-all, .panda-z, .panda-chew, .panda-bubble, .panda-confetti { transform-box: fill-box; }
 .panda-anim .panda-eye { transform-origin: center; animation: panda-blink 5s infinite; }
 .panda-anim.panda-happy .panda-head { transform-origin: 50% 100%; animation: panda-nod 0.7s ease-in-out 2; }

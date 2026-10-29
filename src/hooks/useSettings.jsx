@@ -3,8 +3,8 @@ import { loadJSON, saveJSON } from '../lib/storage.js';
 import { KEYS } from '../lib/constants.js';
 
 const SettingsContext = createContext(null);
-// lang: id | en | both; theme: system | light | dark; cardDir: hanzi (Hanzi->Arti) | arti (Arti->Hanzi)
-const DEFAULTS = { lang: 'id', theme: 'system', cardDir: 'hanzi' };
+// lang: id | en | both; theme: light (default) | dark | system; cardDir: hanzi (Hanzi->Arti) | arti (Arti->Hanzi)
+const DEFAULTS = { lang: 'id', theme: 'light', cardDir: 'hanzi' };
 
 const systemDark = () => window.matchMedia?.('(prefers-color-scheme: dark)').matches ?? false;
 

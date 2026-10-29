@@ -13,25 +13,26 @@ Aplikasi ini saya buat untuk menutup kekurangan atau kesusahan belajar. Kosakata
 - Leitner 3 kotak yang ditampilkan sebagai keranjang bambu. Kata yang sering salah lebih sering muncul sebagai soal.
 - Tombol suara memakai Web Speech API dengan bahasa `zh-CN`. Jika browser tidak mendukung atau tidak punya suara Mandarin, tombol disembunyikan dan muncul pesan singkat.
 - Bahasa terjemahan bisa dipilih: Indonesia, English, atau keduanya.
-- Filter dan pencarian berdasarkan bab, kategori, jenis kata, dan status hafal. Pencarian mencakup hanzi, pinyin, dan arti, dan tidak membedakan tanda nada (`ni hao` menemukan `nǐ hǎo`).
+- Filter dan pencarian berdasarkan bab, kategori, jenis kata, dan status hafal. Bab, kategori, dan jenis kata berupa dropdown pilihan tunggal yang tertutup secara default. Pencarian mencakup hanzi, pinyin, dan arti, dan tidak membedakan tanda nada (`ni hao` menemukan `nǐ hǎo`).
 - Daftar kosakata berbentuk tabel di layar lebar dan daftar kartu di ponsel.
-- Beranda berisi sapaan panda, target harian 10 kata berbeda, streak hari belajar, dan kartu tiap bab dengan progress ring.
-- Halaman progress menampilkan persentase hafal per bab dan per kategori, isi keranjang Leitner, serta panda yang makan bambu. Makin banyak kata yang hafal, makin banyak batang bambu yang habis.
+- Beranda berisi ringkasan target harian 10 kata berbeda, streak, jumlah kata hafal, dan daftar bab sederhana: nomor, judul, jumlah kata, status (Belum mulai, Sedang, Selesai), dan bar progres.
+- Halaman progress menampilkan riwayat belajar harian berupa grafik batang 7 atau 30 hari (kata berbeda per hari, garis target, total, hari aktif, rata-rata, dan jumlah hari target tercapai; angkanya juga tersedia sebagai tabel untuk pembaca layar), persentase hafal per bab dan per kategori, isi keranjang Leitner, serta panda yang makan bambu. Makin banyak kata yang hafal, makin banyak batang bambu yang habis.
 - Konfeti muncul saat skor kuis minimal 80% dan saat target harian tercapai.
-- Mode terang, gelap, atau ikut sistem, dan tombol reset progress dengan dialog konfirmasi.
+- Mode terang (default untuk pengunjung baru), gelap, atau ikut sistem, dan tombol reset progress dengan dialog konfirmasi.
+- Sidebar desktop bisa diciutkan menjadi strip ikon dan statusnya diingat di browser. Di ponsel dan tablet sidebar menjadi drawer yang dibuka dari tombol menu.
 
 ## Keputusan desain
 
 ### Maskot
 
-Panda adalah komponen SVG inline (`PandaMascot.jsx`), tidak memakai gambar atau karakter pihak lain. Ada enam ekspresi lewat prop `mood`: `happy`, `sad`, `thinking`, `sleeping`, `eating`, dan `cheer`. Panda muncul sebagai logo, sapaan di beranda, reaksi saat belajar dan kuis, serta ilustrasi di tampilan kosong, memuat, dan galat. Animasinya (berkedip, mengangguk, bergoyang) mati otomatis bagi pengguna yang mengaktifkan `prefers-reduced-motion`.
+Panda adalah komponen SVG inline (`PandaMascot.jsx`), tidak memakai gambar atau karakter pihak lain. Ada enam ekspresi lewat prop `mood`: `happy`, `sad`, `thinking`, `sleeping`, `eating`, dan `cheer`. Panda muncul sebagai logo, maskot kecil di beranda, reaksi saat belajar dan kuis, serta ilustrasi di tampilan kosong, memuat, dan galat. Animasinya (berkedip, mengangguk, bergoyang) mati otomatis bagi pengguna yang mengaktifkan `prefers-reduced-motion`. Di mode gelap siluet panda diberi kontur terang tipis agar bagian hitamnya tidak menyatu dengan latar.
 
 ### Warna
 
-Nuansanya hangat seperti taman bambu: latar krem `#FFFBF2`, hijau bambu `#4CAF7A`, dan hijau daun `#2E7D5B`, ditambah sakura, madu, biru langit, persik, dan lavender. Mode gelap memakai biru-hijau tua `#16211D`.
+Nuansanya hangat seperti taman bambu: latar krem `#FFFBF2`, hijau bambu `#4CAF7A`, dan hijau daun `#2E7D5B`, ditambah sakura, madu, biru langit, persik, dan lavender. Mode gelap memakai biru-hijau tua `#16211D`. Latar dibiarkan polos, tanpa dekorasi, supaya materi menjadi fokus.
 
 - Semua warna didefinisikan sebagai CSS variables di `src/index.css` dan dipasang ke Tailwind lewat `tailwind.config.js`, jadi tema bisa diubah dari satu tempat.
-- Setiap bab punya warna sendiri yang dihitung dari nomor bab (`lib/chapterColors.js`) dan berputar melalui enam warna aksen. Bab baru langsung mendapat warna dan ikon tanpa konfigurasi.
+- Setiap bab punya warna sendiri yang dihitung dari nomor bab (`lib/chapterColors.js`) dan berputar melalui enam warna aksen. Bab baru langsung mendapat warna tanpa konfigurasi. Warna ini dipakai di flashcard, kuis, dan halaman progress; daftar bab di beranda sengaja memakai satu warna aksen.
 - Status hafal, belum hafal, dan salah selalu disertai ikon dan teks, bukan warna saja.
 - Kontras teks terhadap latar memenuhi WCAG AA di mode terang dan gelap.
 
@@ -41,9 +42,9 @@ Tampilan dirancang dari ukuran ponsel lebih dulu.
 
 | Lebar layar | Navigasi | Konten |
 | --- | --- | --- |
-| di bawah 768px | tab bar bawah | satu kolom, kosakata berbentuk kartu |
+| di bawah 768px | tab bar bawah dan drawer menu | satu kolom, kosakata berbentuk kartu |
 | 768 sampai 1023px | tab bar bawah | kosakata berbentuk tabel |
-| 1024px ke atas | sidebar kiri | konten di tengah dengan lebar maksimum |
+| 1024px ke atas | sidebar kiri, bisa diciutkan | konten di tengah dengan lebar maksimum |
 | 1280px ke atas | sidebar kiri | ditambah panel filter di samping |
 
 Di layar yang lebih sempit dari 1280px, filter muncul sebagai bottom sheet. Hanzi di flashcard memakai ukuran fluid (`clamp`) dan mengecil otomatis untuk frasa yang panjang. Tidak ada scroll horizontal pada lebar 360 sampai 1440px.
@@ -155,7 +156,9 @@ Pembuatan soal ada di `src/lib/quiz.js`. Tiga pengecoh dipilih bertingkat supaya
 2. kata dalam kelompok peran tata bahasa yang sama, misalnya kata hubung dengan kata depan, partikel, atau kata kerja bantu,
 3. kata lain bila dua tingkat di atas belum cukup.
 
-Di dalam tiap tingkat, kata yang paling mirip didahulukan, dengan penilaian dari kategori yang sama, panjang hanzi yang mirip, dan bab yang sama, ditambah sedikit unsur acak. Pilihan dengan teks yang sama dibuang, begitu juga kata lain yang sebenarnya merupakan jawaban benar, misalnya dua entri dengan arti yang sama.
+Di dalam tiap tingkat, kata yang paling mirip didahulukan, dengan penilaian dari kategori yang sama, panjang hanzi yang mirip, dan bab yang sama, ditambah sedikit unsur acak. Pilihan dengan teks yang sama dibuang, begitu juga kata lain yang sebenarnya merupakan jawaban benar, yaitu kata yang berbagi salah satu arti dengan soal (misalnya soal "ibu; mama" tidak akan memakai kata lain berarti "mama" sebagai pengecoh).
+
+Data menyimpan beberapa arti dalam satu string yang dipisah `;`. Pada pilihan jawaban hanya arti pertama yang dipakai, tanpa keterangan dalam kurung ("ibu; mama" menjadi "ibu"), dan pilihan pinyin hanya memuat satu pinyin. Arti lengkap tetap tampil di daftar kosakata, flashcard, dan kotak umpan balik setelah menjawab.
 
 ## Struktur proyek
 
@@ -163,9 +166,9 @@ Di dalam tiap tingkat, kata yang paling mirip didahulukan, dengan penilaian dari
 data-mentah/             data sumber per bab (bab-N.json)
 scripts/build-vocab.js   normalisasi dan validasi data, menghasilkan src/data/vocab.json
 src/
-  components/            PandaMascot, Flashcard, QuizQuestion, ChapterCard, FilterPanel, dan lainnya
-  hooks/                 useProgress, useSettings, useSpeech, useFilters, useHashRoute
-  lib/                   vocab, quiz, leitner, chapterColors, storage, constants
+  components/            PandaMascot, Flashcard, QuizQuestion, ChapterCard, FilterPanel, Dropdown, Sidebar, HistoryChart, dan lainnya
+  hooks/                 useProgress, useSettings, useSidebar, useSpeech, useFilters, useHashRoute
+  lib/                   vocab, quiz, leitner, chapterColors, storage, constants, dates
   pages/                 Home, Study, Quiz, Vocab, Progress
   index.css              token warna (CSS variables) dan animasi
 tailwind.config.js       token yang dipasang ke Tailwind
@@ -173,7 +176,6 @@ tailwind.config.js       token yang dipasang ke Tailwind
 
 ## Rencana pengembangan
 
-- Riwayat belajar harian dengan grafik 7 dan 30 hari.
 - Kuis mengetik pinyin dan kuis mendengarkan.
 - Interval Leitner berbasis tanggal, jadi kata muncul lagi setelah jeda tertentu dan tidak hanya lewat bobot acak.
 - Ekspor dan impor progress untuk berpindah perangkat.

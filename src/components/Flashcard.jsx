@@ -8,8 +8,8 @@ const SWIPE_THRESHOLD = 90; // px
 // Ukuran hanzi fluid (clamp) dan menyesuaikan panjang teks agar frasa panjang tetap muat.
 function hanziSize(text, big) {
   const n = [...text].length;
-  if (n <= 2) return big ? 'clamp(4.5rem, 22vw, 8rem)' : 'clamp(2.75rem, 12vw, 4.5rem)';
-  if (n <= 4) return big ? 'clamp(3.25rem, 15vw, 5.5rem)' : 'clamp(2.25rem, 9vw, 3.5rem)';
+  if (n <= 2) return big ? 'clamp(5rem, 26vw, 9rem)' : 'clamp(3rem, 14vw, 5rem)';
+  if (n <= 4) return big ? 'clamp(3.5rem, 17vw, 6.5rem)' : 'clamp(2.5rem, 10vw, 4rem)';
   return big ? 'clamp(1.75rem, 8vw, 3rem)' : 'clamp(1.5rem, 6vw, 2.25rem)';
 }
 
@@ -91,10 +91,10 @@ export default function Flashcard({ item, flipped, onFlip, direction, lang, card
 
   const frontIsHanzi = direction === 'hanzi';
   const faceBase =
-    'flip-face absolute inset-0 flex flex-col items-center justify-center gap-3 overflow-hidden rounded-card border-2 border-ch p-5 text-center shadow-lift';
+    'flip-face absolute inset-0 flex flex-col items-center justify-center gap-3 overflow-hidden rounded-card border border-line p-5 text-center';
 
   return (
-    <div className="relative mx-auto w-full max-w-md" style={chapterStyle(item.bab)}>
+    <div className="relative mx-auto w-full max-w-xl" style={chapterStyle(item.bab)}>
       <div
         className="relative select-none"
         style={{
@@ -114,10 +114,10 @@ export default function Flashcard({ item, flipped, onFlip, direction, lang, card
             onClick={handleClick}
             aria-label={flipped ? 'Kartu menampilkan jawaban. Balik kembali ke soal' : 'Balik kartu untuk melihat jawaban'}
             className={`flip-card relative block w-full rounded-card text-left ${flipped ? 'is-flipped' : ''}`}
-            style={{ height: 'clamp(18rem, 50vw + 6rem, 25rem)' }}
+            style={{ height: 'clamp(20rem, 50vw + 8rem, 28rem)' }}
           >
             {/* Depan */}
-            <span aria-hidden={flipped} className={`${faceBase} bg-gradient-to-br from-ch-soft to-surface`}>
+            <span aria-hidden={flipped} className={`${faceBase} bg-surface`}>
               {frontIsHanzi ? (
                 <Hanzi text={item.hanzi} big />
               ) : (

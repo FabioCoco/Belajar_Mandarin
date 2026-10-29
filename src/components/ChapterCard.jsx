@@ -1,29 +1,34 @@
-import { chapterStyle } from '../lib/chapterColors.js';
-import ChapterIcon from './ChapterIcon.jsx';
-import ProgressRing from './ProgressRing.jsx';
+// Baris bab: nomor, judul, jumlah kata, dan status progres sederhana. Satu warna aksen, tanpa dekorasi.
+export function chapterStatus(memorized, total) {
+  if (memorized <= 0) return { label: 'Belum mulai', tone: 'text-muted' };
+  if (memorized >= total) return { label: 'Selesai', tone: 'text-ok-ink' };
+  return { label: 'Sedang', tone: 'text-primary-ink' };
+}
 
-// Kartu bab berwarna: ikon, judul bab (title_id), progress ring. Warna otomatis dari nomor bab.
-export default function ChapterCard({ chapter, memorized, onClick, index = 0 }) {
+export default function ChapterCard({ chapter, memorized, onClick }) {
   const ratio = chapter.total ? memorized / chapter.total : 0;
+  const status = chapterStatus(memorized, chapter.total);
   return (
     <button
       type="button"
       onClick={onClick}
-      style={{ ...chapterStyle(chapter.bab), animationDelay: `${Math.min(index, 8) * 60}ms`, animationFillMode: "backwards" }}
-      className="group relative animate-pop-in flex w-full items-center gap-4 overflow-hidden rounded-card border border-ch/30 bg-gradient-to-br from-ch-soft to-surface p-4 text-left shadow-soft transition duration-150 hover:-translate-y-0.5 hover:shadow-lift active:scale-[.98]"
+      aria-label={`Bab ${chapter.bab}: ${chapter.judulId}. ${chapter.total} kata, ${memorized} hafal. ${status.label}`}
+      className="flex w-full flex-col gap-2.5 rounded-xl border border-line bg-surface p-4 text-left transition hover:border-primary-ink active:bg-surface2"
     >
-      <span aria-hidden="true" className="absolute inset-x-0 top-0 h-1.5 bg-ch" />
-      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-surface text-ch-ink shadow-soft">
-        <ChapterIcon bab={chapter.bab} />
+      <span className="flex items-baseline gap-3">
+        <span className="text-2xl font-black tabular-nums text-primary-ink">{String(chapter.bab).padStart(2, '0')}</span>
+        <span className="min-w-0 flex-1 text-base font-extrabold leading-snug text-ink">{chapter.judulId}</span>
       </span>
-      <span className="min-w-0 flex-1">
-        <span className="inline-block rounded-pill bg-ch-ink px-2.5 py-0.5 text-xs font-extrabold text-surface">Bab {chapter.bab}</span>
-        <span className="mt-1 block text-base font-extrabold leading-snug text-ink">{chapter.judulId}</span>
-        <span className="mt-0.5 block text-sm text-muted">
-          {memorized}/{chapter.total} kata hafal
+      <span className="flex items-center justify-between gap-3 text-sm">
+        <span className="text-muted">{chapter.total} kata</span>
+        <span className={`font-bold ${status.tone}`}>
+          {status.label}
+          {memorized > 0 && <span className="font-semibold text-muted"> · {memorized}/{chapter.total}</span>}
         </span>
       </span>
-      <ProgressRing value={ratio} size={58} stroke={7} label={`Bab ${chapter.bab}: ${Math.round(ratio * 100)} persen hafal`} />
+      <span aria-hidden="true" className="h-1.5 overflow-hidden rounded-pill bg-line">
+        <span className="block h-full rounded-pill bg-primary-ink" style={{ width: `${ratio * 100}%` }} />
+      </span>
     </button>
   );
 }

@@ -6,6 +6,7 @@ import ProgressBar from '../components/ProgressBar.jsx';
 import ProgressRing from '../components/ProgressRing.jsx';
 import ChapterIcon from '../components/ChapterIcon.jsx';
 import LeitnerBaskets from '../components/LeitnerBaskets.jsx';
+import HistoryChart from '../components/HistoryChart.jsx';
 import { EmptyState } from '../components/StateViews.jsx';
 import { useProgress } from '../hooks/useProgress.jsx';
 import { chapterStyle } from '../lib/chapterColors.js';
@@ -29,7 +30,7 @@ function Stat({ icon: Icon, value, label, tone }) {
 }
 
 export default function Progress() {
-  const { words, isMemorized, getWord, streak, todayCount } = useProgress();
+  const { words, isMemorized, getWord, streak, todayCount, history } = useProgress();
 
   const stats = useMemo(() => {
     const perBab = chapters.map((c) => ({ ...c, done: c.ids.filter((id) => isMemorized(id)).length }));
@@ -56,7 +57,7 @@ export default function Progress() {
       <h1 className="text-2xl">Progress</h1>
 
       {/* Panda makan bambu: makin banyak hafal, makin banyak bambu termakan */}
-      <section aria-label="Ringkasan hafalan" className="overflow-hidden rounded-card border border-line/70 bg-hero p-5 shadow-soft sm:p-7">
+      <section aria-label="Ringkasan hafalan" className="overflow-hidden rounded-card border border-line bg-surface p-4 sm:p-5">
         <div className="flex flex-col items-center gap-4 sm:flex-row sm:gap-6">
           <PandaMascot mood={started ? 'eating' : 'sleeping'} size={150} />
           <div className="flex w-full flex-1 flex-col items-center gap-3 sm:items-start">
@@ -76,6 +77,13 @@ export default function Progress() {
         <Stat icon={Flame} value={streak} label="Streak (hari berturut-turut)" tone="bg-peach-soft text-peach-ink" />
         <Stat icon={Target} value={`${todayCount}/${DAILY_TARGET}`} label="Target harian" tone="bg-sky-soft text-sky-ink" />
         <Stat icon={CircleCheck} value={stats.memorized} label="Kata hafal" tone="bg-ok-soft text-ok-ink" />
+      </section>
+
+      <section aria-labelledby="judul-riwayat" className="card p-4 sm:p-5">
+        <h2 id="judul-riwayat" className="mb-3 text-xl">
+          Riwayat belajar
+        </h2>
+        <HistoryChart history={history} />
       </section>
 
       <section aria-labelledby="judul-bab" className="card p-4 sm:p-5">

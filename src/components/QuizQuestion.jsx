@@ -22,7 +22,7 @@ function Prompt({ item, mode, lang }) {
     );
   }
   const n = [...item.hanzi].length;
-  const size = n <= 2 ? 'clamp(3.5rem, 18vw, 6rem)' : n <= 4 ? 'clamp(2.75rem, 13vw, 4.5rem)' : 'clamp(1.5rem, 7vw, 2.5rem)';
+  const size = n <= 2 ? 'clamp(4.5rem, 22vw, 8rem)' : n <= 4 ? 'clamp(3.25rem, 15vw, 5.5rem)' : 'clamp(1.75rem, 8vw, 3rem)';
   return (
     <p lang="zh-CN" className="break-words font-hanzi font-bold leading-tight text-ink" style={{ fontSize: size }}>
       {item.hanzi}
@@ -59,7 +59,7 @@ export default function QuizQuestion({ question, selected, onSelect, lang, speec
 
   return (
     <div className="flex flex-col gap-4" style={chapterStyle(item.bab)}>
-      <div className="relative flex min-h-[10rem] flex-col items-center justify-center gap-2 rounded-card border-2 border-ch bg-gradient-to-br from-ch-soft to-surface px-14 py-5 text-center shadow-soft">
+      <div className="relative flex min-h-[12rem] flex-col items-center justify-center gap-2 rounded-card border border-line bg-surface px-14 py-5 text-center">
         <p className="text-sm font-extrabold text-ch-ink">{modeInfo.prompt}</p>
         <Prompt item={item} mode={mode} lang={lang} />
         {showSpeak && (
@@ -90,7 +90,7 @@ export default function QuizQuestion({ question, selected, onSelect, lang, speec
               type="button"
               disabled={answered}
               onClick={() => onSelect(i)}
-              className={`flex min-h-[64px] items-center gap-3 rounded-2xl border-2 px-4 py-3 text-left shadow-soft transition active:scale-[.98] disabled:cursor-default disabled:active:scale-100 ${tone}`}
+              className={`flex min-h-[64px] items-center gap-3 rounded-2xl border-2 px-4 py-3 text-left transition active:scale-[.98] disabled:cursor-default disabled:active:scale-100 ${tone}`}
             >
               <span aria-hidden="true" className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-ch-soft text-sm font-extrabold text-ch-ink">
                 {LETTERS[i]}

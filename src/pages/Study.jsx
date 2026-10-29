@@ -3,7 +3,6 @@ import { ChevronLeft, ChevronRight, CircleCheck, CircleX, RotateCw, Shuffle, Vol
 import Flashcard from '../components/Flashcard.jsx';
 import PandaMascot from '../components/PandaMascot.jsx';
 import FilterLayout from '../components/FilterLayout.jsx';
-import ChapterFilter from '../components/ChapterFilter.jsx';
 import Segmented from '../components/Segmented.jsx';
 import { EmptyState } from '../components/StateViews.jsx';
 import { useProgress } from '../hooks/useProgress.jsx';
@@ -24,7 +23,7 @@ function shuffled(list) {
 const isTyping = (el) => el && (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.tagName === 'SELECT' || el.isContentEditable);
 
 export default function Study({ filterApi, navigate }) {
-  const { filters, toggle, set, reset } = filterApi;
+  const { filters, set, reset } = filterApi;
   const { lang, cardDir, setCardDir } = useSettings();
   const { isMemorized, markReviewed } = useProgress();
   const speech = useSpeech();
@@ -173,8 +172,6 @@ export default function Study({ filterApi, navigate }) {
             </div>
           </div>
 
-          <ChapterFilter selected={filters.babs} onToggle={toggle} />
-
           <Segmented
             label="Arah kartu"
             value={cardDir}
@@ -275,7 +272,7 @@ export default function Study({ filterApi, navigate }) {
               </p>
 
               {/* Aksi */}
-              <div className="mx-auto grid w-full max-w-md grid-cols-2 gap-3">
+              <div className="mx-auto grid w-full max-w-xl grid-cols-2 gap-3">
                 <button type="button" onClick={() => mark(false)} className="btn !min-h-[56px] bg-todo-soft text-todo-ink shadow-soft hover:brightness-95">
                   <CircleX size={22} aria-hidden="true" /> Belum hafal
                 </button>

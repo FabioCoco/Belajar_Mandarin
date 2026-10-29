@@ -3,13 +3,13 @@ import { SettingsProvider } from './hooks/useSettings.jsx';
 import { ProgressProvider, useProgress } from './hooks/useProgress.jsx';
 import { useHashRoute } from './hooks/useHashRoute.js';
 import { useFilters } from './hooks/useFilters.js';
+import { useSidebar } from './hooks/useSidebar.js';
 import { CelebrationHoldContext } from './hooks/useCelebrationHold.jsx';
 import Sidebar from './components/Sidebar.jsx';
 import BottomNav from './components/BottomNav.jsx';
 import MobileHeader from './components/MobileHeader.jsx';
 import Confetti from './components/Confetti.jsx';
 import Toast from './components/Toast.jsx';
-import { BackgroundDecor } from './components/Decorations.jsx';
 import { ErrorBoundary, LoadingState } from './components/StateViews.jsx';
 import Home from './pages/Home.jsx';
 import { APP_NAME, DAILY_TARGET } from './lib/constants.js';
@@ -24,6 +24,7 @@ const TITLES = { beranda: 'Beranda', belajar: 'Flashcard', kuis: 'Kuis', kosakat
 function Shell() {
   const { route, navigate } = useHashRoute();
   const filterApi = useFilters();
+  const sidebar = useSidebar();
   const { setFilters } = filterApi;
   const { todayCount, datasetReset, dismissDatasetReset } = useProgress();
   const mainRef = useRef(null);
@@ -91,15 +92,21 @@ function Shell() {
         >
           Lewati ke konten
         </button>
-        <BackgroundDecor />
-        <Sidebar route={route} navigate={navigate} />
-        <div className="relative z-10 lg:pl-72">
-          <MobileHeader />
+        <Sidebar
+          route={route}
+          navigate={navigate}
+          collapsed={sidebar.collapsed}
+          onToggle={sidebar.toggleCollapsed}
+          mobileOpen={sidebar.mobileOpen}
+          onMobileClose={sidebar.closeMobile}
+        />
+        <div className={`relative z-10 transition-[padding] duration-200 ease-out ${sidebar.collapsed ? 'lg:pl-[4.5rem]' : 'lg:pl-72'}`}>
+          <MobileHeader onMenu={sidebar.openMobile} />
           <main
             id="konten"
             ref={mainRef}
             tabIndex={-1}
-            className="pl-safe pr-safe mx-auto w-full max-w-5xl px-4 pb-28 pt-5 focus:outline-none sm:px-6 lg:pb-10 lg:pt-8"
+            className="pl-safe pr-safe mx-auto w-full max-w-6xl px-3 pb-24 pt-3 focus:outline-none sm:px-5 lg:pb-8 lg:pt-5"
           >
             <ErrorBoundary key={route}>
               <Suspense fallback={<LoadingState />}>

@@ -1,16 +1,9 @@
 import { chapters } from '../lib/vocab.js';
-import { chapterStyle } from '../lib/chapterColors.js';
-import Chip from './Chip.jsx';
+import Dropdown from './Dropdown.jsx';
 
-// Chip bab berwarna (pilih satu atau beberapa). Daftar bab dibaca otomatis dari data.
-export default function ChapterFilter({ selected, onToggle }) {
-  return (
-    <div className="flex flex-wrap gap-2" role="group" aria-label="Filter bab">
-      {chapters.map((c) => (
-        <Chip key={c.bab} colored style={chapterStyle(c.bab)} selected={selected.includes(c.bab)} onClick={() => onToggle('babs', c.bab)}>
-          Bab {c.bab}
-        </Chip>
-      ))}
-    </div>
-  );
+const OPTIONS = [{ value: 'all', label: 'Semua bab' }, ...chapters.map((c) => ({ value: c.bab, label: `Bab ${c.bab}: ${c.judulId}` }))];
+
+// Dropdown bab (pilih satu). Daftar bab dibaca otomatis dari data. `onChange` menerima array bab ([] = semua).
+export default function ChapterFilter({ selected, onChange }) {
+  return <Dropdown label="Bab" value={selected[0] ?? 'all'} onChange={(v) => onChange(v === 'all' ? [] : [v])} options={OPTIONS} />;
 }

@@ -15,11 +15,34 @@ function shuffle(list) {
   return a;
 }
 
+// Data menyimpan beberapa arti dalam satu string ("ibu; mama"). Pilihan jawaban hanya memuat arti pertama
+// (yang paling umum), tanpa keterangan dalam kurung, supaya singkat dan tidak membingungkan.
+const meaningParts = (text) =>
+  String(text ?? '')
+    .split(';')
+    .map((s) => s.trim())
+    .filter(Boolean);
+const primaryMeaning = (text) => {
+  const first = meaningParts(text)[0] ?? '';
+  return first.replace(/\s*\([^)]*\)/g, '').trim() || first;
+};
+
+// Semua arti (Indonesia + Inggris) sebuah kata, huruf kecil. Dipakai untuk mendeteksi sinonim.
+const allMeanings = (v) =>
+  new Set([...meaningParts(v.indonesian), ...meaningParts(v.english), ...(v.altIndonesian || []), ...(v.altEnglish || [])].map((s) => s.toLowerCase()));
+const shareMeaning = (a, b) => {
+  const mb = allMeanings(b);
+  return [...allMeanings(a)].some((m) => mb.has(m));
+};
+
 // Isi jawaban sebuah kata menurut mode. `key` dipakai untuk mendeteksi pilihan yang kembar.
 export function answerOf(v, mode, lang) {
   if (mode === 'arti-hanzi') return { key: v.hanzi, lines: [v.hanzi] };
-  if (mode === 'hanzi-pinyin') return { key: v.pinyin.toLowerCase(), lines: [v.pinyin] };
-  const lines = getMeanings(v, lang).map((m) => m.text);
+  if (mode === 'hanzi-pinyin') {
+    const pinyin = v.pinyin.split(/[;/]/)[0].trim();
+    return { key: pinyin.toLowerCase(), lines: [pinyin] };
+  }
+  const lines = getMeanings(v, lang).map((m) => primaryMeaning(m.text));
   return { key: lines.join(' / ').toLowerCase(), lines };
 }
 
@@ -54,10 +77,10 @@ function closeness(c, item) {
 }
 
 // Kata lain yang juga merupakan jawaban benar untuk soal ini tidak boleh jadi pengecoh,
-// misalnya hanzi yang sama di bab berbeda, atau dua kata dengan arti Indonesia/Inggris yang sama.
+// misalnya hanzi yang sama di bab berbeda, atau kata yang berbagi salah satu arti (sinonim, mis. "ibu" dan "mama").
 function conflicts(c, item, mode) {
-  if (mode === 'arti-hanzi') return c.indonesian === item.indonesian || c.english === item.english;
-  return c.hanzi === item.hanzi;
+  if (c.hanzi === item.hanzi) return true;
+  return mode !== 'hanzi-pinyin' && shareMeaning(c, item);
 }
 
 // Membuat satu soal pilihan ganda (maksimal 4 pilihan).
